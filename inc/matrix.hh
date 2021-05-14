@@ -4,29 +4,49 @@
 #include "vector.hh"
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
-class Matrix {
+/*************************************************************************************
+ | Klasa modelujaca w programie pojecie macierzy.                                    |
+ | Klasa posiada prywatne pole "value", stanowi ono zbior wartosci macierzy rotacji. |
+ |  Jest to tablica dwuwymiarowa dla warosci typu double.                            |
+ | Klasa posiada publiczny interfejs pozwalajacy na wprowazdanie,                    |
+ |  zmiane i odczytywanie danych z macierzy rotacji.                                 |
+ | Klasa zawiera publiczne przeciazenia operatorow funkcyjnych opowiedzialnych       |
+ |  za wprowadzanie i odczytywanie wartosci z macierzy rotacji, oraz przeciazenie    |
+ |  operatora mnozenia macierzy razy wetkor i przeciazenia operatora dodawania       |
+ |  dwoch macierzy.                                                                  | 
+ | Klasa posiada metode inicjujaca macierz wartosciami funkcji trygonometrycznych    |
+ |  dla zadanego konta obrotu.                                                       |
+ | W roli modyfikacji zadania, dodano metode wyznaczajaca wyznacznik macierzy.       |
+ */
 
+template <unsigned int Size>
+class Matrix{
 private:
-    double value[SIZE][SIZE];               // Wartosci macierzy
-
+    double value[Size][Size];            /* Wartosci macierzy */
 public:
-    Matrix(double [SIZE][SIZE]);            // Konstruktor klasy
+    Matrix();                            /* Bezparametryczny konstruktor klasy */       
+    Matrix(double [Size][Size]);         /* Konstruktor klasy z parametrem */
 
-    Matrix();                               // Konstruktor klasy
+    Vector<Size> operator * (Vector<Size> const &tmp);    /* Operator mnożenia przez wektor */
+    Matrix<Size> operator * (Matrix<Size> const &tmp);
+    Matrix<Size>  operator / (const double &tmp);
+    Matrix operator + (Matrix const &tmp);    /* Operator dodwania dwoch macierzy */
 
-    Vector operator * (Vector tmp);           // Operator mnożenia przez wektor
+    Matrix<Size> reset_matrix();
 
-    Matrix operator + (Matrix tmp);
-
-    double  &operator () (unsigned int row, unsigned int column);
+    double determinant_of_the_matrix() const; /* Obliczenie wyznacznika macierzy */
     
-    const double &operator () (unsigned int row, unsigned int column) const;
+    double & operator () (unsigned int row, unsigned int column); /* Przeciazenia operatora funkcyjnego */
+    const double & operator () (unsigned int row, unsigned int column) const;
 };
 
-std::istream &operator>>(std::istream &in, Matrix &mat);
+template <unsigned int Size>
+std::ostream & operator << (std::ostream &out, Matrix<Size> const &mat); /* Przeciazenie operatora << sluzace wyswietlaniu macierzy */ 
 
-std::ostream &operator<<(std::ostream &out, Matrix const &mat);
+template <unsigned int Size>
+std::istream & operator >> (std::istream &in, Matrix<Size> &mat);        /* Przeciazenie operatora >> sluzace wczytywaniu wartosci do macierzy */ 
 
 /******************************************************************************
  |  Konstruktor klasy Matrix.                                                 |
@@ -35,14 +55,14 @@ std::ostream &operator<<(std::ostream &out, Matrix const &mat);
  |  Zwraca:                                                                   |
  |      Macierz wypelnione wartoscia 0.                                       |
  */
-Matrix::Matrix() {
-    for (int i = 0; i < SIZE; ++i) {
-        for (int j = 0; j < SIZE; ++j) {
-            value[i][j] = 0;
+template <unsigned int Size>
+Matrix<Size>::Matrix(){
+    for (unsigned int i = 0; i < Size; ++i){
+        for (unsigned int j = 0; j < Size; ++j){
+            i == j ? value[i][j] = 1 : value[i][j] = 0;
         }
     }
 }
-
 
 /******************************************************************************
  |  Konstruktor parametryczny klasy Matrix.                                   |
@@ -51,14 +71,14 @@ Matrix::Matrix() {
  |  Zwraca:                                                                   |
  |      Macierz wypelniona wartosciami podanymi w argumencie.                 |
  */
-Matrix::Matrix(double tmp[SIZE][SIZE]) {
-    for (int i = 0; i < SIZE; ++i) {
-        for (int j = 0; j < SIZE; ++j) {
+template <unsigned int Size>
+Matrix<Size>::Matrix(double tmp[Size][Size]){
+    for (unsigned int i = 0; i < Size; ++i){
+        for (unsigned int j = 0; j < Size; ++j){
             value[i][j] = tmp[i][j];
         }
     }
 }
-
 
 /******************************************************************************
  |  Realizuje mnozenie macierzy przez wektor.                                 |
@@ -68,17 +88,53 @@ Matrix::Matrix(double tmp[SIZE][SIZE]) {
  |  Zwraca:                                                                   |
  |      Iloczyn dwoch skladnikow przekazanych jako wektor.                    |
  */
-
-Vector Matrix::operator * (Vector tmp) {
-    Vector result;
-    for (int i = 0; i < SIZE; ++i) {
-        for (int j = 0; j < SIZE; ++j) {
+template <unsigned int Size>
+Vector<Size> Matrix<Size>::operator * (Vector<Size> const &tmp){
+    Vector<Size> result;
+    for (unsigned int i = 0; i < Size; ++i){ 
+        for (unsigned int j = 0; j < Size; ++j){
             result[i] += value[i][j] * tmp[j];
+            }
+    }
+    return result; 
+}
+
+template <unsigned int Size>
+Matrix<Size> Matrix<Size>::operator * (Matrix<Size> const &tmp){
+    Matrix<Size> result;
+    for(unsigned int i = 0; i < Size; i++){
+        result(i,i) = 0;
+        for(unsigned int j = 0; j < Size; j++)
+        for(unsigned int k = 0; k < Size; k++){
+            result(i,j) += value[i][k] * tmp(i,j);
         }
     }
+  
+    return result; 
+}
+
+
+template <unsigned int Size>
+Matrix<Size> Matrix<Size>::operator / (const double &tmp){
+    Matrix<Size> result;
+    if (tmp == 0)
+        throw std::runtime_error("Wykonano dzielenie przez 0");
+
+    for (unsigned int i = 0; i < Size; ++i)
+        for (unsigned int j = 0; j < Size; ++j)
+            result(i,j) = value[i][j] / tmp;  
     return result;
 }
 
+template <unsigned int Size>
+Matrix<Size> Matrix<Size>::reset_matrix(){
+    for (unsigned int i = 0; i < Size; ++i){
+        for (unsigned int j = 0; j < Size; ++j){
+            i == j ? value[i][j] = 1 : value[i][j] = 0;
+        }
+    }
+    return *this;
+}
 
 /******************************************************************************
  |  Funktor macierzy                                                          |
@@ -88,18 +144,12 @@ Vector Matrix::operator * (Vector tmp) {
  |  Zwraca:                                                                   |
  |      Wartosc macierzy w danym miejscu tablicy.                             |
  */
-double &Matrix::operator()(unsigned int row, unsigned int column) {
-
-    if (row >= SIZE) {
-        std::cout << "Error: Macierz jest poza zasiegiem"; 
-        exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
-    }
-
-    if (column >= SIZE) {
-        std::cout << "Error: Macierz jest poza zasiegiem";
-        exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
-    }
-
+template <unsigned int Size>
+double & Matrix<Size>::operator()(unsigned int row, unsigned int column){
+    if (row >= Size) 
+        throw std::runtime_error("Bledna wartosc indeksu macierzy");
+    if (column >= Size)
+        throw std::runtime_error("Bledna wartosc indeksu macierzy");
     return value[row][column];
 }
 
@@ -112,33 +162,28 @@ double &Matrix::operator()(unsigned int row, unsigned int column) {
  |  Zwraca:                                                                   |
  |      Wartosc macierzy w danym miejscu tablicy jako stala.                  |
  */
-const double &Matrix::operator () (unsigned int row, unsigned int column) const {
-
-    if (row >= SIZE) {
-        std::cout << "Error: Macierz jest poza zasiegiem";
-        exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
-    }
-
-    if (column >= SIZE) {
-        std::cout << "Error: Macierz jest poza zasiegiem";
-        exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
-    }
-
+template <unsigned int Size>
+const double & Matrix<Size>::operator ()(unsigned int row, unsigned int column) const{
+    if (row >= Size)
+        throw std::runtime_error("Bledna wartosc indeksu macierzy");
+    if (column >= Size) 
+        throw std::runtime_error("Bledna wartosc indeksu macierzy");
     return value[row][column];
 }
 
 /******************************************************************************
- |  Przeciążenie dodawania macierzy                                                          |
+ |  Przeciążenie dodawania macierzy                                           |
  |  Argumenty:                                                                |
- |      this - macierz, czyli pierwszy skladnik dodawania,                     |
- |      v - wektor, czyli drugi skladnik dodawania.                                               |
+ |      this - macierz, czyli pierwszy skladnik dodawania,                    |
+ |      v - wektor, czyli drugi skladnik dodawania.                           |
  |  Zwraca:                                                                   |
- |      Macierz - iloczyn dwóch podanych macierzy.                  |
+ |      Macierz - iloczyn dwóch podanych macierzy.                            |
  */
-Matrix Matrix::operator + (Matrix tmp) {
+template <unsigned int Size>
+Matrix<Size> Matrix<Size>::operator + (Matrix<Size> const &tmp){
     Matrix result;
-    for (int i = 0; i < SIZE; ++i) {
-        for (int j = 0; j < SIZE; ++j) {
+    for (unsigned int i = 0; i < Size; ++i){
+        for (unsigned int j = 0; j < Size; ++j){
             result(i, j) = this->value[i][j] + tmp(i, j);
         }
     }
@@ -149,17 +194,19 @@ Matrix Matrix::operator + (Matrix tmp) {
  |  Przeciazenie operatora >>                                                 |
  |  Argumenty:                                                                |
  |      in - strumien wyjsciowy,                                              |
- |      mat - macierz.                                                         |
+ |      mat - macierz.                                                        |
  */
-std::istream &operator>>(std::istream &in, Matrix &mat) {
-    for (int i = 0; i < SIZE; ++i) {
-        for (int j = 0; j < SIZE; ++j) {
+template <unsigned int Size>
+std::istream & operator>>(std::istream &in, Matrix<Size> &mat){
+    for (unsigned int i = 0; i < Size; ++i){
+        for (unsigned int j = 0; j < Size; ++j){
             in >> mat(i, j);
         }
     }
+    if (in.fail())
+        throw std::runtime_error(":/ Podano wartosc nie bedaca typu double ");
     return in;
 }
-
 
 /******************************************************************************
  |  Przeciazenie operatora <<                                                 |
@@ -167,9 +214,10 @@ std::istream &operator>>(std::istream &in, Matrix &mat) {
  |      out - strumien wejsciowy,                                             |
  |      mat - macierz.                                                        |
  */
-std::ostream &operator<<(std::ostream &out, const Matrix &mat) {
-    for (int i = 0; i < SIZE; ++i) {
-        for (int j = 0; j < SIZE; ++j) {
+template <unsigned int Size>
+std::ostream & operator<<(std::ostream &out, const Matrix<Size> &mat){
+    for (unsigned int i = 0; i < Size; ++i){
+        for (unsigned int j = 0; j < Size; ++j){
             out << "| " << mat(i, j) << " | "; //warto ustalic szerokosc wyswietlania dokladnosci liczb
         }
         std::cout << std::endl;
@@ -177,3 +225,26 @@ std::ostream &operator<<(std::ostream &out, const Matrix &mat) {
     return out;
 }
 
+/********************************************************************************************
+ |  Metoda klasy Matrix obliczajaca wyznacznik macierzy z uzyciem metody eliminacji Gaussa  |
+ |  Argumenty:                                                                              |
+ |      this - macierz, ktorej wyznacznik bedzie obliczany.                                 |
+ |  Zwraca:                                                                                 |
+ |      Wartosc wyznacznika macierzy typu double                                            |
+ */
+template <unsigned int Size>
+double Matrix<Size>::determinant_of_the_matrix() const{
+    double ratio;
+    Matrix temp_matrix = *this; /* Stworzenie nowej tymczasowej macierzy sluzacej do obliczen */
+    for(unsigned int i = 0; i < Size; i++){
+        if(temp_matrix(i,i) == 0.0)
+            throw std::runtime_error(":/ Podczas wyznaczania wyznacznika, napotkano 0 w macierzy ");
+        for(unsigned int j = i + 1; j < Size; j++){
+            ratio = temp_matrix(j,i) / temp_matrix(i,i);
+            for(unsigned int k = 0; k < Size; k++){
+                temp_matrix(j,k) -=  ratio * value[i][k];
+            }
+        }
+    }
+    return temp_matrix(0,0) * temp_matrix(1,1);
+}
