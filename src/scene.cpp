@@ -38,13 +38,11 @@ void Scene::update_vector(Vector3D const & vec){
 }
 
 Scene Scene::Move_figure(unsigned int cuboid_number){
-    std::cout << Rotation_matrix;
-
-   // for(int j=0; j<CORNERS; j++)
-      //  Corners[j] = temp * Origin_Corners[j];
     solid_figures[cuboid_number].Move_cuboid(Translation_vector,Rotation_matrix);
-    //std::cout << std::endl << solid_figures[0] << std::endl;
-    //solid_figures[cuboid_number].Translate_cub(Translation_vector);
-    //std::cout << std::endl << solid_figures[0] << std::endl;
+    return *this;
+}
+
+Scene Scene::Move_figure_animation(unsigned int cuboid_number){
+    solid_figures[cuboid_number].Move_cuboid(Translation_vector/FRAMES,Rotation_matrix/FRAMES);
     return *this;
 }

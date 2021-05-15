@@ -145,6 +145,9 @@ Matrix<Size> Matrix<Size>::reset_matrix(){
     return *this;
 }
 
+
+
+
 /******************************************************************************
  |  Funktor macierzy                                                          |
  |  Argumenty:                                                                |

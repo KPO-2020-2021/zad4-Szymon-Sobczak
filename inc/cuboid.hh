@@ -31,15 +31,18 @@ class Cuboid{
     public:   
         Cuboid();                      /* Bezparametryczny konstuktor klasy */
         Cuboid(Vector3D  CornerA, Vector3D CornerB, Vector3D CornerC, Vector3D CornerD,Vector3D CornerE,Vector3D CornerF,Vector3D CornerG,Vector3D CornerH); /* Wieloparametrowy konstuktor klasy */
-        const Vector3D & operator [] (int index) const;           /* Przeciazenia operatora indeksujacego */
+        const Vector3D & operator [] (int index) const;          /* Przeciazenia operatora indeksujacego */
         Vector3D & operator [] (int index);
-        Cuboid Translate_cub(Vector3D const &vector);             /* Translacja prostokata prostokata o zadany wektor */
-        Cuboid Rotate_cub (Matrix3x3 const & mtx); /* Obrot prostokata o zadany kat, zadana ilosc razy */
-        void Is_it_cub() const;                                        /* Sprawdzenie czy dany prostokat ma rowne przeciwlegle boki */
-        void Write_cub_to_file(const char *sNazwaPliku) const;         /* Zapis wartosci wspolrzendych wierzcholkow do pliku */
-        bool collision(Cuboid const &ScRec) const;                     /* Detekcja kolizji dwoch prostokatow */
+        Cuboid Translate_cub(Vector3D const &vector);            /* Translacja prostokata prostokata o zadany wektor */
+        Cuboid Rotate_cub (Matrix3x3 const & mtx);               /* Obrot prostokata o zadany kat, zadana ilosc razy */
+        void Is_it_cub() const;                                  /* Sprawdzenie czy dany prostokat ma rowne przeciwlegle boki */
+        void Write_cub_to_file(const char *sNazwaPliku) const;   /* Zapis wartosci wspolrzendych wierzcholkow do pliku */
+        bool collision(Cuboid const &ScRec) const;               /* Detekcja kolizji dwoch prostokatow */
+        
         Cuboid Move_cuboid(Vector3D const &vector, Matrix3x3 const & mtx);
 };
+
+bool are_sides_equal(double const array[]);
 
 int orientation(Vector3D const &p, Vector3D  const &q, Vector3D  const &r);       /* Fukncja pomocnicza detekcji kolizji, sprawdzenie orientacji 3 punktow */
 

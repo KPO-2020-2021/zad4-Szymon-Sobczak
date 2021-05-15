@@ -76,12 +76,17 @@ Vector3D & Cuboid::operator[](int index) {
     return const_cast <Vector3D  &> (const_cast <const Cuboid *> (this)->operator[](index));
 }
 
+
+
+
 Cuboid Cuboid::Move_cuboid(Vector3D const &vector, Matrix3x3 const & mtx){
     Matrix3x3 temp = mtx;
     for(int i=0; i<CORNERS; ++i)      
         Corners[i] = temp * Origin_Corners[i] + vector;
     return *this;
     }
+
+
 
 /*****************************************************************************************************************
  | Metoda klasy Rectangle realizaujca dzialanie translacji prostokata o wybrany wektor.                          |
@@ -168,6 +173,12 @@ std::istream & operator >> (std::istream & In,Cuboid & Rc){
     return In;
 }
 
+
+
+
+
+
+
 /************************************************************************************************************
  | Metoda klasy Rectangle realizujaca zapis wartosci wspolrzednych wierzcholkow do pliku.                   | 
  | Warunki wstepne:                                                                                         |
@@ -194,6 +205,18 @@ void Cuboid::Write_cub_to_file(const char *sNazwaPliku) const{
   StrmPlikowy.close();
 }
 
+
+
+
+bool are_sides_equal(double const array[]){
+    for (unsigned int i = 0; i < 4 ; ++i)
+        for (unsigned int j = i + 1; j < 4; ++j){
+            if (array[i] - array[j] < -MAX_VALUE_DIFF || array[i] - array[j] > MAX_VALUE_DIFF )
+              return false;
+        }
+    return true;
+}
+
 /***************************************************************************************************
  | Metoda klasy Rectangle wykonujaca operacje wyznaczenia dlugosic bokow prostokata i sprawdzenia, |
  |   czy przeciwlegle boki sa sobie rowne.                                                         |
@@ -208,48 +231,104 @@ void Cuboid::Write_cub_to_file(const char *sNazwaPliku) const{
  |   Wypisuje na standardowe wyjscie dane o bokach prostokata.                                     |
  */
 void Cuboid::Is_it_cub() const{
-    double a,b,c,d;
-    a = sqrt(pow(Corners[1][0] - Corners[0][0],2) + pow(Corners[1][1] - Corners[0][1],2)); /* Wyliczenie dlugosci bokow prostokata */
-    b = sqrt(pow(Corners[2][0] - Corners[1][0],2) + pow(Corners[2][1] - Corners[1][1],2));
-    c = sqrt(pow(Corners[3][0] - Corners[2][0],2) + pow(Corners[3][1] - Corners[2][1],2));
-    d = sqrt(pow(Corners[0][0] - Corners[3][0],2) + pow(Corners[0][1] - Corners[3][1],2));
-    std::cout << std::endl;
-    if(a - c < MAX_VALUE_DIFF && c - a < MAX_VALUE_DIFF){ /* Sprawdzenie spojnosci dlugosci przeciewleglych bokow */
-        if(a == b && a == d && c == b && c == d)          /* Warunek generujacy komunikat, gdy badana figura to kwadrat */
-            std::cout << ":) Przeciwlegle boki kwadratu sa sobie rowne." << std::endl;
-        else if(a > b && a > d && c > b && c > d)         /* Ustalenie, ktore boki prostokata sa dluzsze, a ktore krotsze */
-            std::cout << ":) Dluzsze przeciwlegle boki sa sobie rowne." << std::endl;
-        else
-            std::cout << ":) Krotsze przeciwlegle boki sa sobie rowne." << std::endl;
+ 
+    double  A[4] = {vector_length(Corners[0],Corners[1]), vector_length(Corners[2],Corners[3]), vector_length(Corners[4],Corners[5]), vector_length(Corners[6],Corners[7])},
+            B[4] = {vector_length(Corners[0],Corners[2]), vector_length(Corners[1],Corners[3]), vector_length(Corners[4],Corners[6]), vector_length(Corners[5],Corners[7])},
+            C[4] = {vector_length(Corners[0],Corners[6]), vector_length(Corners[1],Corners[7]), vector_length(Corners[2],Corners[4]), vector_length(Corners[3],Corners[5])};
+
+    if (are_sides_equal(A)){
+        if (A[0] == B[0])
+            std::cout << ":( Przeciwlegle boki nie sa sobie rowne." << std::endl;
+        else if (A[0]>B[0])
+            std::cout << ":) Przeciwlegle, dluzsze boki prostopadloscianu sa sobie rowne." << std::endl;
+        else 
+            std::cout << ":) Przeciwlegle, krotsze boki prostopadloscianu sa sobie rowne." << std::endl;
+    }   
+    else {
+        if (A[0] == B[0]){
+            std::cout << ":( Przeciwlegle boki nie sa sobie rowne." << std::endl;
+        }
+        else if (A[0]>B[0])
+            std::cout << ":( Przeciwlegle, dluzsze boki prostopadloscianu nie sa sobie rowne." << std::endl;
+        else 
+            std::cout << ":) Przeciwlegle, krotsze boki prostopadloscianu nie sa sobie rowne." << std::endl;
+        
     }
-    else{ 
-        if(a >= b && a >= d && c >= b && c >= d)
-            std::cout << ":O Dluzsze przeciwlegle boki nie sa sobie rowne." << std::endl;
-        else
-            std::cout << ":O Krotsze przeciwlegle boki nie sa sobie rowne." << std::endl;
+    std::cout << "\tDlugosc pierwszego boku: " << std::fixed << std::setprecision(20) << A[0] << std::endl 
+              << "\tDlugosc drugiego boku: "   << std::fixed << std::setprecision(20) << A[1] << std::endl 
+              << "\tDlugosc trzeciego boku: "  << std::fixed << std::setprecision(20) << A[2] << std::endl 
+              << "\tDlugosc czwartego boku: "  << std::fixed << std::setprecision(20) << A[3] << std::endl << std::endl;
+
+    if (are_sides_equal(B)){
+        if (A[0] == B[0])
+            std::cout << ":( Przeciwlegle boki nie sa sobie rowne." << std::endl;
+        else if (B[0]>A[0])
+            std::cout << ":) Przeciwlegle, dluzsze boki prostopadloscianu sa sobie rowne." << std::endl;
+        else 
+            std::cout << ":) Przeciwlegle, krotsze boki prostopadloscianu sa sobie rowne." << std::endl;
+    }   
+    else{
+        if (A[0] == B[0]){
+            std::cout << ":( Przeciwlegle boki nie sa sobie rowne." << std::endl;
+        }
+        else if (B[0]>A[0])
+            std::cout << ":( Przeciwlegle, dluzsze boki prostopadloscianu nie sa sobie rowne." << std::endl;
+        else 
+            std::cout << ":) Przeciwlegle, krotsze boki prostopadloscianu nie sa sobie rowne." << std::endl;  
     }
-    std::cout << "Dlugosc pierwszego boku: " << std::fixed << std::setprecision(10) << a << std::endl; /* Wyswietlenie informacji o dl. bokow */
-    std::cout << "Dlugosc drugiego boku: " << std::fixed << std::setprecision(10) << c << std::endl;
-    std::cout << std::endl;
+    std::cout << "\tDlugosc pierwszego boku: " << std::fixed << std::setprecision(20) << B[0] << std::endl 
+              << "\tDlugosc drugiego boku: "   << std::fixed << std::setprecision(20) << B[1] << std::endl 
+              << "\tDlugosc trzeciego boku: "  << std::fixed << std::setprecision(20) << B[2] << std::endl 
+              << "\tDlugosc czwartego boku: "  << std::fixed << std::setprecision(20) << B[3] << std::endl << std::endl;
+
+    if (are_sides_equal(C))
+        std::cout << ":) Poprzeczne boki prostopadloscianu sa sobie rowne." << std::endl;
+    else 
+        std::cout << ":( Poprzeczne boki prostopadloscianu nie sa sobie rowne." << std::endl;       
+
+    std::cout << "\tDlugosc pierwszego boku: " << std::fixed << std::setprecision(20) << C[0] << std::endl 
+              << "\tDlugosc drugiego boku: "   << std::fixed << std::setprecision(20) << C[1] << std::endl 
+              << "\tDlugosc trzeciego boku: "  << std::fixed << std::setprecision(20) << C[2] << std::endl 
+              << "\tDlugosc czwartego boku: "  << std::fixed << std::setprecision(20) << C[3] << std::endl << std::endl;
+
+//     std::cout << std::endl;
+
+//     if(a - c < MAX_VALUE_DIFF && c - a < MAX_VALUE_DIFF){ /* Sprawdzenie spojnosci dlugosci przeciewleglych bokow */
+//         if(a == b && a == d && c == b && c == d)          /* Warunek generujacy komunikat, gdy badana figura to kwadrat */
+//             std::cout << ":) Przeciwlegle boki kwadratu sa sobie rowne." << std::endl;
+//         else if(a > b && a > d && c > b && c > d)         /* Ustalenie, ktore boki prostokata sa dluzsze, a ktore krotsze */
+//             std::cout << ":) Dluzsze przeciwlegle boki sa sobie rowne." << std::endl;
+//         else
+//             std::cout << ":) Krotsze przeciwlegle boki sa sobie rowne." << std::endl;
+//     }
+//     else{ 
+//         if(a >= b && a >= d && c >= b && c >= d)
+//             std::cout << ":O Dluzsze przeciwlegle boki nie sa sobie rowne." << std::endl;
+//         else
+//             std::cout << ":O Krotsze przeciwlegle boki nie sa sobie rowne." << std::endl;
+//     }
+//     std::cout << "Dlugosc pierwszego boku: " << std::fixed << std::setprecision(10) << a << std::endl; /* Wyswietlenie informacji o dl. bokow */
+//     std::cout << "Dlugosc drugiego boku: " << std::fixed << std::setprecision(10) << c << std::endl;
+//     std::cout << std::endl;
     
-    if(b - d < MAX_VALUE_DIFF && d - b < MAX_VALUE_DIFF){
-        if(a == b && a == d && c == b && c == d) 
-            std::cout << ":) Przeciwlegle boki kwadratu sa sobie rowne." << std::endl;
-        else if(b >= a && b >= c && d >= a && d >= c)
-            std::cout << ":) Dluzsze przeciwlegle boki sa sobie rowne. "<< std::endl;
-        else
-            std::cout << ":) Krotsze przeciwlegle boki sa sobie rowne." << std::endl;
-    }
-    else{ 
-        if(a >= b && a >= d && c >= b && c >= d)
-            std::cout << ":O Dluzsze przeciwlegle boki nie sa sobie rowne." << std::endl;
-        else
-            std::cout << ":O  Krotsze przeciwlegle boki nie sa sobie rowne." << std::endl;
-    }
-    std::cout << "Dlugosc pierwszego boku: " << std::fixed << std::setprecision(10) << b << std::endl;
-    std::cout << "Dlugosc drugiego boku: " << std::fixed << std::setprecision(10) << d << std::endl;
-    std::cout << std::endl;
-}
+//     if(b - d < MAX_VALUE_DIFF && d - b < MAX_VALUE_DIFF){
+//         if(a == b && a == d && c == b && c == d) 
+//             std::cout << ":) Przeciwlegle boki kwadratu sa sobie rowne." << std::endl;
+//         else if(b >= a && b >= c && d >= a && d >= c)
+//             std::cout << ":) Dluzsze przeciwlegle boki sa sobie rowne. "<< std::endl;
+//         else
+//             std::cout << ":) Krotsze przeciwlegle boki sa sobie rowne." << std::endl;
+//     }
+//     else{ 
+//         if(a >= b && a >= d && c >= b && c >= d)
+//             std::cout << ":O Dluzsze przeciwlegle boki nie sa sobie rowne." << std::endl;
+//         else
+//             std::cout << ":O  Krotsze przeciwlegle boki nie sa sobie rowne." << std::endl;
+//     }
+//     std::cout << "Dlugosc pierwszego boku: " << std::fixed << std::setprecision(10) << b << std::endl;
+//     std::cout << "Dlugosc drugiego boku: " << std::fixed << std::setprecision(10) << d << std::endl;
+//     std::cout << std::endl;
+ }
 
 /****************************************************************************************************
  | Funkcja pomocnicza metody detekcji kolizji, sluzy do sprawdzenia orientacji polozenia 3 punktow. |

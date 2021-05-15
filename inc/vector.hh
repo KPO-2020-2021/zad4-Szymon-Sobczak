@@ -28,6 +28,8 @@ public:
     Vector operator / (const double &tmp);  /* Operator dzielenia wektora i liczby typu double */
     const double & operator [] (unsigned int index) const; /* Przeciazenia operatora indeksujacego */
     double & operator [] (unsigned int index);
+
+   
 };
 
 template <unsigned int Size>
@@ -35,6 +37,7 @@ std::ostream & operator << (std::ostream &out, Vector<Size> const &tmp); /* Prze
 
 template <unsigned int Size>
 std::istream & operator >> (std::istream &in, Vector<Size> &tmp); /* Przeciazenie operatora >> sluzace do wczytywania wartosci do wektora */
+
 
 
  /*****************************************************************************
@@ -198,4 +201,13 @@ std::istream & operator >> (std::istream &in, Vector<Size> &tmp){
         throw std::runtime_error("Podano wartosc nie bedaca typu double ");
     std::cout << std::endl;
     return in;
+}
+
+
+template <unsigned int Size>
+double vector_length(Vector<Size> const & vec1, Vector<Size> const & vec2){
+    double temp=0;
+    for (unsigned int i = 0; i < Size; ++i)
+        temp += pow(vec2[i] - vec1[i],2);
+    return sqrt(temp);
 }

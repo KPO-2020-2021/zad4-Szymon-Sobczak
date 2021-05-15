@@ -18,10 +18,10 @@ class Scene{
     public:
         Scene(unsigned int number_of_cuboids);
         Scene Move_figure(unsigned int cuboid_number);
-        
-        Matrix3x3 get_matrix();
+        Scene Move_figure_animation(unsigned int cuboid_number);
         void update_matrix(Matrix3x3 const & mtx);
         void update_vector(Vector3D const & vec);
         const Cuboid & operator [] (unsigned int index) const;
         Cuboid & operator [] (unsigned int index);
+        Matrix3x3 get_matrix();
 };
