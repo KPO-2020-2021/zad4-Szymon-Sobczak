@@ -99,19 +99,28 @@ Vector<Size> Matrix<Size>::operator * (Vector<Size> const &tmp){
     return result; 
 }
 
+
+
+
+
 template <unsigned int Size>
 Matrix<Size> Matrix<Size>::operator * (Matrix<Size> const &tmp){
     Matrix<Size> result;
-    for(unsigned int i = 0; i < Size; i++){
-        result(i,i) = 0;
-        for(unsigned int j = 0; j < Size; j++)
-        for(unsigned int k = 0; k < Size; k++){
-            result(i,j) += value[i][k] * tmp(i,j);
+    for(unsigned int i = 0; i < Size; ++i){
+        for(unsigned int j = 0; j < Size; ++j){    
+            result(i,j) = 0;
+            for(unsigned int k = 0; k < Size; ++k){
+                result(i,j) +=  value[i][k] * tmp(k,j);
+            }
         }
     }
-  
     return result; 
 }
+
+
+
+
+
 
 
 template <unsigned int Size>

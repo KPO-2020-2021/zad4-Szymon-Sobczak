@@ -20,8 +20,8 @@ class Scene{
         Scene Move_figure(unsigned int cuboid_number);
         
         Matrix3x3 get_matrix();
-        void update_matrix(Matrix3x3 mtx);
-        void update_vector(Vector3D vec);
+        void update_matrix(Matrix3x3 const & mtx);
+        void update_vector(Vector3D const & vec);
         const Cuboid & operator [] (unsigned int index) const;
         Cuboid & operator [] (unsigned int index);
 };

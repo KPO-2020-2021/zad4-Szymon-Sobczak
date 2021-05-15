@@ -9,8 +9,8 @@
  |  Prostokat o wierzcholakach zainicjowanych wartosciami wektorow zerowych.        |
  */
 Cuboid::Cuboid(){
-    for (int i=0;i<4;i++)
-        Corners[i] = Vector<SIZE>();    
+    for (int i=0;i<CORNERS;i++)
+        Corners[i] = Vector3D();    
 }
  
 /****************************************************************************************************************
@@ -76,6 +76,13 @@ Vector3D & Cuboid::operator[](int index) {
     return const_cast <Vector3D  &> (const_cast <const Cuboid *> (this)->operator[](index));
 }
 
+Cuboid Cuboid::Move_cuboid(Vector3D const &vector, Matrix3x3 const & mtx){
+    Matrix3x3 temp = mtx;
+    for(int i=0; i<CORNERS; ++i)      
+        Corners[i] = temp * Origin_Corners[i] + vector;
+    return *this;
+    }
+
 /*****************************************************************************************************************
  | Metoda klasy Rectangle realizaujca dzialanie translacji prostokata o wybrany wektor.                          |
  | Warunki wstepne:                                                                                              |
@@ -89,7 +96,7 @@ Vector3D & Cuboid::operator[](int index) {
  */
 
 Cuboid Cuboid::Translate_cub(Vector3D const &vector){
-    for (int i=0; i<CORNERS; i++){
+    for (int i=0; i<CORNERS; ++i){
        Corners[i] = Origin_Corners[i] + vector;
     }
     return *this;
@@ -112,8 +119,8 @@ Cuboid Cuboid::Translate_cub(Vector3D const &vector){
 
 Cuboid Cuboid::Rotate_cub(Matrix3x3 const & mtx){
     Matrix3x3 temp = mtx;
-    for(int j=0; j<CORNERS; j++)
-        Corners[j] = temp * Origin_Corners[j];
+    for(int i=0; i<CORNERS; ++i)
+        Corners[i] = temp * Origin_Corners[i];
     return *this;
 }
 

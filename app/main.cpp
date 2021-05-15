@@ -62,7 +62,15 @@ int main(){
     Link.UstawZakresX(-155,155);
     Link.UstawZakresZ(-155,155); 
 
+    double A[3][3] = {1,2,3,4,5,6,7,8,9},B[3][3] = {9,6,3,8,5,2,7,4,1};
+
     Matrix3x3 temp_rot_matrix;
+
+    Matrix3x3 matrix1(A),matrix2(B);
+
+    std::cout << matrix1  << std::endl;
+     std::cout << matrix2  << std::endl;
+    std::cout << matrix1 * matrix2 << std::endl;
     std::cout << temp_rot_matrix;
     try{
         Scenery[0].Write_cub_to_file("../datasets/prostokat.dat"); /* Wyswietlenie w GNUplot stanu poczatkowego prostokata */
@@ -86,26 +94,33 @@ int main(){
             switch(Option){
                 case 'o': /* Opcja obrotu prostokata */
                     temp_rot_matrix.reset_matrix();
+
+                    std::cout << temp_rot_matrix <<std::endl;
                     std::cout << "Podaj sekwencje: "; /* Okreslenie parametrow obrotu prostokata- kata i ilosci obrotow */
-                    while (Option !='.')
-                        {   
+                    while (Option !='.'){   
                             std::cin >> Option;
-                            std::cin >> angle;
+                            switch(Option){
+                                case 'x':
+                                    std::cin >> angle;
                                     if(std::cin.fail())
                                         throw std::runtime_error("Podano wyrazenie nie bedace typu double");
-                            switch(Option)
-                            {
-                                case 'x':
-                                    temp_rot_matrix = Fill_matrix_OX(angle)*temp_rot_matrix;
-                                    std::cout << temp_rot_matrix;
+                                    temp_rot_matrix = Fill_matrix_OX(angle) * temp_rot_matrix;
+                                    std::cout << Fill_matrix_OX(angle) << std::endl;
+                                    std::cout << temp_rot_matrix << std::endl;
                                 break;
 
                                 case 'y':
-                                     temp_rot_matrix = Fill_matrix_OY(angle)*temp_rot_matrix;
+                                std::cin >> angle;
+                                    if(std::cin.fail())
+                                        throw std::runtime_error("Podano wyrazenie nie bedace typu double");
+                                     temp_rot_matrix = Fill_matrix_OY(angle) * temp_rot_matrix;
                                 break;
 
                                 case 'z':
-                                    temp_rot_matrix = Fill_matrix_OZ(angle)* temp_rot_matrix;
+                                    std::cin >> angle;
+                                    if(std::cin.fail())
+                                        throw std::runtime_error("Podano wyrazenie nie bedace typu double");
+                                    temp_rot_matrix = Fill_matrix_OZ(angle) * temp_rot_matrix;
                                 break;
 
                                 case '.':
@@ -166,19 +181,20 @@ int main(){
                     std::cin >> Option;
                     switch(Option){
                         case 'T':  /* Gdy uzytkownik zdecyduje sie na animacje translacji */
-                            T_vector/FRAMES;
-                            for(int i=0;i<FRAMES;i++){
-                                Scenery[0].Translate_cub(T_vector/FRAMES);/* Wywolanie metody przesuwajacej prostokat raz, o ulamek wybranego wektora, w celu nadania wrazenia ruchu */
-                                Scenery[0].Write_cub_to_file("../datasets/prostokat.dat");
-                                usleep(4000);
-                                Link.Rysuj();
-                                usleep(4000); 
-                            }
-                            Scenery[0].Is_it_cub();
+                        //     T_vector/FRAMES;
+                        //     for(int i=0;i<FRAMES;i++){
+                        //         Scenery[0].Translate_cub(T_vector/FRAMES);/* Wywolanie metody przesuwajacej prostokat raz, o ulamek wybranego wektora, w celu nadania wrazenia ruchu */
+                        //         Scenery[0].Write_cub_to_file("../datasets/prostokat.dat");
+                        //         usleep(4000);
+                        //         Link.Rysuj();
+                        //         usleep(4000); 
+                        //     }
+                        //     Scenery[0].Is_it_cub();
                         break;
 
                         case 'N': /* Gdy uzytkownik nie zdecyduje sie na animacje translacji */
-                            Scenery[0].Translate_cub(T_vector);
+                            Scenery.update_vector(T_vector);
+                            Scenery.Move_figure(0);
                             Scenery[0].Write_cub_to_file("../datasets/prostokat.dat");
                             Scenery[0].Is_it_cub();
                             Link.Rysuj();

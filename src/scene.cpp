@@ -27,12 +27,14 @@ Matrix3x3 Scene::get_matrix(){
     return Rotation_matrix;
 }
 
-void Scene::update_matrix(Matrix3x3 mtx){
-    Rotation_matrix = mtx * Rotation_matrix ;
+void Scene::update_matrix(Matrix3x3 const & mtx){
+    Matrix3x3 temp_matrix = mtx;
+    Rotation_matrix = temp_matrix * Rotation_matrix ;
 }
 
-void Scene::update_vector(Vector3D vec){
-    Translation_vector = Translation_vector + vec;
+void Scene::update_vector(Vector3D const & vec){
+    Vector3D temp_vector = vec;
+    Translation_vector = Translation_vector + temp_vector;
 }
 
 Scene Scene::Move_figure(unsigned int cuboid_number){
@@ -40,8 +42,8 @@ Scene Scene::Move_figure(unsigned int cuboid_number){
 
    // for(int j=0; j<CORNERS; j++)
       //  Corners[j] = temp * Origin_Corners[j];
-    solid_figures[cuboid_number].Rotate_cub(Rotation_matrix);
-    std::cout << std::endl << solid_figures[0] << std::endl;
+    solid_figures[cuboid_number].Move_cuboid(Translation_vector,Rotation_matrix);
+    //std::cout << std::endl << solid_figures[0] << std::endl;
     //solid_figures[cuboid_number].Translate_cub(Translation_vector);
     //std::cout << std::endl << solid_figures[0] << std::endl;
     return *this;
