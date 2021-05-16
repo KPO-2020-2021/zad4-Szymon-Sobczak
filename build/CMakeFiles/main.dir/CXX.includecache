@@ -57,6 +57,8 @@ cmath
 -
 iomanip
 -
+vector
+-
 vector.hh
 ../inc/vector.hh
 matrix.hh

@@ -25,13 +25,17 @@ users, this can be left out. */
 #include "../inc/lacze_do_gnuplota.hh"
 
 int main(){
+    int active_cuboid = 0, number_of_cuboids = 1;
     double angle = 0, multiplier = 1; /* Inicjalizacja tablic wartosciami wierzcholkow prostokata oraz zmiennych potrzebnych w programie */
     char Option;
     PzG::LaczeDoGNUPlota Link;  /* Zmienna potrzebna do wizualizacji rysunku prostokata */
     Vector3D T_vector;          /* Inicjalizacja wektorow reprezentujacych wspolrzedne wierzcholkow prostokata i wektora translacji */
     Matrix3x3 temp_rot_matrix;
-    Scene Scenery(1);
+    Scene Scenery;
+    std::string name_of_new_file;
     
+    
+
     /*!
         Wspolrzedne wierzcholkow beda zapisywane w pliku "prostokat.dat"           
         Ponizsze metody powoduja, ze dane z pliku beda wizualizowane na dwa sposoby:
@@ -49,11 +53,14 @@ int main(){
     Link.UstawZakresZ(-310,310); 
 
     try{
-        Scenery[0].Write_cub_to_file("../datasets/cuboid.dat"); /* Wyswietlenie w GNUplot stanu poczatkowego prostokata */
+        Scenery[active_cuboid].Write_cub_to_file("../datasets/cuboid.dat"); /* Wyswietlenie w GNUplot stanu poczatkowego prostokata */
         Link.Rysuj();
+
         std::cout << "Poczatkowy stan bokow prostopadloscianu: " << std::endl;
-        Scenery[0].Is_it_cub(); 
+        Scenery[active_cuboid].Is_it_cub(); 
+        
         std::cout << "Menu wyboru opcji:" << std::endl
+                  << "\ta - zmien aktywny prostopadloscian" << std::endl
                   << "\to - obrot bryly o zadana sekwencje katow" << std::endl
                   << "\tt - powtorzenie poprzedniego obrotu" << std::endl
                   << "\tr - wyswietlenie macierzy rotacji" << std::endl
@@ -61,6 +68,7 @@ int main(){
                   << "\tw - wyswietlenie wspolrzednych wierzcholkow " << std::endl
                   << "\ts - sprawdzenie dlugosci przeciwleglych bokow" << std::endl
                   << "\tm - wyswietl menu" << std::endl
+                  << "\td - dodaj nowy prostopadloscian" << std::endl
                   << "\tk - koniec dzialania programu" << std::endl;
                   
         while (Option != 'k'){ /* Glowna petla menu, dzialajaca do czasu wybrania opcji zakonczenia- k */
@@ -119,17 +127,17 @@ int main(){
                     std::cout << "Ile razy operacja obrotu ma byc powtorzona > ";
                     std::cin >> multiplier;
                     for (unsigned int i=0; i<multiplier;++i)
-                        Scenery.update_matrix(temp_rot_matrix);
+                        Scenery.update_matrix(temp_rot_matrix,active_cuboid);
                     Scenery.Move_figure(0);
-                    Scenery[0].Write_cub_to_file("../datasets/cuboid.dat");
-                    Scenery[0].Is_it_cub();
+                    Scenery[active_cuboid].Write_cub_to_file("../datasets/cuboid.dat");
+                    Scenery[active_cuboid].Is_it_cub();
                     Link.Rysuj();
                 break;
 
                 case 'p': /* Opcja translacji o wektor */
                     std::cout << "Wprowadz wspolrzedne wektora translacji w postaci liczb x i y > ";
                     std::cin >> T_vector;
-                    Scenery.update_vector(T_vector);
+                    Scenery.update_vector(T_vector,active_cuboid);
                     Scenery.Move_figure(0);
                     Scenery[0].Write_cub_to_file("../datasets/cuboid.dat");
                     Scenery[0].Is_it_cub();
@@ -138,20 +146,20 @@ int main(){
 
                 case 'w': /* Opcja wyswietlajaca wspolrzedne prsotokata */
                     std::cout << "Aktualne wspolrzedne prostopadloscianu: " << std::endl;
-                    std::cout << Scenery[0];
+                    std::cout << Scenery[active_cuboid];
                 break;
 
                 case 't':
                     for (unsigned int i=0; i<multiplier;++i)
-                        Scenery.update_matrix(temp_rot_matrix);  
-                    Scenery.Move_figure(0);
-                    Scenery[0].Write_cub_to_file("../datasets/cuboid.dat");
-                    Scenery[0].Is_it_cub();
+                        Scenery.update_matrix(temp_rot_matrix,active_cuboid);  
+                    Scenery.Move_figure(active_cuboid);
+                    Scenery[active_cuboid].Write_cub_to_file("../datasets/cuboid.dat");
+                    Scenery[active_cuboid].Is_it_cub();
                     Link.Rysuj();
                 break;
 
                 case 'r':
-                    std::cout << "Macierz rotacji " << std::endl << Scenery.get_matrix() << std::endl;
+                    std::cout << "Macierz rotacji " << std::endl << Scenery.get_matrix(active_cuboid) << std::endl;
                 break;
 
                 case 'm': /* Opcja wyswietlajaca dostepne w menu opcje */
@@ -170,6 +178,14 @@ int main(){
                     std::cout << ":) Konczenie pracy programu" << std::endl;
                 break;
 
+
+                case 'd': /* Opcja konczaca program */
+                    name_of_new_file = "cuboid.dat";
+                    name_of_new_file.insert(6,std::to_string(number_of_cuboids+1));
+
+                break;
+
+
                 default: /* dzialanie, gdy podana opcja nie bedzie uprzednio zdefiniowana */
                     std::cout << ":/ Opcja niezdefiniowana" << std::endl;
             }
@@ -179,5 +195,12 @@ int main(){
         std::cerr << ":O Wystapil blad!"<< std::endl << e.what() << std::endl;
         exit(1);
     }
+
+
+    // ////////////to sie zobaczy
+    //  catch (std::out_of_range){ /* W wyniku wyrzucenia bledu program poinformuje o tym i zakonczy swoje dzialanie */
+    //     std::cerr << ":O Wystapil blad!"<< std::endl;
+    //     exit(1);
+    // }
     return 0;
 } 
