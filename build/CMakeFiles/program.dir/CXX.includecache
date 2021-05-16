@@ -15,8 +15,6 @@ cmath
 -
 iomanip
 -
-vector.hh
-../inc/vector.hh
 vector3D.hh
 ../inc/vector3D.hh
 matrix3x3.hh

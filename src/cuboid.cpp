@@ -41,9 +41,8 @@ Cuboid::Cuboid(){
     Origin_Corners[5] = CornerF;
     Origin_Corners[6] = CornerG;
     Origin_Corners[7] = CornerH;
-    for(int i = 0; i < CORNERS; ++i){
+    for(int i = 0; i < CORNERS; ++i)
         Corners[i] = Origin_Corners[i];
-    }
 }
 
 /******************************************************************************
@@ -79,7 +78,7 @@ Vector3D & Cuboid::operator[](int index) {
 
 
 
-Cuboid Cuboid::Move_cuboid(Vector3D const &vector, Matrix3x3 const & mtx){
+Cuboid Cuboid::Move_cuboid(Vector3D const & vector, Matrix3x3 const & mtx){
     Matrix3x3 temp = mtx;
     for(int i=0; i<CORNERS; ++i)      
         Corners[i] = temp * Origin_Corners[i] + vector;
@@ -194,18 +193,54 @@ std::istream & operator >> (std::istream & In,Cuboid & Rc){
  |   brak.                                                                                                  |
  */
 void Cuboid::Write_cub_to_file(const char *sNazwaPliku) const{
-  std::ofstream  StrmPlikowy;
-  StrmPlikowy.open(sNazwaPliku);
-  if (!StrmPlikowy.is_open()){
-    throw std::runtime_error(":(  Operacja otwarcia pliku do zapisu nie powiodla sie.");
-  }
-  StrmPlikowy << *this;
-  StrmPlikowy << Corners[0] << std::endl;
-  StrmPlikowy << Corners[1] << std::endl;
-  StrmPlikowy.close();
+    std::ofstream  FileStrm;
+    Vector3D P1,P2,temp_vec[]={Corners[0],Corners[7],Corners[2],Corners[5]};
+    
+    FileStrm.open(sNazwaPliku);
+    if (!FileStrm.is_open()){
+      throw std::runtime_error(":(  Operacja otwarcia pliku do zapisu nie powiodla sie.");
+    }
+    
+    P1 = (temp_vec[0] + temp_vec[1])/2;
+    P2 = (temp_vec[2] + temp_vec[3])/2;
+
+    FileStrm << P1 << std::endl
+             << Corners[6] << std::endl
+             << Corners[4] << std::endl
+             << P2 << std::endl
+             << '#' << std::endl
+             << std::endl;
+
+    FileStrm << P1 << std::endl
+             << Corners[7] << std::endl
+             << Corners[5] << std::endl
+             << P2 << std::endl
+             << '#' << std::endl
+             << std::endl; 
+
+    FileStrm << P1 << std::endl
+             << Corners[1] << std::endl
+             << Corners[3] << std::endl
+             << P2 << std::endl
+             << '#' << std::endl
+             << std::endl; 
+
+    FileStrm << P1 << std::endl
+             << Corners[0] << std::endl
+             << Corners[2] << std::endl
+             << P2 << std::endl
+             << '#' << std::endl
+             << std::endl; 
+
+    FileStrm << P1 << std::endl
+             << Corners[6] << std::endl
+             << Corners[4] << std::endl
+             << P2 << std::endl
+             << '#' << std::endl
+             << std::endl; 
+
+    FileStrm.close();
 }
-
-
 
 
 bool are_sides_equal(double const array[]){

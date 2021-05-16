@@ -5,7 +5,7 @@
 #include <fstream>
 #include <cmath>
 #include <iomanip>
-#include "vector.hh"
+
 #include "vector3D.hh"
 #include "matrix3x3.hh"
 #include "matrix.hh"
