@@ -5,7 +5,8 @@
 #include <iomanip>
 #include <fstream>
 #include <stdexcept>
- 
+#include <cmath>
+
 /****************************************************************************************
  | Klasa modelujaca w programie pojecie wektora.                                        |
  | Klasa posiada prywatne pole "size" bedace tablica- zbiorem wspolrzednych wekotra.    |

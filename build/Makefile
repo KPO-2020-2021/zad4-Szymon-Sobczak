@@ -122,6 +122,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named doc
+
+# Build rule for target.
+doc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 doc
+.PHONY : doc
+
+# fast build rule for target.
+doc/fast:
+	$(MAKE) -f CMakeFiles/doc.dir/build.make CMakeFiles/doc.dir/build
+.PHONY : doc/fast
+
+#=============================================================================
 # Target rules for targets named NightlyMemCheck
 
 # Build rule for target.
@@ -618,6 +631,33 @@ src/lacze_do_gnuplota.cpp.s:
 	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.s
 .PHONY : src/lacze_do_gnuplota.cpp.s
 
+src/matrix2x2.o: src/matrix2x2.cpp.o
+
+.PHONY : src/matrix2x2.o
+
+# target to build an object file
+src/matrix2x2.cpp.o:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/matrix2x2.cpp.o
+.PHONY : src/matrix2x2.cpp.o
+
+src/matrix2x2.i: src/matrix2x2.cpp.i
+
+.PHONY : src/matrix2x2.i
+
+# target to preprocess a source file
+src/matrix2x2.cpp.i:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/matrix2x2.cpp.i
+.PHONY : src/matrix2x2.cpp.i
+
+src/matrix2x2.s: src/matrix2x2.cpp.s
+
+.PHONY : src/matrix2x2.s
+
+# target to generate assembly for a file
+src/matrix2x2.cpp.s:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/matrix2x2.cpp.s
+.PHONY : src/matrix2x2.cpp.s
+
 src/matrix3x3.o: src/matrix3x3.cpp.o
 
 .PHONY : src/matrix3x3.o
@@ -680,6 +720,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... doc"
 	@echo "... edit_cache"
 	@echo "... NightlyMemCheck"
 	@echo "... main"
@@ -722,6 +763,9 @@ help:
 	@echo "... src/lacze_do_gnuplota.o"
 	@echo "... src/lacze_do_gnuplota.i"
 	@echo "... src/lacze_do_gnuplota.s"
+	@echo "... src/matrix2x2.o"
+	@echo "... src/matrix2x2.i"
+	@echo "... src/matrix2x2.s"
 	@echo "... src/matrix3x3.o"
 	@echo "... src/matrix3x3.i"
 	@echo "... src/matrix3x3.s"

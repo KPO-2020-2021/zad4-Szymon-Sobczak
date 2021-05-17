@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/program.dir/src/cuboid.cpp.o"
   "CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o"
+  "CMakeFiles/program.dir/src/matrix2x2.cpp.o"
   "CMakeFiles/program.dir/src/matrix3x3.cpp.o"
   "CMakeFiles/program.dir/src/scene.cpp.o"
 )

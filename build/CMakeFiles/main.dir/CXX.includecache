@@ -44,6 +44,10 @@ cstdlib
 cmath
 -
 
+../inc/matrix2x2.hh
+matrix.hh
+../inc/matrix.hh
+
 ../inc/matrix3x3.hh
 matrix.hh
 ../inc/matrix.hh
@@ -56,6 +60,8 @@ fstream
 cmath
 -
 iomanip
+-
+filesystem
 -
 vector
 -
@@ -81,6 +87,8 @@ fstream
 -
 stdexcept
 -
+cmath
+-
 
 ../inc/vector3D.hh
 vector.hh
@@ -101,6 +109,8 @@ string
 -
 unistd.h
 -
+vector
+-
 exampleConfig.h
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/app/exampleConfig.h
 vector.hh
@@ -111,14 +121,14 @@ vector3D.hh
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/app/vector3D.hh
 matrix3x3.hh
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/app/matrix3x3.hh
+matrix2x2.hh
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/app/matrix2x2.hh
 cuboid.hh
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/app/cuboid.hh
 scene.hh
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/app/scene.hh
 ../inc/lacze_do_gnuplota.hh
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/inc/lacze_do_gnuplota.hh
-vector
--
 
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/inc/lacze_do_gnuplota.hh
 string

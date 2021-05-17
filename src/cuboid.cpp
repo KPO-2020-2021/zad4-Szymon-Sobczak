@@ -274,7 +274,7 @@ void Cuboid::Is_it_cub() const{
     if (are_sides_equal(A)){
         if (A[0] == B[0])
             std::cout << ":( Przeciwlegle boki nie sa sobie rowne." << std::endl;
-        else if (A[0]>B[0])
+        else if (A[0] > B[0])
             std::cout << ":) Przeciwlegle, dluzsze boki prostopadloscianu sa sobie rowne." << std::endl;
         else 
             std::cout << ":) Przeciwlegle, krotsze boki prostopadloscianu sa sobie rowne." << std::endl;
@@ -283,7 +283,7 @@ void Cuboid::Is_it_cub() const{
         if (A[0] == B[0]){
             std::cout << ":( Przeciwlegle boki nie sa sobie rowne." << std::endl;
         }
-        else if (A[0]>B[0])
+        else if (A[0] > B[0])
             std::cout << ":( Przeciwlegle, dluzsze boki prostopadloscianu nie sa sobie rowne." << std::endl;
         else 
             std::cout << ":) Przeciwlegle, krotsze boki prostopadloscianu nie sa sobie rowne." << std::endl;
@@ -297,7 +297,7 @@ void Cuboid::Is_it_cub() const{
     if (are_sides_equal(B)){
         if (A[0] == B[0])
             std::cout << ":( Przeciwlegle boki nie sa sobie rowne." << std::endl;
-        else if (B[0]>A[0])
+        else if (B[0] > A[0])
             std::cout << ":) Przeciwlegle, dluzsze boki prostopadloscianu sa sobie rowne." << std::endl;
         else 
             std::cout << ":) Przeciwlegle, krotsze boki prostopadloscianu sa sobie rowne." << std::endl;
@@ -306,7 +306,7 @@ void Cuboid::Is_it_cub() const{
         if (A[0] == B[0]){
             std::cout << ":( Przeciwlegle boki nie sa sobie rowne." << std::endl;
         }
-        else if (B[0]>A[0])
+        else if (B[0] > A[0])
             std::cout << ":( Przeciwlegle, dluzsze boki prostopadloscianu nie sa sobie rowne." << std::endl;
         else 
             std::cout << ":) Przeciwlegle, krotsze boki prostopadloscianu nie sa sobie rowne." << std::endl;  

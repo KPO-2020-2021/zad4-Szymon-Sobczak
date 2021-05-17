@@ -36,6 +36,8 @@ public:
 
     Matrix<Size> reset_matrix();
 
+    bool operator == (Matrix const &tmp);  
+
     double determinant_of_the_matrix() const; /* Obliczenie wyznacznika macierzy */
     
     double & operator () (unsigned int row, unsigned int column); /* Przeciazenia operatora funkcyjnego */
@@ -118,11 +120,6 @@ Matrix<Size> Matrix<Size>::operator * (Matrix<Size> const &tmp){
 }
 
 
-
-
-
-
-
 template <unsigned int Size>
 Matrix<Size> Matrix<Size>::operator / (const double &tmp){
     Matrix<Size> result;
@@ -146,6 +143,14 @@ Matrix<Size> Matrix<Size>::reset_matrix(){
 }
 
 
+template <unsigned int Size>
+bool Matrix<Size>::operator == (Matrix const &tmp){
+    for (unsigned int i = 0; i < Size ; ++i)
+        for (unsigned int j = 0; j < Size ; ++j) 
+            if(value[i][j]-tmp(i,j) < -MAX_VALUE_DIFF || value[i][j]-tmp(i,j) > MAX_VALUE_DIFF)   
+                return false;   
+    return true;    
+}
 
 
 /******************************************************************************

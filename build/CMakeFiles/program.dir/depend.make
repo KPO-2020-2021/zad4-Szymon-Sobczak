@@ -13,6 +13,12 @@ CMakeFiles/program.dir/src/cuboid.cpp.o: ../src/cuboid.cpp
 CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o: ../inc/lacze_do_gnuplota.hh
 CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o: ../src/lacze_do_gnuplota.cpp
 
+CMakeFiles/program.dir/src/matrix2x2.cpp.o: ../inc/matrix.hh
+CMakeFiles/program.dir/src/matrix2x2.cpp.o: ../inc/matrix2x2.hh
+CMakeFiles/program.dir/src/matrix2x2.cpp.o: ../inc/size.hh
+CMakeFiles/program.dir/src/matrix2x2.cpp.o: ../inc/vector.hh
+CMakeFiles/program.dir/src/matrix2x2.cpp.o: ../src/matrix2x2.cpp
+
 CMakeFiles/program.dir/src/matrix3x3.cpp.o: ../src/matrix3x3.cpp
 
 CMakeFiles/program.dir/src/scene.cpp.o: ../inc/cuboid.hh
