@@ -23,25 +23,32 @@ users, this can be left out. */
 #include "cuboid.hh"
 #include "scene.hh"
 #include "../inc/lacze_do_gnuplota.hh"
+#include <vector>
 
 int main(){
-    int active_cuboid = 0, number_of_cuboids = 1;
+    int active_cuboid = 0;
     double angle = 0, multiplier = 1; /* Inicjalizacja tablic wartosciami wierzcholkow prostokata oraz zmiennych potrzebnych w programie */
     char Option;
     PzG::LaczeDoGNUPlota Link;  /* Zmienna potrzebna do wizualizacji rysunku prostokata */
     Vector3D T_vector;          /* Inicjalizacja wektorow reprezentujacych wspolrzedne wierzcholkow prostokata i wektora translacji */
     Matrix3x3 temp_rot_matrix;
     Scene Scenery;
+
+
+    Vector3D temp_vec1,temp_vec2;
+    std::vector <std::string> adresses_of_files;
     std::string name_of_new_file;
-    
-    
+    adresses_of_files.push_back("../datasets/cuboid1.dat");
 
     /*!
         Wspolrzedne wierzcholkow beda zapisywane w pliku "prostokat.dat"           
         Ponizsze metody powoduja, ze dane z pliku beda wizualizowane na dwa sposoby:
         1.Rysowane jako linia ciagla o grubosci 2 piksele                           
     */
-    Link.DodajNazwePliku("../datasets/cuboid.dat",PzG::RR_Ciagly,2);
+   
+    std::cout << adresses_of_files[active_cuboid] << std::endl;
+    Link.DodajNazwePliku(adresses_of_files.at(0).c_str(),PzG::RR_Ciagly,2);
+    std::cout << adresses_of_files[active_cuboid].c_str() << std::endl;
 
     /*!
         Ustawienie trybu rysowania gnuplot na 3D.                                   
@@ -52,13 +59,25 @@ int main(){
     Link.UstawZakresX(-310,310);
     Link.UstawZakresZ(-310,310); 
 
-    try{
-        Scenery[active_cuboid].Write_cub_to_file("../datasets/cuboid.dat"); /* Wyswietlenie w GNUplot stanu poczatkowego prostokata */
-        Link.Rysuj();
 
+
+
+
+       /*  Scenery.update_matrix(Fill_matrix_OY(45), active_cuboid);
+        Scenery.Move_figure(active_cuboid);
+
+        Scenery[active_cuboid].Is_it_cub();
+        Scenery[active_cuboid].Write_cub_to_file(adresses_of_files[active_cuboid].c_str());
+         Link.Rysuj();   
+         exit(0);       */  
+
+    try{
+        Scenery[active_cuboid].Write_cub_to_file(adresses_of_files.at(active_cuboid).c_str()); /* Wyswietlenie w GNUplot stanu poczatkowego prostokata */
+        Link.Rysuj();
+ 
         std::cout << "Poczatkowy stan bokow prostopadloscianu: " << std::endl;
         Scenery[active_cuboid].Is_it_cub(); 
-        
+
         std::cout << "Menu wyboru opcji:" << std::endl
                   << "\ta - zmien aktywny prostopadloscian" << std::endl
                   << "\to - obrot bryly o zadana sekwencje katow" << std::endl
@@ -70,19 +89,28 @@ int main(){
                   << "\tm - wyswietl menu" << std::endl
                   << "\td - dodaj nowy prostopadloscian" << std::endl
                   << "\tk - koniec dzialania programu" << std::endl;
-                  
+
+        
+
         while (Option != 'k'){ /* Glowna petla menu, dzialajaca do czasu wybrania opcji zakonczenia- k */
+            std::cout << std::endl << "Numer aktywnego prostopadloscianu: " << active_cuboid << std::endl;
             std::cout << "Twoj wybor? (m - menu) > ";
             std::cin >> Option;
             switch(Option){
+                
+                case 'a':
+                    std::cout << "Podaj numer prostopadloscianu, ktory ma byc aktywny: ";
+                    std::cin >> active_cuboid;
+                break;
+
                 case 'o': /* Opcja obrotu prostokata */
                     temp_rot_matrix.reset_matrix();
+                    std::cout << Scenery[0];
                     std::cout << "Podaj sekwencje: " << std::endl; /* Okreslenie parametrow obrotu prostokata- kata i ilosci obrotow */
                     while (Option !='.'){  
                         try{
                             std::cin >> Option;
                             switch(Option){
-                            
                                 case 'x':
                                 std::cin >> angle;
                                 if(std::cin.fail())
@@ -125,22 +153,27 @@ int main(){
                         }
                     }
                     std::cout << "Ile razy operacja obrotu ma byc powtorzona > ";
-                    std::cin >> multiplier;
+                    std::cin >> multiplier; /* !!!!!!!!!!!!ASERCJA!!!!!!!!! */
+                    
                     for (unsigned int i=0; i<multiplier;++i)
-                        Scenery.update_matrix(temp_rot_matrix,active_cuboid);
-                    Scenery.Move_figure(0);
-                    Scenery[active_cuboid].Write_cub_to_file("../datasets/cuboid.dat");
+                        Scenery.update_matrix(temp_rot_matrix, active_cuboid);
+                    
+                    Scenery.Move_figure(active_cuboid);
                     Scenery[active_cuboid].Is_it_cub();
+                    Scenery[active_cuboid].Write_cub_to_file(adresses_of_files.at(active_cuboid).c_str());
                     Link.Rysuj();
                 break;
 
                 case 'p': /* Opcja translacji o wektor */
                     std::cout << "Wprowadz wspolrzedne wektora translacji w postaci liczb x i y > ";
                     std::cin >> T_vector;
+
                     Scenery.update_vector(T_vector,active_cuboid);
-                    Scenery.Move_figure(0);
-                    Scenery[0].Write_cub_to_file("../datasets/cuboid.dat");
-                    Scenery[0].Is_it_cub();
+                    Scenery.Move_figure(active_cuboid);
+
+                    Scenery[active_cuboid].Write_cub_to_file(adresses_of_files[active_cuboid].c_str());
+                    Scenery[active_cuboid].Is_it_cub();
+                    
                     Link.Rysuj();
                 break;
 
@@ -153,13 +186,14 @@ int main(){
                     for (unsigned int i=0; i<multiplier;++i)
                         Scenery.update_matrix(temp_rot_matrix,active_cuboid);  
                     Scenery.Move_figure(active_cuboid);
-                    Scenery[active_cuboid].Write_cub_to_file("../datasets/cuboid.dat");
+                    Scenery[active_cuboid].Write_cub_to_file(adresses_of_files[active_cuboid].c_str());
                     Scenery[active_cuboid].Is_it_cub();
                     Link.Rysuj();
                 break;
 
                 case 'r':
-                    std::cout << "Macierz rotacji " << std::endl << Scenery.get_matrix(active_cuboid) << std::endl;
+                    std::cout << "Macierz rotacji " << std::endl << Scenery.get_matrix(active_cuboid) << std::endl; 
+
                 break;
 
                 case 'm': /* Opcja wyswietlajaca dostepne w menu opcje */
@@ -178,13 +212,27 @@ int main(){
                     std::cout << ":) Konczenie pracy programu" << std::endl;
                 break;
 
-
-                case 'd': /* Opcja konczaca program */
-                    name_of_new_file = "cuboid.dat";
-                    name_of_new_file.insert(6,std::to_string(number_of_cuboids+1));
-
+                case 's': /* Opcja wyswietlajaca wspolrzedne prsotokata */
+                    Scenery[active_cuboid].Is_it_cub();
                 break;
 
+                case 'd': /* Opcja konczaca program */
+                    name_of_new_file = "../datasets/cuboid.dat";
+                    name_of_new_file.insert(18,std::to_string(Scenery.how_many_cuboids()+1));
+                    adresses_of_files.push_back(name_of_new_file);
+                    Link.DodajNazwePliku(name_of_new_file.c_str(),PzG::RR_Ciagly,2);
+
+                    std::cout << "Podaj wspolrzedne punktow, na ktorych zostanie rozpiety nowy prostopadloscian: " << std::endl; 
+                    std::cout << "Podaj wspolrzedne x y z pierwszego punktu: "; 
+                    std::cin >> temp_vec1;
+                    std::cout << "Podaj wspolrzedne x y z drugiego punktu: "; 
+                    std::cin >> temp_vec2;
+
+                    Scenery.Add_cuboid(temp_vec1,temp_vec2);
+
+                    Scenery[Scenery.how_many_cuboids()-1].Write_cub_to_file(name_of_new_file.c_str());
+                    Link.Rysuj();
+                break;
 
                 default: /* dzialanie, gdy podana opcja nie bedzie uprzednio zdefiniowana */
                     std::cout << ":/ Opcja niezdefiniowana" << std::endl;

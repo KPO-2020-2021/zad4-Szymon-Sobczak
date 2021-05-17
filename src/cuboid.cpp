@@ -72,7 +72,7 @@ const Vector3D & Cuboid::operator [] (int index) const {
  |      Wartosc prostokata w danym miejscu tablicy.                           |
  */
 Vector3D & Cuboid::operator[](int index) {
-    return const_cast <Vector3D  &> (const_cast <const Cuboid *> (this)->operator[](index));
+    return const_cast <Vector3D &> (const_cast <const Cuboid *> (this)->operator[](index));
 }
 
 
@@ -80,10 +80,10 @@ Vector3D & Cuboid::operator[](int index) {
 
 Cuboid Cuboid::Move_cuboid(Vector3D const & vector, Matrix3x3 const & mtx){
     Matrix3x3 temp = mtx;
-    for(int i=0; i<CORNERS; ++i)      
+    for(int i = 0; i < CORNERS; ++i)      
         Corners[i] = temp * Origin_Corners[i] + vector;
     return *this;
-    }
+}
 
 
 
@@ -100,7 +100,7 @@ Cuboid Cuboid::Move_cuboid(Vector3D const & vector, Matrix3x3 const & mtx){
  */
 
 Cuboid Cuboid::Translate_cub(Vector3D const &vector){
-    for (int i=0; i<CORNERS; ++i){
+    for (int i=0; i < CORNERS; ++i){
        Corners[i] = Origin_Corners[i] + vector;
     }
     return *this;
@@ -123,7 +123,7 @@ Cuboid Cuboid::Translate_cub(Vector3D const &vector){
 
 Cuboid Cuboid::Rotate_cub(Matrix3x3 const & mtx){
     Matrix3x3 temp = mtx;
-    for(int i=0; i<CORNERS; ++i)
+    for(int i = 0; i < CORNERS; ++i)
         Corners[i] = temp * Origin_Corners[i];
     return *this;
 }
@@ -143,7 +143,7 @@ Cuboid Cuboid::Rotate_cub(Matrix3x3 const & mtx){
  |   Wypisane wspolrzende wksazanego prostokata, w odpowiedniej formie na wskazane wyjscie.                          |
  */
 std::ostream & operator << (std::ostream & Out, const Cuboid & Rc){
-    for (int i=0; i<CORNERS;i++){
+    for (int i = 0; i < CORNERS; i++){
         Out << Rc[i] << std::endl;
         if(i%2==1)
             Out << std::endl;
@@ -194,7 +194,7 @@ std::istream & operator >> (std::istream & In,Cuboid & Rc){
  */
 void Cuboid::Write_cub_to_file(const char *sNazwaPliku) const{
     std::ofstream  FileStrm;
-    Vector3D P1,P2,temp_vec[]={Corners[0],Corners[7],Corners[2],Corners[5]};
+    Vector3D P1,P2, temp_vec[]={Corners[0],Corners[7],Corners[2],Corners[5]};
     
     FileStrm.open(sNazwaPliku);
     if (!FileStrm.is_open()){

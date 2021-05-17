@@ -16,10 +16,11 @@ class Scene{
         std::vector <Cuboid> solid_figures;
         std::vector <Matrix3x3> Rotation_matrix;
         std::vector <Vector3D> Translation_vector;
+        
     public:
         Scene();
         
-        Scene Move_figure(unsigned int index);
+        void Move_figure(unsigned int index);
         
         void update_matrix(Matrix3x3 const & mtx, unsigned int index);
         void update_vector(Vector3D const & vec,unsigned int index);
@@ -27,7 +28,9 @@ class Scene{
         Matrix3x3 get_matrix(unsigned int index);
         
         const Cuboid & operator [] (unsigned int index) const;
-        Cuboid & operator [] (unsigned int index);
+        //Cuboid & operator [] (unsigned int index);
+
+        unsigned int how_many_cuboids();
 
         void Add_cuboid(Vector3D const & Apx0, Vector3D const & Apx5);
 };
