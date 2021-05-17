@@ -1,10 +1,16 @@
 #include "scene.hh"
 
 Scene::Scene(){
-    double Apx1[]={2,3,3}, Apx6[]={22,18,28};
-    Vector3D A(Apx1), B(Apx6);
-    Add_cuboid(A,B);
+    double Apx1[]={2,3,3};
+    Vector3D A(Apx1);
+    Add_cuboid(A,20,15,25);
 }
+
+  Scene::~Scene(){
+      std::string datasets_path = "../datasets";
+    for (const auto& entry : std::filesystem::directory_iterator(datasets_path)) 
+        std::filesystem::remove_all(entry.path());
+  }
 
 const Cuboid & Scene::operator [] (unsigned int index) const{
     if (index>=solid_figures.size())
@@ -41,36 +47,23 @@ unsigned int Scene::how_many_cuboids(){
 }
 
 
-void Scene::Add_cuboid(Vector3D const & Apx0, Vector3D const & Apx5){
-    Vector3D initial_vec;
+void Scene::Add_cuboid(Vector3D const & Apx0, double const & tra_OX, double const & tra_OY, double const & tra_OZ){
+    Vector3D initial_vec,VecOX, VecOY, VecOZ;
     Matrix3x3 initial_mtx;
-    
-    Vector3D temp_apx0 = Apx0, temp_apx5 = Apx5,VecOX, VecOY, VecOZ;
-    
-    //Vector3D cub_apx[8] = {Apx0,Apx0,Apx0,Apx0,Apx0,Apx5,Apx0,Apx0};
-    Vector3D cub_apx[8] = {Apx0,Apx0,Apx0,Apx5,Apx5,Apx5,Apx0,Apx5};
 
-    VecOX[0] = abs(temp_apx0 [0]-temp_apx5[0]);
-    VecOY[1] = abs(temp_apx0 [1]-temp_apx5[1]);
-    VecOZ[2] = abs(temp_apx0 [2]-temp_apx5[2]);
-    /* DO PRZEROBIENIA NA PODAWANIE DL X Y Z bo tak za duzo wyjatkow*/
-/*     
+    Vector3D cub_apx[8] = {Apx0,Apx0,Apx0,Apx0,Apx0,Apx0,Apx0,Apx0};
+
+    VecOX[0] = tra_OX;
+    VecOY[1] = tra_OY;
+    VecOZ[2] = tra_OZ;
+ 
     cub_apx[1] + VecOX;
     cub_apx[2] + VecOY;
     cub_apx[3] + VecOX; cub_apx[3] + VecOY;
-
     cub_apx[4] + VecOY; cub_apx[4] + VecOZ;
+    cub_apx[5] + VecOX; cub_apx[5] + VecOY; cub_apx[5] + VecOZ;
     cub_apx[6] + VecOZ;
-    cub_apx[7] + VecOX; cub_apx[7] + VecOZ;
-      */
-     if (Apx0[0]>Apx5[0])
-    cub_apx[1] + VecOX;
-    cub_apx[2] + VecOY;
-    cub_apx[6] + VecOZ; 
-
-    cub_apx[3] - VecOZ;
-    cub_apx[4] - VecOX;
-    cub_apx[7] - VecOY; 
+    cub_apx[7] + VecOX;  cub_apx[7] + VecOZ;
 
     Cuboid cuboid_dummy(cub_apx[0],cub_apx[1],cub_apx[2],cub_apx[3],cub_apx[4],cub_apx[5],cub_apx[6],cub_apx[7]);
 

@@ -4,6 +4,7 @@
 #include <fstream>
 #include <cmath>
 #include <iomanip>
+#include <filesystem>
 #include <vector>
 #include "vector.hh"
 #include "matrix.hh"
@@ -19,7 +20,7 @@ class Scene{
         
     public:
         Scene();
-        
+        ~Scene();
         void Move_figure(unsigned int index);
         
         void update_matrix(Matrix3x3 const & mtx, unsigned int index);
@@ -32,5 +33,5 @@ class Scene{
 
         unsigned int how_many_cuboids();
 
-        void Add_cuboid(Vector3D const & Apx0, Vector3D const & Apx5);
+        void Add_cuboid(Vector3D const & Apx0, double const & tra_OX, double const & tra_OY, double const & tra_OZ);
 };

@@ -27,7 +27,7 @@ users, this can be left out. */
 
 int main(){
     int active_cuboid = 0;
-    double angle = 0, multiplier = 1; /* Inicjalizacja tablic wartosciami wierzcholkow prostokata oraz zmiennych potrzebnych w programie */
+    double angle = 0, multiplier = 1, tr_X, tr_Y,tr_Z; /* Inicjalizacja tablic wartosciami wierzcholkow prostokata oraz zmiennych potrzebnych w programie */
     char Option;
     PzG::LaczeDoGNUPlota Link;  /* Zmienna potrzebna do wizualizacji rysunku prostokata */
     Vector3D T_vector;          /* Inicjalizacja wektorow reprezentujacych wspolrzedne wierzcholkow prostokata i wektora translacji */
@@ -225,10 +225,9 @@ int main(){
                     std::cout << "Podaj wspolrzedne punktow, na ktorych zostanie rozpiety nowy prostopadloscian: " << std::endl; 
                     std::cout << "Podaj wspolrzedne x y z pierwszego punktu: "; 
                     std::cin >> temp_vec1;
-                    std::cout << "Podaj wspolrzedne x y z drugiego punktu: "; 
-                    std::cin >> temp_vec2;
-
-                    Scenery.Add_cuboid(temp_vec1,temp_vec2);
+                    std::cout << "Podaj wartosci o jakie punkt ma zostac rozsuniety na osiach OX, OY, OZ"; 
+                    std::cin >>tr_X >> tr_Y >> tr_Z;
+                    Scenery.Add_cuboid(temp_vec1,tr_X,tr_Y,tr_Z);
 
                     Scenery[Scenery.how_many_cuboids()-1].Write_cub_to_file(name_of_new_file.c_str());
                     Link.Rysuj();
