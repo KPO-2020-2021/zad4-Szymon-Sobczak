@@ -39,7 +39,7 @@ int main(){
     std::vector <std::string> adresses_of_files;
     std::string name_of_new_file;
     adresses_of_files.push_back("../datasets/cuboid1.dat");
-
+      
     /*!
         Wspolrzedne wierzcholkow beda zapisywane w pliku "prostokat.dat"           
         Ponizsze metody powoduja, ze dane z pliku beda wizualizowane na dwa sposoby:
@@ -59,6 +59,8 @@ int main(){
     Link.UstawZakresX(-310,310);
     Link.UstawZakresZ(-310,310); 
 
+
+    
     try{
         Scenery[active_cuboid].Write_cub_to_file(adresses_of_files.at(active_cuboid).c_str()); /* Wyswietlenie w GNUplot stanu poczatkowego prostokata */
         Link.Rysuj();

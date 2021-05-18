@@ -32,7 +32,7 @@ Cuboid::Cuboid(){
  |   Prostokat o wierzcholakach zainicjowanych wartosciami wektorow.                                            |
  */
 
- Cuboid::Cuboid(Vector3D  CornerA, Vector3D  CornerB, Vector3D CornerC, Vector3D CornerD,Vector3D  CornerE,Vector3D  CornerF,Vector3D  CornerG,Vector3D  CornerH){
+ Cuboid::Cuboid(Vector3D  CornerA, Vector3D  CornerB, Vector3D CornerC, Vector3D CornerD,Vector3D  CornerE,Vector3D  CornerF,Vector3D  CornerG,Vector3D  CornerH, Vector3D center_of_cuboid){
     Origin_Corners[0] = CornerA; 
     Origin_Corners[1] = CornerB;
     Origin_Corners[2] = CornerC; 
@@ -41,8 +41,16 @@ Cuboid::Cuboid(){
     Origin_Corners[5] = CornerF;
     Origin_Corners[6] = CornerG;
     Origin_Corners[7] = CornerH;
-    for(int i = 0; i < CORNERS; ++i)
-        Corners[i] = Origin_Corners[i];
+    Matrix3x3 temp;
+    center_of_cub = center_of_cuboid;
+    std::cout << "srodek.konstruktor: " << center_of_cuboid << std::endl<< std::endl;
+
+    for(int i = 0; i < CORNERS; ++i)   
+        Corners[i] = (temp * (Origin_Corners[i] + center_of_cuboid)); 
+
+
+    /* for(int i = 0; i < CORNERS; ++i)
+        Corners[i] = Origin_Corners[i]; */
 }
 
 /******************************************************************************
@@ -71,19 +79,105 @@ const Vector3D & Cuboid::operator [] (int index) const {
  |  Zwraca:                                                                   |
  |      Wartosc prostokata w danym miejscu tablicy.                           |
  */
-Vector3D & Cuboid::operator[](int index) {
+ Vector3D & Cuboid::operator[](int index) {
     return const_cast <Vector3D &> (const_cast <const Cuboid *> (this)->operator[](index));
 }
+
+/*
+Cuboid Cuboid::Move_cuboid(Vector3D const & vector, Matrix3x3 const & mtx){
+    Matrix3x3 temp = mtx;
+    Vector3D ctr_of_grav, new_center_of_gravity; 
+    Vector3D initial_vec, VecOX, VecOY, VecOZ;
+    Cuboid const test = *this;
+    
+    ctr_of_grav = ctr_of_grav + Origin_Corners[0];
+    ctr_of_grav = ctr_of_grav + Origin_Corners[5];
+    ctr_of_grav = ctr_of_grav/2;
+
+    Vector3D cub_apx[8] = {ctr_of_grav,ctr_of_grav,ctr_of_grav,ctr_of_grav,ctr_of_grav,ctr_of_grav,ctr_of_grav,ctr_of_grav};
+
+    VecOX[0] = abs(vector_length()-test[2][0])/2;
+    VecOY[1] = abs(test[0][1]-test[1][1])/2;
+    VecOZ[2] = abs(test[][2]-test[][2])/2;
+ 
+    cub_apx[1] + VecOX;
+    cub_apx[2] + VecOY;
+    cub_apx[3] + VecOX; cub_apx[3] + VecOY;
+    cub_apx[4] + VecOY; cub_apx[4] + VecOZ;
+    cub_apx[5] + VecOX; cub_apx[5] + VecOY; cub_apx[5] + VecOZ;
+    cub_apx[6] + VecOZ;
+    cub_apx[7] + VecOX; cub_apx[7] + VecOZ;
+
+    Cuboid cuboid_dummy(cub_apx[0],cub_apx[1],cub_apx[2],cub_apx[3],cub_apx[4],cub_apx[5],cub_apx[6],cub_apx[7]);
+
+
+
+    lgth_OX =
+
+
+    new_center_of_gravity = temp * ctr_of_grav + vector;
+       
+    Corners[0] =  new_center_of_gravity;
+    Corners[1] =  new_center_of_gravity;
+    Corners[2] =  new_center_of_gravity;
+    Corners[3] =  new_center_of_gravity;
+    Corners[4] =  new_center_of_gravity;
+    Corners[5] =  new_center_of_gravity;
+    Corners[6] =  new_center_of_gravity;
+    Corners[7] =  new_center_of_gravity;
+} */
+ 
+
+
+
+
+
+
+
+
 
 
 
 
 Cuboid Cuboid::Move_cuboid(Vector3D const & vector, Matrix3x3 const & mtx){
     Matrix3x3 temp = mtx;
-    for(int i = 0; i < CORNERS; ++i)      
-        Corners[i] = temp * Origin_Corners[i] + vector;
+    Vector3D ctr_of_grav; 
+      std::cout << "wierzcholki. " << std::endl << Origin_Corners[0] << std::endl << Origin_Corners[5] << std::endl << std::endl;
+    
+ /*    Vector3D temp0 = Origin_Corners[0], temp5 = Origin_Corners[5];  */
+   
+/*     std::cout << temp0 << std::endl;
+    
+    ctr_of_grav = temp0 + temp5;
+
+    std::cout << temp0 << std::endl;
+    
+    ctr_of_grav = ctr_of_grav / 2;
+
+
+    
+    std::cout << "2. " << ctr_of_grav << std::endl;
+ */
+
+
+    std::cout << "srodek. " << center_of_cub << std::endl;
+
+    for(int i = 0; i < CORNERS; ++i){
+        Corners[i] = (temp *(Origin_Corners[i])) + center_of_cub + vector;
+    }   
     return *this;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -148,6 +242,7 @@ std::ostream & operator << (std::ostream & Out, const Cuboid & Rc){
         if(i%2==1)
             Out << std::endl;
     }
+      std::cout << "srodek. " << Rc.center_of_cub << std::endl;
     return Out;
 }
 
@@ -171,10 +266,6 @@ std::istream & operator >> (std::istream & In,Cuboid & Rc){
     }
     return In;
 }
-
-
-
-
 
 
 
@@ -287,7 +378,6 @@ void Cuboid::Is_it_cub() const{
             std::cout << ":( Przeciwlegle, dluzsze boki prostopadloscianu nie sa sobie rowne." << std::endl;
         else 
             std::cout << ":) Przeciwlegle, krotsze boki prostopadloscianu nie sa sobie rowne." << std::endl;
-        
     }
     std::cout << "\tDlugosc pierwszego boku: " << std::fixed << std::setprecision(20) << A[0] << std::endl 
               << "\tDlugosc drugiego boku: "   << std::fixed << std::setprecision(20) << A[1] << std::endl 

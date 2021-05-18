@@ -1,9 +1,9 @@
 #include "scene.hh"
 
 Scene::Scene(){
-    double Apx1[]={2,3,3};
+    double Apx1[]={50,60,40};
     Vector3D A(Apx1);
-    Add_cuboid(A,20,15,25);
+    Add_cuboid(A,40,30,20);
 }
 
 Scene::~Scene(){
@@ -40,25 +40,37 @@ unsigned int Scene::how_many_cuboids(){
     return solid_figures.size();
 }
 
-void Scene::Add_cuboid(Vector3D const & Apx0, double const & tra_OX, double const & tra_OY, double const & tra_OZ){
+void Scene::Add_cuboid(Vector3D const & center, double const & tra_OX, double const & tra_OY, double const & tra_OZ){
     Vector3D initial_vec, VecOX, VecOY, VecOZ;
     Matrix3x3 initial_mtx;
+    
+    Vector3D cub_apx[8];
 
-    Vector3D cub_apx[8] = {Apx0,Apx0,Apx0,Apx0,Apx0,Apx0,Apx0,Apx0};
+    VecOX[0] = tra_OX/2;
+    VecOY[1] = tra_OY/2;
+    VecOZ[2] = tra_OZ/2;
 
-    VecOX[0] = tra_OX;
-    VecOY[1] = tra_OY;
-    VecOZ[2] = tra_OZ;
- 
-    cub_apx[1] + VecOX;
-    cub_apx[2] + VecOY;
-    cub_apx[3] + VecOX; cub_apx[3] + VecOY;
-    cub_apx[4] + VecOY; cub_apx[4] + VecOZ;
-    cub_apx[5] + VecOX; cub_apx[5] + VecOY; cub_apx[5] + VecOZ;
-    cub_apx[6] + VecOZ;
-    cub_apx[7] + VecOX; cub_apx[7] + VecOZ;
+    cub_apx[0] = cub_apx[0] - VecOX - VecOY - VecOZ;
+    cub_apx[1] = cub_apx[1] + VecOX - VecOY - VecOZ;
+    cub_apx[2] = cub_apx[2] - VecOX + VecOY - VecOZ;
+    cub_apx[3] = cub_apx[3] + VecOX + VecOY - VecOZ;
+    cub_apx[4] = cub_apx[4] - VecOX + VecOY + VecOZ;
+    cub_apx[5] = cub_apx[5] + VecOX + VecOY + VecOZ;
+    cub_apx[6] = cub_apx[6] - VecOX - VecOY + VecOZ;
+    cub_apx[7] = cub_apx[7] + VecOX - VecOY + VecOZ;
 
-    Cuboid cuboid_dummy(cub_apx[0],cub_apx[1],cub_apx[2],cub_apx[3],cub_apx[4],cub_apx[5],cub_apx[6],cub_apx[7]);
+/*  
+    cub_apx[1] = cub_apx[1] + VecOX;
+    cub_apx[2] = cub_apx[2] + VecOY;
+    cub_apx[3] = cub_apx[3] + VecOX; cub_apx[3] = cub_apx[3] + VecOY;
+    cub_apx[4] = cub_apx[4] + VecOY; cub_apx[4] = cub_apx[4] + VecOZ;
+    cub_apx[5] = cub_apx[5] + VecOX; cub_apx[5] = cub_apx[5] + VecOY; cub_apx[5] = cub_apx[5] + VecOZ;
+    cub_apx[6] = cub_apx[6] + VecOZ;
+    cub_apx[7] = cub_apx[7] + VecOX; cub_apx[7] = cub_apx[7] + VecOZ; */
+    std::cout << "Add_cuboid srodek: " << center << std::endl;
+    Cuboid cuboid_dummy(cub_apx[0],cub_apx[1],cub_apx[2],cub_apx[3],cub_apx[4],cub_apx[5],cub_apx[6],cub_apx[7],center);
+    
+    std::cout << "Add_cuboid srodek_cuboid: " << cuboid_dummy.center_of_cub << std::endl;
 
     solid_figures.push_back(cuboid_dummy); 
     Rotation_matrix.push_back(initial_mtx);

@@ -101,10 +101,6 @@ Vector<Size> Matrix<Size>::operator * (Vector<Size> const &tmp){
     return result; 
 }
 
-
-
-
-
 template <unsigned int Size>
 Matrix<Size> Matrix<Size>::operator * (Matrix<Size> const &tmp){
     Matrix<Size> result;
@@ -118,7 +114,6 @@ Matrix<Size> Matrix<Size>::operator * (Matrix<Size> const &tmp){
     }
     return result; 
 }
-
 
 template <unsigned int Size>
 Matrix<Size> Matrix<Size>::operator / (const double &tmp){

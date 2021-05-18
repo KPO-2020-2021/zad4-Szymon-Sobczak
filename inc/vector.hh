@@ -29,8 +29,6 @@ public:
     Vector operator / (const double &tmp);  /* Operator dzielenia wektora i liczby typu double */
     const double & operator [] (unsigned int index) const; /* Przeciazenia operatora indeksujacego */
     double & operator [] (unsigned int index);
-
-   
 };
 
 template <unsigned int Size>
@@ -83,7 +81,7 @@ template <unsigned int Size>
 Vector<Size>  Vector<Size>::operator + (const Vector<Size> &v){
     Vector result;
     for (unsigned int i = 0; i < Size; ++i){
-        result[i] = size[i] += v[i];
+        result[i] = size[i] + v[i];
     }
     return result;
 }
@@ -101,7 +99,7 @@ template <unsigned int Size>
 Vector<Size> Vector<Size>::operator - (const Vector<Size> &v){
     Vector result;
     for (unsigned int i = 0; i < Size; ++i){
-        result[i] = size[i] -= v[i];
+        result[i] = size[i] - v[i];
     }
     return result; 
 }
@@ -118,7 +116,7 @@ template <unsigned int Size>
 Vector<Size> Vector<Size>::operator * (const double &tmp){
     Vector result;
     for (unsigned int i = 0; i < Size; ++i){
-        result[i] = size[i] *= tmp;
+        result[i] = size[i] * tmp;
     }
     return result;
 }

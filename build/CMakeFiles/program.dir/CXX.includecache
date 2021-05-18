@@ -6,6 +6,32 @@
 
 #IncludeRegexTransform: 
 
+../inc/cuboid.hh
+iostream
+-
+fstream
+-
+cmath
+-
+iomanip
+-
+vector3D.hh
+../inc/vector3D.hh
+matrix3x3.hh
+../inc/matrix3x3.hh
+matrix.hh
+../inc/matrix.hh
+lacze_do_gnuplota.hh
+../inc/lacze_do_gnuplota.hh
+
+../inc/lacze_do_gnuplota.hh
+string
+-
+list
+-
+vector
+-
+
 ../inc/matrix.hh
 size.hh
 ../inc/size.hh
@@ -18,7 +44,7 @@ cstdlib
 cmath
 -
 
-../inc/matrix2x2.hh
+../inc/matrix3x3.hh
 matrix.hh
 ../inc/matrix.hh
 
@@ -38,7 +64,11 @@ stdexcept
 cmath
 -
 
-/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix2x2.cpp
-matrix2x2.hh
-/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix2x2.hh
+../inc/vector3D.hh
+vector.hh
+../inc/vector.hh
+
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/cuboid.cpp
+cuboid.hh
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/cuboid.hh
 

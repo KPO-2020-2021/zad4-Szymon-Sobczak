@@ -1,0 +1,38 @@
+digraph "main"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="main",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="PzG::LaczeDoGNUPlota\l::DodajNazwePliku",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a34bd48f57c0fd69c12bf4127a1cacd8f",tooltip="Dodaje nazwę pliku."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="PzG::CzyJestPlik",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespace_pz_g.html#ae1ae4d36f66c77879380ba73da8e20e3",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Fill_matrix_OX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$matrix3x3_8hh.html#a8ec09e862d862c55ce380b0479a7f831",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Fill_matrix_OY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$matrix3x3_8hh.html#a027d7f5b7cb4dbdc9e95cc6b5871f7d8",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Fill_matrix_OZ",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$matrix3x3_8hh.html#a09eb2fbe2cced0556e119e17cd95a8dd",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Scene::how_many_cuboids",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_scene.html#a8acb4afea40217735406565926c4ba07",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Scene::Move_figure",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_scene.html#aba1b1578d9bc822c0ecbe542d9b88c85",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Matrix::reset_matrix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_matrix.html#ab44f2b44f6003b43b11e24b0e2fa601e",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="PzG::LaczeDoGNUPlota\l::Rysuj",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335",tooltip=" "];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Scene::update_matrix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_scene.html#ab1474297a3dd7a45e2161ace73354291",tooltip=" "];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Scene::update_vector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_scene.html#aeb561fa13f66e613c1e20c51b9776aa2",tooltip=" "];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="PzG::LaczeDoGNUPlota\l::UstawZakresX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9c91987dfc869d6fcea96205c581daef",tooltip="Ustawia zakres osi OX."];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="PzG::LaczeDoGNUPlota\l::UstawZakresY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a54c6e9cf9ab2eae479451fd953c2717c",tooltip="Ustawia zakres osi OY."];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="PzG::LaczeDoGNUPlota\l::UstawZakresZ",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a1dbbb2b86fb13b8632e6bad9df2a82e3",tooltip="Ustawia zakres osi OZ."];
+  Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="PzG::LaczeDoGNUPlota\l::ZmienTrybRys",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a10950349b348fd3a3d4143e95337527c",tooltip="Zmienia tryb rysowania."];
+}
