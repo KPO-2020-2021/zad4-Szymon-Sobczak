@@ -48,6 +48,28 @@ cmath
 matrix.hh
 ../inc/matrix.hh
 
+../inc/scene.hh
+iostream
+-
+fstream
+-
+cmath
+-
+iomanip
+-
+filesystem
+-
+vector
+-
+vector.hh
+../inc/vector.hh
+matrix.hh
+../inc/matrix.hh
+cuboid.hh
+../inc/cuboid.hh
+lacze_do_gnuplota.hh
+../inc/lacze_do_gnuplota.hh
+
 ../inc/size.hh
 
 ../inc/vector.hh
@@ -71,4 +93,8 @@ vector.hh
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/cuboid.cpp
 cuboid.hh
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/cuboid.hh
+
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/scene.cpp
+scene.hh
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/scene.hh
 

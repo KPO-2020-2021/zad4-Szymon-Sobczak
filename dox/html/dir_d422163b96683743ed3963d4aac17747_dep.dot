@@ -1,8 +1,0 @@
-digraph "app" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  dir_d422163b96683743ed3963d4aac17747 [shape=box, label="app", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_d422163b96683743ed3963d4aac17747.html"];
-  dir_bfccd401955b95cf8c75461437045ac0 [shape=box label="inc" URL="dir_bfccd401955b95cf8c75461437045ac0.html"];
-  dir_d422163b96683743ed3963d4aac17747->dir_bfccd401955b95cf8c75461437045ac0 [headlabel="8", labeldistance=1.5 headhref="dir_000000_000002.html"];
-}

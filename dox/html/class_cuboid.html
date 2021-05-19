@@ -5,10 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Dokumentacja klasy Cuboid</title>
+<title>Rotacje 3D: Dokumentacja klasy Cuboid</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -18,8 +25,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Rotacje 3D
+   &#160;<span id="projectnumber">1.0 v.</span>
    </div>
+   <div id="projectbrief">Szymon Sobczak nr 259275.</div>
   </td>
  </tr>
  </tbody>
@@ -27,65 +36,136 @@
 </div>
 <!-- end header part -->
 <!-- Wygenerowano przez Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',false,false,'search.php','Szukaj');
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_cuboid.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
 <a href="class_cuboid-members.html">Lista wszystkich składowych</a>  </div>
   <div class="headertitle">
 <div class="title">Dokumentacja klasy Cuboid</div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>Klasa modelujaca w programie pojecie prostokata, ktorego wierzcholki sa wyrazone za pomoca wektorow.  
+ <a href="class_cuboid.html#details">Więcej...</a></p>
+
 <p><code>#include &lt;<a class="el" href="cuboid_8hh_source.html">cuboid.hh</a>&gt;</code></p>
+<div class="dynheader">
+Diagram współpracy dla Cuboid:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_cuboid__coll__graph.png" border="0" usemap="#_cuboid_coll__map" alt="Collaboration graph"/></div>
+<map name="_cuboid_coll__map" id="_cuboid_coll__map">
+<area shape="rect" title="Klasa modelujaca w programie pojecie prostokata, ktorego wierzcholki sa wyrazone za pomoca wektorow." alt="" coords="32,213,99,240"/>
+<area shape="rect" href="class_vector.html" title=" " alt="" coords="15,95,116,121"/>
+<area shape="rect" href="class_vector.html" title=" " alt="" coords="5,5,125,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
 <tr class="memitem:a1abf60e93d024b7a01ee5b1a48f1f08a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#a1abf60e93d024b7a01ee5b1a48f1f08a">Cuboid</a> ()</td></tr>
+<tr class="memdesc:a1abf60e93d024b7a01ee5b1a48f1f08a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bezparametryczny konstuktor klasy.  <a href="class_cuboid.html#a1abf60e93d024b7a01ee5b1a48f1f08a">Więcej...</a><br /></td></tr>
 <tr class="separator:a1abf60e93d024b7a01ee5b1a48f1f08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adba123311fb134a59abb094cacd57b05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#adba123311fb134a59abb094cacd57b05">Cuboid</a> (<a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerA, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerB, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerC, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerD, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerE, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerF, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerG, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerH)</td></tr>
-<tr class="separator:adba123311fb134a59abb094cacd57b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3548fc5a1e0cffaf1f5b89e10e3306bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#a3548fc5a1e0cffaf1f5b89e10e3306bb">Cuboid</a> (<a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerA, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerB, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerC, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerD, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerE, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerF, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerG, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> CornerH, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> center_of_cuboid)</td></tr>
+<tr class="memdesc:a3548fc5a1e0cffaf1f5b89e10e3306bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wieloparametrowy konstuktor klasy.  <a href="class_cuboid.html#a3548fc5a1e0cffaf1f5b89e10e3306bb">Więcej...</a><br /></td></tr>
+<tr class="separator:a3548fc5a1e0cffaf1f5b89e10e3306bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07a687d9ca38998c19d8258bcb6eb4df"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#a07a687d9ca38998c19d8258bcb6eb4df">operator[]</a> (int index) const</td></tr>
+<tr class="memdesc:a07a687d9ca38998c19d8258bcb6eb4df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przeciazenie operatora indeksujacego.  <a href="class_cuboid.html#a07a687d9ca38998c19d8258bcb6eb4df">Więcej...</a><br /></td></tr>
 <tr class="separator:a07a687d9ca38998c19d8258bcb6eb4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4a06a0e84f6cd5576929ff203324445"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#af4a06a0e84f6cd5576929ff203324445">operator[]</a> (int index)</td></tr>
+<tr class="memdesc:af4a06a0e84f6cd5576929ff203324445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przeciazenie operatora indeksujacego.  <a href="class_cuboid.html#af4a06a0e84f6cd5576929ff203324445">Więcej...</a><br /></td></tr>
 <tr class="separator:af4a06a0e84f6cd5576929ff203324445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76397640c590d9d4fded0fb99c8c196b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cuboid.html">Cuboid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#a76397640c590d9d4fded0fb99c8c196b">Translate_cub</a> (<a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> const &amp;vector)</td></tr>
+<tr class="memdesc:a76397640c590d9d4fded0fb99c8c196b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translacja prostokata prostokata o zadany wektor.  <a href="class_cuboid.html#a76397640c590d9d4fded0fb99c8c196b">Więcej...</a><br /></td></tr>
 <tr class="separator:a76397640c590d9d4fded0fb99c8c196b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af67bf6ddc43a632c334398a54f29bbc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cuboid.html">Cuboid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#af67bf6ddc43a632c334398a54f29bbc9">Rotate_cub</a> (<a class="el" href="matrix3x3_8hh.html#ac0b1a54ceafb28519afcbd8939668a70">Matrix3x3</a> const &amp;mtx)</td></tr>
+<tr class="memdesc:af67bf6ddc43a632c334398a54f29bbc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obrot prostokata o zadany kat, zadana ilosc razy.  <a href="class_cuboid.html#af67bf6ddc43a632c334398a54f29bbc9">Więcej...</a><br /></td></tr>
 <tr class="separator:af67bf6ddc43a632c334398a54f29bbc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf0c2d0b6f669edba513008a916c6732"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#adf0c2d0b6f669edba513008a916c6732">Is_it_cub</a> () const</td></tr>
+<tr class="memdesc:adf0c2d0b6f669edba513008a916c6732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdzenie czy dany prostokat ma rowne przeciwlegle boki.  <a href="class_cuboid.html#adf0c2d0b6f669edba513008a916c6732">Więcej...</a><br /></td></tr>
 <tr class="separator:adf0c2d0b6f669edba513008a916c6732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafd7e97dc8f9d48715ad2a6295f0d328"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#aafd7e97dc8f9d48715ad2a6295f0d328">Write_cub_to_file</a> (const char *sNazwaPliku) const</td></tr>
+<tr class="memdesc:aafd7e97dc8f9d48715ad2a6295f0d328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapis wartosci wspolrzendych wierzcholkow do pliku.  <a href="class_cuboid.html#aafd7e97dc8f9d48715ad2a6295f0d328">Więcej...</a><br /></td></tr>
 <tr class="separator:aafd7e97dc8f9d48715ad2a6295f0d328"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a577685d1e3f426bd334261ea1cfc1dd9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#a577685d1e3f426bd334261ea1cfc1dd9">collision</a> (<a class="el" href="class_cuboid.html">Cuboid</a> const &amp;ScRec) const</td></tr>
-<tr class="separator:a577685d1e3f426bd334261ea1cfc1dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1b37f5676c9a955b8ecd35e47ca8061"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cuboid.html">Cuboid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#ad1b37f5676c9a955b8ecd35e47ca8061">Move_cuboid</a> (<a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> const &amp;vector, <a class="el" href="matrix3x3_8hh.html#ac0b1a54ceafb28519afcbd8939668a70">Matrix3x3</a> const &amp;mtx)</td></tr>
+<tr class="memdesc:ad1b37f5676c9a955b8ecd35e47ca8061"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przmieszczenie prostopadloscianu w ukladzie globalnym.  <a href="class_cuboid.html#ad1b37f5676c9a955b8ecd35e47ca8061">Więcej...</a><br /></td></tr>
 <tr class="separator:ad1b37f5676c9a955b8ecd35e47ca8061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a84c46c3a1841dd28cc3d476afea7c1d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#a84c46c3a1841dd28cc3d476afea7c1d0">Origin_Corners</a> [<a class="el" href="size_8hh.html#a91e52f45f6f11b18c0b4fec8fcdc9d7a">CORNERS</a>]</td></tr>
+<tr class="memdesc:a84c46c3a1841dd28cc3d476afea7c1d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wartosci wektorow reprezentujace poczatkowe wierzcholki prostokata.  <a href="class_cuboid.html#a84c46c3a1841dd28cc3d476afea7c1d0">Więcej...</a><br /></td></tr>
+<tr class="separator:a84c46c3a1841dd28cc3d476afea7c1d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0566d8a0ecb46d0a1d805a66982af8d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#a0566d8a0ecb46d0a1d805a66982af8d8">Corners</a> [<a class="el" href="size_8hh.html#a91e52f45f6f11b18c0b4fec8fcdc9d7a">CORNERS</a>]</td></tr>
+<tr class="memdesc:a0566d8a0ecb46d0a1d805a66982af8d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wartosci wektorow reprezentujace poczatkowe wierzcholki prostokata.  <a href="class_cuboid.html#a0566d8a0ecb46d0a1d805a66982af8d8">Więcej...</a><br /></td></tr>
+<tr class="separator:a0566d8a0ecb46d0a1d805a66982af8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41bc42c928ecd273ac1ac79470fe0809"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cuboid.html#a41bc42c928ecd273ac1ac79470fe0809">center_of_cub</a></td></tr>
+<tr class="memdesc:a41bc42c928ecd273ac1ac79470fe0809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wartosci wektorow reprezentujace tymaczasowe wierzcholki prostokata.  <a href="class_cuboid.html#a41bc42c928ecd273ac1ac79470fe0809">Więcej...</a><br /></td></tr>
+<tr class="separator:a41bc42c928ecd273ac1ac79470fe0809"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
-<div class="textblock"><p>Klasa modelujaca w programie pojecie prostokata, ktorego wierzcholki sa wyrazone za pomoca wektorow. <br  />
- Klasa posiada prywatne pole "Corners" bedace tablica wektorow, opisuje ono wektorowo pozycje wierzcholkow prosotkata. Klasa posiada publiczny konstruktor domyśly oraz konstruktor pozwalajacy na inicjowanie prostokata za pomoca wektorow. Klasa posiada publiczne metody pozwalajace na: <br  />
+<div class="textblock"><p>Klasa modelujaca w programie pojecie prostokata, ktorego wierzcholki sa wyrazone za pomoca wektorow. </p>
+<p>Klasa posiada prywatne pole "Corners" bedace tablica wektorow, opisuje ono wektorowo pozycje wierzcholkow prosotkata. Klasa posiada publiczny konstruktor domyśly oraz konstruktor pozwalajacy na inicjowanie prostokata za pomoca wektorow. Klasa posiada publiczne metody pozwalajace na: <br  />
 </p><ul>
 <li>sprawdzenie czy prostokat posiada rowne przeciwlegle boki i wyswietlenie informacji o tym na standarowe wyjscie,</li>
 <li>translacje prostokata o zadany wektor, <br  />
 </li>
 <li>obrot prostokata wokol srodka ukladu wspolrzednych o zadany kat, wybrana ilosc razy. <br  />
- Klasa zawiera publiczne przeciazenia operatora indeksujacego opowiedzialnych za wprowadzanie i odczytywanie wartosci <br  />
- z wektorow. <br  />
- Klasa posiada metode pozwalajaca zbadac kolizyjnosc dwoch prostokatow. <br  />
- </li>
+</li>
 </ul>
+<p>Klasa zawiera publiczne przeciazenia operatora indeksujacego opowiedzialnych za wprowadzanie i odczytywanie wartosci <br  />
+ z wektorow. <br  />
+</p>
+<p>Klasa posiada metode pozwalajaca zbadac kolizyjnosc dwoch prostokatow. <br  />
+ </p>
 
-<p class="definition">Definicja w linii <a class="el" href="cuboid_8hh_source.html#l00027">27</a> pliku <a class="el" href="cuboid_8hh_source.html">cuboid.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="cuboid_8hh_source.html#l00030">30</a> pliku <a class="el" href="cuboid_8hh_source.html">cuboid.hh</a>.</p>
 </div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
 <a id="a1abf60e93d024b7a01ee5b1a48f1f08a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1abf60e93d024b7a01ee5b1a48f1f08a">&#9670;&nbsp;</a></span>Cuboid() <span class="overload">[1/2]</span></h2>
@@ -102,12 +182,18 @@ Metody publiczne</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00011">11</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
+<p>Bezparametryczny konstuktor klasy. </p>
+<p>Domyślny konstruktor obiektu typu Rectangle. Konstruktor pozwala na inicjalizacje prostokata z uzyciem wektorow. <br  />
+</p>
+<dl class="section return"><dt>Zwraca</dt><dd>Prostokat o wierzcholakach zainicjowanych wartosciami wektorow zerowych. <br  />
+ </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00016">16</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
 
 </div>
 </div>
-<a id="adba123311fb134a59abb094cacd57b05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adba123311fb134a59abb094cacd57b05">&#9670;&nbsp;</a></span>Cuboid() <span class="overload">[2/2]</span></h2>
+<a id="a3548fc5a1e0cffaf1f5b89e10e3306bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3548fc5a1e0cffaf1f5b89e10e3306bb">&#9670;&nbsp;</a></span>Cuboid() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,7 +244,13 @@ Metody publiczne</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a>&#160;</td>
-          <td class="paramname"><em>CornerH</em>&#160;</td>
+          <td class="paramname"><em>CornerH</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>center_of_cuboid</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -168,41 +260,39 @@ Metody publiczne</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00035">35</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
+<p>Wieloparametrowy konstuktor klasy. </p>
+<p>Alternatywny konstruktor obiektu typu Rectangle. Konstruktor pozwala na inicjalizacje prostokata z uzyciem wektorow. <br  />
+</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">CornerA</td><td>- wektor opisujacy polozenie w ukladzie lokalnym wierzcholka W1. <br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">CornerB</td><td>- wektor opisujacy polozenie w ukladzie lokalnym wierzcholka W2. <br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">CornerC</td><td>- wektor opisujacy polozenie w ukladzie lokalnym wierzcholka W3. <br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">CornerD</td><td>- wektor opisujacy polozenie w ukladzie lokalnym wierzcholka W4. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">CornerE</td><td>- wektor opisujacy polozenie w ukladzie lokalnym wierzcholka W5. <br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">CornerF</td><td>- wektor opisujacy polozenie w ukladzie lokalnym wierzcholka W6. <br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">CornerG</td><td>- wektor opisujacy polozenie w ukladzie lokalnym wierzcholka W7. <br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">CornerH</td><td>- wektor opisujacy polozenie w ukladzie lokalnym wierzcholka W8. <br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">CornerH</td><td>- wektor opisujacy polozenie w ukladzie lokalnym wierzcholka W8. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">center_of_cuboid</td><td>- wektor opisujacy polozenie srodka prostopadloscianu.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Prostokat o wierzcholakach zainicjowanych wartosciami wektorow. <br  />
+ </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00038">38</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Dokumentacja funkcji składowych</h2>
-<a id="a577685d1e3f426bd334261ea1cfc1dd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a577685d1e3f426bd334261ea1cfc1dd9">&#9670;&nbsp;</a></span>collision()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Cuboid::collision </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_cuboid.html">Cuboid</a> const &amp;&#160;</td>
-          <td class="paramname"><em>ScRec</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00479">479</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
-<div class="dynheader">
-Oto graf wywołań dla tej funkcji:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_cuboid_a577685d1e3f426bd334261ea1cfc1dd9_cgraph.png" border="0" usemap="#class_cuboid_a577685d1e3f426bd334261ea1cfc1dd9_cgraph" alt=""/></div>
-</div>
-<div class="dynheader">
-Oto graf wywoływań tej funkcji:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_cuboid_a577685d1e3f426bd334261ea1cfc1dd9_icgraph.png" border="0" usemap="#class_cuboid_a577685d1e3f426bd334261ea1cfc1dd9_icgraph" alt=""/></div>
-</div>
-
-</div>
-</div>
 <a id="adf0c2d0b6f669edba513008a916c6732"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf0c2d0b6f669edba513008a916c6732">&#9670;&nbsp;</a></span>Is_it_cub()</h2>
 
@@ -218,11 +308,28 @@ Oto graf wywoływań tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00320">320</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
+<p>Sprawdzenie czy dany prostokat ma rowne przeciwlegle boki. </p>
+<p>Metoda klasy Rectangle wykonujaca operacje wyznaczenia dlugosic bokow prostokata i sprawdzenia, czy przeciwlegle boki sa sobie rowne.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">this</td><td>- prostokat, ktory ma zostac poddany sprawdzeniu. <br  />
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Wypisuje na standardowe wyjscie dane o bokach prostokata. <br  />
+ </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00234">234</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_cuboid_adf0c2d0b6f669edba513008a916c6732_cgraph.png" border="0" usemap="#class_cuboid_adf0c2d0b6f669edba513008a916c6732_cgraph" alt=""/></div>
+<map name="class_cuboid_adf0c2d0b6f669edba513008a916c6732_cgraph" id="class_cuboid_adf0c2d0b6f669edba513008a916c6732_cgraph">
+<area shape="rect" title="Sprawdzenie czy dany prostokat ma rowne przeciwlegle boki." alt="" coords="5,31,137,57"/>
+<area shape="rect" href="cuboid_8cpp.html#af5dd140a958ad0ff70e8bcb6e457479d" title=" " alt="" coords="185,5,312,32"/>
+<area shape="rect" href="vector_8hh.html#a929ea1c63656cd8395d15f97393c4f65" title=" " alt="" coords="193,56,304,83"/>
+</map>
 </div>
 
 </div>
@@ -253,7 +360,9 @@ Oto graf wywołań dla tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00122">122</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
+<p>Przmieszczenie prostopadloscianu w ukladzie globalnym. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00079">79</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
 
 </div>
 </div>
@@ -273,7 +382,18 @@ Oto graf wywołań dla tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00074">74</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
+<p>Przeciazenie operatora indeksujacego. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>- index prostokata. <br  />
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Wartosc prostokata w danym miejscu tablicy. <br  />
+ </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00073">73</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
 
 </div>
 </div>
@@ -292,6 +412,17 @@ Oto graf wywołań dla tej funkcji:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Przeciazenie operatora indeksujacego. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>- index prostokata. <br  />
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Wartosc prostokata w danym miejscu tablicy jako stala. <br  />
+ </dd></dl>
 
 <p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00060">60</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
 
@@ -313,7 +444,22 @@ Oto graf wywołań dla tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00176">176</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
+<p>Obrot prostokata o zadany kat, zadana ilosc razy. </p>
+<p>Metoda klasy Rectangle realizaujca dzialanie obrotu prostokata o wybrany kat, wybrana ilosc razy. <br  />
+</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">multiplier</td><td>- ile razy ma zostac wykonany obrot. <br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">angle</td><td>- kat o jaki ma zostac obrocony prostokat. <br  />
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Prostokat o zmienionym polozeniu za sprawa operacji obrotu. <br  />
+ </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00110">110</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
 
 </div>
 </div>
@@ -333,7 +479,20 @@ Oto graf wywołań dla tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00154">154</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
+<p>Translacja prostokata prostokata o zadany wektor. </p>
+<p>Metoda klasy Rectangle realizaujca dzialanie translacji prostokata o wybrany wektor. <br  />
+</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">vector</td><td>- wektor translacji. <br  />
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Prostokat o zmienionym polozeniu za sprawa operacji translacji o wektor. <br  />
+ </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00094">94</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
 
 </div>
 </div>
@@ -353,20 +512,116 @@ Oto graf wywołań dla tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00247">247</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
+<p>Zapis wartosci wspolrzendych wierzcholkow do pliku. </p>
+<p>Metoda klasy <a class="el" href="class_cuboid.html" title="Klasa modelujaca w programie pojecie prostokata, ktorego wierzcholki sa wyrazone za pomoca wektorow.">Cuboid</a> realizujaca zapis wartosci wspolrzednych wierzcholkow globalnych prostopadloscianu do pliku. <br  />
+</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">this</td><td>- prostopadloscian do zapisu. <br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sNazwaPliku</td><td>- wskaznik na napis stanowiacy nazwe pliku wyjsciowego. <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="cuboid_8cpp_source.html#l00158">158</a> pliku <a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="a41bc42c928ecd273ac1ac79470fe0809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41bc42c928ecd273ac1ac79470fe0809">&#9670;&nbsp;</a></span>center_of_cub</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> Cuboid::center_of_cub</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wartosci wektorow reprezentujace tymaczasowe wierzcholki prostokata. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="cuboid_8hh_source.html#l00039">39</a> pliku <a class="el" href="cuboid_8hh_source.html">cuboid.hh</a>.</p>
+
+</div>
+</div>
+<a id="a0566d8a0ecb46d0a1d805a66982af8d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0566d8a0ecb46d0a1d805a66982af8d8">&#9670;&nbsp;</a></span>Corners</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> Cuboid::Corners[<a class="el" href="size_8hh.html#a91e52f45f6f11b18c0b4fec8fcdc9d7a">CORNERS</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wartosci wektorow reprezentujace poczatkowe wierzcholki prostokata. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="cuboid_8hh_source.html#l00036">36</a> pliku <a class="el" href="cuboid_8hh_source.html">cuboid.hh</a>.</p>
+
+</div>
+</div>
+<a id="a84c46c3a1841dd28cc3d476afea7c1d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84c46c3a1841dd28cc3d476afea7c1d0">&#9670;&nbsp;</a></span>Origin_Corners</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> Cuboid::Origin_Corners[<a class="el" href="size_8hh.html#a91e52f45f6f11b18c0b4fec8fcdc9d7a">CORNERS</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wartosci wektorow reprezentujace poczatkowe wierzcholki prostokata. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="cuboid_8hh_source.html#l00033">33</a> pliku <a class="el" href="cuboid_8hh_source.html">cuboid.hh</a>.</p>
 
 </div>
 </div>
 <hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
-<li>inc/<a class="el" href="cuboid_8hh_source.html">cuboid.hh</a></li>
-<li>src/<a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a></li>
+<li><a class="el" href="cuboid_8hh_source.html">cuboid.hh</a></li>
+<li><a class="el" href="cuboid_8cpp_source.html">cuboid.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_cuboid.html">Cuboid</a></li>
+    <li class="footer">Wygenerowano przez
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

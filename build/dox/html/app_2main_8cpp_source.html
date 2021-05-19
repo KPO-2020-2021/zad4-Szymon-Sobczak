@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rotacje 3D: Plik źródłowy main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Rotacje 3D
+   &#160;<span id="projectnumber">1.0 v.</span>
+   </div>
+   <div id="projectbrief">Szymon Sobczak nr 259275.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('app_2main_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">app/main.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="app_2main_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Przygotowal: Szymon Sobczak nr 259275 */</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/* Executables must have the following defined if the library contains</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">doctest definitions. For builds with this disabled, e.g. code shipped to</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">users, this can be left out. */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifdef ENABLE_DOCTEST_IN_LIBRARY</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define DOCTEST_CONFIG_IMPLEMENT</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../tests/doctest/doctest.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="example_config_8h.html">exampleConfig.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vector_8hh.html">vector.hh</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="matrix_8hh.html">matrix.hh</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vector3_d_8hh.html">vector3D.hh</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="matrix3x3_8hh.html">matrix3x3.hh</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="matrix2x2_8hh.html">matrix2x2.hh</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cuboid_8hh.html">cuboid.hh</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="scene_8hh.html">scene.hh</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;../inc/lacze_do_gnuplota.hh&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="app_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   30</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="app_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(){</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> active_cuboid = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">double</span> angle = 0, multiplier = 1, tr_X = 0, tr_Y = 0,tr_Z = 0; <span class="comment">/* Inicjalizacja tablic wartosciami wierzcholkow prostokata oraz zmiennych potrzebnych w programie */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">char</span> Option;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html">PzG::LaczeDoGNUPlota</a> Link;  <span class="comment">/* Zmienna potrzebna do wizualizacji rysunku prostokata */</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_vector.html">Vector3D</a> T_vector;          <span class="comment">/* Inicjalizacja wektorow reprezentujacych wspolrzedne wierzcholkow prostokata i wektora translacji */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_matrix.html">Matrix3x3</a> temp_rot_matrix;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="class_scene.html">Scene</a> Scenery;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_vector.html">Vector3D</a> temp_vec1,temp_vec2;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::vector &lt;std::string&gt; adresses_of_files;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::string name_of_new_file;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    adresses_of_files.push_back(<span class="stringliteral">&quot;../datasets/cuboid1.dat&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::cout &lt;&lt; adresses_of_files[active_cuboid] &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    Link.<a class="code" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a34bd48f57c0fd69c12bf4127a1cacd8f">DodajNazwePliku</a>(adresses_of_files.at(0).c_str(),<a class="code" href="namespace_pz_g.html#a705c92106f39b7d0c34a6739d10ff0b6a927eaa159aa4bd3198f0a330b967746d">PzG::RR_Ciagly</a>,2);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::cout &lt;&lt; adresses_of_files[active_cuboid].c_str() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Link.<a class="code" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a10950349b348fd3a3d4143e95337527c">ZmienTrybRys</a>(<a class="code" href="namespace_pz_g.html#aeedae1ef10c66d720f9e89de408ca4caa856e6b0fa6b8a9dc184c60cf27dcc5d2">PzG::TR_3D</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    Link.<a class="code" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a54c6e9cf9ab2eae479451fd953c2717c">UstawZakresY</a>(-255,255);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Link.<a class="code" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9c91987dfc869d6fcea96205c581daef">UstawZakresX</a>(-255,255);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    Link.<a class="code" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a1dbbb2b86fb13b8632e6bad9df2a82e3">UstawZakresZ</a>(-255,255); </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">try</span>{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        Scenery[active_cuboid].Write_cub_to_file(adresses_of_files.at(active_cuboid).c_str()); <span class="comment">/* Wyswietlenie w GNUplot stanu poczatkowego prostokata */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        Link.<a class="code" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Poczatkowy stan bokow prostopadloscianu: &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        Scenery[active_cuboid].Is_it_cub(); </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Menu wyboru opcji:&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\ta - zmien aktywny prostopadloscian&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\to - obrot bryly o zadana sekwencje katow&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\tt - powtorzenie poprzedniego obrotu&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\tr - wyswietlenie macierzy rotacji&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\tp - przesuniecie bryly o zadany wektor &quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\tw - wyswietlenie wspolrzednych wierzcholkow &quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\ts - sprawdzenie dlugosci przeciwleglych bokow&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\tm - wyswietl menu&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\td - dodaj nowy prostopadloscian&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\tk - koniec dzialania programu&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">while</span> (Option != <span class="charliteral">&#39;k&#39;</span>){ <span class="comment">/* Glowna petla menu, dzialajaca do czasu wybrania opcji zakonczenia- k */</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Numer aktywnego prostopadloscianu: &quot;</span> &lt;&lt; active_cuboid &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Twoj wybor? (m - menu) &gt; &quot;</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            std::cin &gt;&gt; Option;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">switch</span>(Option){</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;a&#39;</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    <span class="keywordflow">while</span> (<span class="keyword">true</span>){</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        <span class="keywordflow">try</span>{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                            std::cout &lt;&lt; <span class="stringliteral">&quot;Podaj numer prostopadloscianu, ktory ma byc aktywny: &quot;</span> &lt;&lt; std::endl;;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                            std::cout &lt;&lt; <span class="stringliteral">&quot;Dostepne prostopadlosciany [0;&quot;</span> &lt;&lt; Scenery.<a class="code" href="class_scene.html#a8acb4afea40217735406565926c4ba07">how_many_cuboids</a>()-1  &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                            std::cin &gt;&gt; active_cuboid; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                            <span class="keywordflow">if</span>(std::cin.fail() || active_cuboid &gt; (Scenery.<a class="code" href="class_scene.html#a8acb4afea40217735406565926c4ba07">how_many_cuboids</a>()-1))</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;:/ Podano bledny numer prostopadloscianu &quot;</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                            <span class="keywordflow">else</span>   </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                        <span class="keywordflow">catch</span> (std::invalid_argument &amp; a){ </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                            std::cerr &lt;&lt; a.what() &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;:/ Sprobuj jeszcze raz&quot;</span>  &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                            std::cin.clear();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                            std::cin.ignore(10000,<span class="charliteral">&#39;\n&#39;</span>);   </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    } </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;o&#39;</span>: <span class="comment">/* Opcja obrotu prostokata */</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    temp_rot_matrix.<a class="code" href="class_matrix.html#ab44f2b44f6003b43b11e24b0e2fa601e">reset_matrix</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Podaj sekwencje: &quot;</span> &lt;&lt; std::endl; <span class="comment">/* Okreslenie parametrow obrotu prostokata- kata i ilosci obrotow */</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    <span class="keywordflow">while</span> (Option !=<span class="charliteral">&#39;.&#39;</span>){  </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        <span class="keywordflow">try</span>{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                            std::cin &gt;&gt; Option;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                            <span class="keywordflow">switch</span>(Option){</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                <span class="keywordflow">case</span> <span class="charliteral">&#39;x&#39;</span>:</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                std::cin &gt;&gt; angle;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                <span class="keywordflow">if</span>(std::cin.fail())</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;:/ Podano bledna wartosc kata obrotu &quot;</span>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                                <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                    temp_rot_matrix = <a class="code" href="matrix3x3_8hh.html#a8ec09e862d862c55ce380b0479a7f831">Fill_matrix_OX</a>(angle) * temp_rot_matrix;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                <span class="keywordflow">case</span> <span class="charliteral">&#39;y&#39;</span>:</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                std::cin &gt;&gt; angle;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                                <span class="keywordflow">if</span>(std::cin.fail())</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                                    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;:/ Podano bledna wartosc kata obrotu &quot;</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                    temp_rot_matrix = <a class="code" href="matrix3x3_8hh.html#a027d7f5b7cb4dbdc9e95cc6b5871f7d8">Fill_matrix_OY</a>(angle) * temp_rot_matrix;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                <span class="keywordflow">case</span> <span class="charliteral">&#39;z&#39;</span>:</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                std::cin &gt;&gt; angle;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                <span class="keywordflow">if</span>(std::cin.fail())</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;:/ Podano bledna wartosc kata obrotu &quot;</span>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                                    temp_rot_matrix = <a class="code" href="matrix3x3_8hh.html#a09eb2fbe2cced0556e119e17cd95a8dd">Fill_matrix_OZ</a>(angle) * temp_rot_matrix;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                                <span class="keywordflow">case</span> <span class="charliteral">&#39;.&#39;</span>:    </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                                    std::cout &lt;&lt; <span class="stringliteral">&quot;:) Podawanie sekwencji obrotow zakonczone pomyslnie. &quot;</span> &lt;&lt; std::endl;      </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                                    std::cout &lt;&lt; <span class="stringliteral">&quot;:/ Bledne oznaczenie osi. Dopuszczalne znaki to: (x, y, z, .)&quot;</span> &lt;&lt; std::endl; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                    std::cout &lt;&lt; <span class="stringliteral">&quot;:/ Sprobuj jeszcze raz&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                    std::cin.ignore(10000,<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                <span class="keywordflow">break</span>;            </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                              } </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                        <span class="keywordflow">catch</span> (std::invalid_argument &amp; d){ <span class="comment">/* W wyniku wyrzucenia bledu program poinformuje o tym i zakonczy swoje dzialanie */</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                            std::cerr &lt;&lt; d.what() &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;:/ Sprobuj jeszcze raz&quot;</span>  &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                            std::cin.clear();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                            std::cin.ignore(10000,<span class="charliteral">&#39;\n&#39;</span>);   </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                        }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                    }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    <span class="keywordflow">while</span> (<span class="keyword">true</span>){</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                        <span class="keywordflow">try</span>{</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                            std::cout &lt;&lt; <span class="stringliteral">&quot;Ile razy operacja obrotu ma byc powtorzona? &quot;</span>&lt;&lt; std::endl;;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                            std::cin &gt;&gt; multiplier; <span class="comment">/* !!!!!!!!!!!!ASERCJA!!!!!!!!! */</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                            <span class="keywordflow">if</span>(std::cin.fail() || multiplier &lt; 0)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;:/ Podano bledna wartosc mnoznika &quot;</span>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                            <span class="keywordflow">else</span>   </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                        }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                        <span class="keywordflow">catch</span> (std::invalid_argument &amp; f){ <span class="comment">/* W wyniku wyrzucenia bledu program poinformuje o tym i zakonczy swoje dzialanie */</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                            std::cerr &lt;&lt; f.what() &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;:/ Sprobuj jeszcze raz&quot;</span>  &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                            std::cin.clear();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                            std::cin.ignore(10000,<span class="charliteral">&#39;\n&#39;</span>);   </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                        }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    } </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;multiplier;++i)</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                        Scenery.<a class="code" href="class_scene.html#ab1474297a3dd7a45e2161ace73354291">update_matrix</a>(temp_rot_matrix, active_cuboid);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                    </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                    Scenery.<a class="code" href="class_scene.html#aba1b1578d9bc822c0ecbe542d9b88c85">Move_figure</a>(active_cuboid);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    Scenery[active_cuboid].Is_it_cub();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                    Scenery[active_cuboid].Write_cub_to_file(adresses_of_files.at(active_cuboid).c_str());</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    Link.<a class="code" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>();</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;p&#39;</span>: <span class="comment">/* Opcja translacji o wektor */</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Wprowadz wspolrzedne wektora translacji w postaci liczb x i y &gt; &quot;</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                    std::cin &gt;&gt; T_vector;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                    Scenery.<a class="code" href="class_scene.html#aeb561fa13f66e613c1e20c51b9776aa2">update_vector</a>(T_vector,active_cuboid);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                    Scenery.<a class="code" href="class_scene.html#aba1b1578d9bc822c0ecbe542d9b88c85">Move_figure</a>(active_cuboid);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    Scenery[active_cuboid].Write_cub_to_file(adresses_of_files[active_cuboid].c_str());</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                    Scenery[active_cuboid].Is_it_cub();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                    Link.<a class="code" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>();</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;w&#39;</span>: <span class="comment">/* Opcja wyswietlajaca wspolrzedne prsotokata */</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Aktualne wspolrzedne prostopadloscianu: &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    std::cout &lt;&lt; Scenery[active_cuboid];</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;t&#39;</span>:</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;multiplier;++i)</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                        Scenery.<a class="code" href="class_scene.html#ab1474297a3dd7a45e2161ace73354291">update_matrix</a>(temp_rot_matrix,active_cuboid);  </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    Scenery.Move_figure(active_cuboid);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    Scenery[active_cuboid].Write_cub_to_file(adresses_of_files[active_cuboid].c_str());</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                    Scenery[active_cuboid].Is_it_cub();</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                    Link.<a class="code" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;r&#39;</span>:</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Macierz rotacji &quot;</span> &lt;&lt; std::endl &lt;&lt; Scenery.get_matrix(active_cuboid) &lt;&lt; std::endl; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>: <span class="comment">/* Opcja wyswietlajaca dostepne w menu opcje */</span>        </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Menu wyboru opcji:&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                              &lt;&lt; <span class="stringliteral">&quot;\ta - zmien aktywny prostopadloscian&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                              &lt;&lt; <span class="stringliteral">&quot;\to - obrot bryly o zadana sekwencje katow&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                              &lt;&lt; <span class="stringliteral">&quot;\tt - powtorzenie poprzedniego obrotu&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                              &lt;&lt; <span class="stringliteral">&quot;\tr - wyswietlenie macierzy rotacji&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                              &lt;&lt; <span class="stringliteral">&quot;\tp - przesuniecie bryly o zadany wektor &quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                              &lt;&lt; <span class="stringliteral">&quot;\tw - wyswietlenie wspolrzednych wierzcholkow &quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                              &lt;&lt; <span class="stringliteral">&quot;\ts - sprawdzenie dlugosci przeciwleglych bokow&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                              &lt;&lt; <span class="stringliteral">&quot;\tm - wyswietl menu&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                              &lt;&lt; <span class="stringliteral">&quot;\td - dodaj nowy prostopadloscian&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                              &lt;&lt; <span class="stringliteral">&quot;\tk - koniec dzialania programu&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;k&#39;</span>: <span class="comment">/* Opcja konczaca program */</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;:) Konczenie pracy programu&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>: <span class="comment">/* Opcja wyswietlajaca wspolrzedne prsotokata */</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    Scenery[active_cuboid].Is_it_cub();</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>: <span class="comment">/* Opcja konczaca program */</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Podaj wspolrzedne punktow, na ktorych zostanie rozpiety nowy prostopadloscian: &quot;</span> &lt;&lt; std::endl; </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Podaj wspolrzedne x y z pierwszego punktu: &quot;</span>; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                    std::cin &gt;&gt; temp_vec1;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Podaj wartosci dlugosci o jakie punkt ma zostac rozsuniety na osiach OX, OY, OZ &quot;</span> &lt;&lt; std::endl; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                    std::cin &gt;&gt;tr_X &gt;&gt; tr_Y &gt;&gt; tr_Z;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                    <span class="keywordflow">if</span> (std::cin.fail() || (tr_X == 0 &amp;&amp; tr_Y == 0 &amp;&amp; tr_Z == 0)){</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                        std::cerr &lt;&lt; <span class="stringliteral">&quot;:( Niepoprawne oznaczenie dlugosci, dodawanie przerwane.&quot;</span> &lt;&lt; std::endl; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                        std::cin.clear();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                        std::cin.ignore(10000,<span class="charliteral">&#39;\n&#39;</span>);   </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                    }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    name_of_new_file = <span class="stringliteral">&quot;../datasets/cuboid.dat&quot;</span>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    name_of_new_file.insert(18,std::to_string(Scenery.how_many_cuboids()+1));</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    adresses_of_files.push_back(name_of_new_file);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    Link.<a class="code" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a34bd48f57c0fd69c12bf4127a1cacd8f">DodajNazwePliku</a>(name_of_new_file.c_str(),<a class="code" href="namespace_pz_g.html#a705c92106f39b7d0c34a6739d10ff0b6a927eaa159aa4bd3198f0a330b967746d">PzG::RR_Ciagly</a>,2);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    Scenery.Add_cuboid(temp_vec1,tr_X,tr_Y,tr_Z);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    Scenery[Scenery.how_many_cuboids()-1].Write_cub_to_file(name_of_new_file.c_str());</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    Link.<a class="code" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>();</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                <span class="keywordflow">default</span>: <span class="comment">/* dzialanie, gdy podana opcja nie bedzie uprzednio zdefiniowana */</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;:/ Opcja niezdefiniowana&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">catch</span> (std::runtime_error &amp; e){ <span class="comment">/* W wyniku wyrzucenia bledu program poinformuje o tym i zakonczy swoje dzialanie */</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;:O Wystapil blad!&quot;</span>&lt;&lt; std::endl &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;} </div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_pz_g_1_1_lacze_do_g_n_u_plota_html_a9c91987dfc869d6fcea96205c581daef"><div class="ttname"><a href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9c91987dfc869d6fcea96205c581daef">PzG::LaczeDoGNUPlota::UstawZakresX</a></div><div class="ttdeci">void UstawZakresX(float Xo, float Xn)</div><div class="ttdoc">Ustawia zakres osi OX.</div><div class="ttdef"><b>Definition:</b> <a href="lacze__do__gnuplota_8hh_source.html#l00459">lacze_do_gnuplota.hh:459</a></div></div>
+<div class="ttc" id="amatrix3x3_8hh_html_a09eb2fbe2cced0556e119e17cd95a8dd"><div class="ttname"><a href="matrix3x3_8hh.html#a09eb2fbe2cced0556e119e17cd95a8dd">Fill_matrix_OZ</a></div><div class="ttdeci">Matrix3x3 Fill_matrix_OZ(double const angle)</div><div class="ttdef"><b>Definition:</b> <a href="matrix3x3_8cpp_source.html#l00045">matrix3x3.cpp:45</a></div></div>
+<div class="ttc" id="aclass_pz_g_1_1_lacze_do_g_n_u_plota_html_a1dbbb2b86fb13b8632e6bad9df2a82e3"><div class="ttname"><a href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a1dbbb2b86fb13b8632e6bad9df2a82e3">PzG::LaczeDoGNUPlota::UstawZakresZ</a></div><div class="ttdeci">void UstawZakresZ(float Zo, float Zn)</div><div class="ttdoc">Ustawia zakres osi OZ.</div><div class="ttdef"><b>Definition:</b> <a href="lacze__do__gnuplota_8hh_source.html#l00477">lacze_do_gnuplota.hh:477</a></div></div>
+<div class="ttc" id="anamespace_pz_g_html_aeedae1ef10c66d720f9e89de408ca4caa856e6b0fa6b8a9dc184c60cf27dcc5d2"><div class="ttname"><a href="namespace_pz_g.html#aeedae1ef10c66d720f9e89de408ca4caa856e6b0fa6b8a9dc184c60cf27dcc5d2">PzG::TR_3D</a></div><div class="ttdeci">@ TR_3D</div><div class="ttdef"><b>Definition:</b> <a href="lacze__do__gnuplota_8hh_source.html#l00039">lacze_do_gnuplota.hh:39</a></div></div>
+<div class="ttc" id="avector_8hh_html"><div class="ttname"><a href="vector_8hh.html">vector.hh</a></div></div>
+<div class="ttc" id="aexample_config_8h_html"><div class="ttname"><a href="example_config_8h.html">exampleConfig.h</a></div></div>
+<div class="ttc" id="anamespace_pz_g_html_a705c92106f39b7d0c34a6739d10ff0b6a927eaa159aa4bd3198f0a330b967746d"><div class="ttname"><a href="namespace_pz_g.html#a705c92106f39b7d0c34a6739d10ff0b6a927eaa159aa4bd3198f0a330b967746d">PzG::RR_Ciagly</a></div><div class="ttdeci">@ RR_Ciagly</div><div class="ttdef"><b>Definition:</b> <a href="lacze__do__gnuplota_8hh_source.html#l00045">lacze_do_gnuplota.hh:45</a></div></div>
+<div class="ttc" id="afoo_8cpp_html_a14bcd2d544b22300bba3863251393e0f"><div class="ttname"><a href="foo_8cpp.html#a14bcd2d544b22300bba3863251393e0f">foo</a></div><div class="ttdeci">int foo()</div><div class="ttdef"><b>Definition:</b> <a href="foo_8cpp_source.html#l00001">foo.cpp:1</a></div></div>
+<div class="ttc" id="aclass_pz_g_1_1_lacze_do_g_n_u_plota_html_a10950349b348fd3a3d4143e95337527c"><div class="ttname"><a href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a10950349b348fd3a3d4143e95337527c">PzG::LaczeDoGNUPlota::ZmienTrybRys</a></div><div class="ttdeci">void ZmienTrybRys(TrybRysowania Tryb)</div><div class="ttdoc">Zmienia tryb rysowania.</div><div class="ttdef"><b>Definition:</b> <a href="lacze__do__gnuplota_8hh_source.html#l00442">lacze_do_gnuplota.hh:442</a></div></div>
+<div class="ttc" id="amatrix_8hh_html"><div class="ttname"><a href="matrix_8hh.html">matrix.hh</a></div></div>
+<div class="ttc" id="aclass_scene_html_aba1b1578d9bc822c0ecbe542d9b88c85"><div class="ttname"><a href="class_scene.html#aba1b1578d9bc822c0ecbe542d9b88c85">Scene::Move_figure</a></div><div class="ttdeci">void Move_figure(unsigned int index)</div><div class="ttdef"><b>Definition:</b> <a href="scene_8cpp_source.html#l00035">scene.cpp:35</a></div></div>
+<div class="ttc" id="aclass_pz_g_1_1_lacze_do_g_n_u_plota_html"><div class="ttname"><a href="class_pz_g_1_1_lacze_do_g_n_u_plota.html">PzG::LaczeDoGNUPlota</a></div><div class="ttdoc">Klasa realizuje interfejs do programu GNUPlot.</div><div class="ttdef"><b>Definition:</b> <a href="lacze__do__gnuplota_8hh_source.html#l00123">lacze_do_gnuplota.hh:123</a></div></div>
+<div class="ttc" id="aclass_pz_g_1_1_lacze_do_g_n_u_plota_html_a065f5b8402737cc62b0ad4f66d028335"><div class="ttname"><a href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335">PzG::LaczeDoGNUPlota::Rysuj</a></div><div class="ttdeci">bool Rysuj()</div><div class="ttdef"><b>Definition:</b> <a href="lacze__do__gnuplota_8cpp_source.html#l00327">lacze_do_gnuplota.cpp:327</a></div></div>
+<div class="ttc" id="avector3_d_8hh_html"><div class="ttname"><a href="vector3_d_8hh.html">vector3D.hh</a></div></div>
+<div class="ttc" id="aclass_pz_g_1_1_lacze_do_g_n_u_plota_html_a54c6e9cf9ab2eae479451fd953c2717c"><div class="ttname"><a href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a54c6e9cf9ab2eae479451fd953c2717c">PzG::LaczeDoGNUPlota::UstawZakresY</a></div><div class="ttdeci">void UstawZakresY(float Yo, float Yn)</div><div class="ttdoc">Ustawia zakres osi OY.</div><div class="ttdef"><b>Definition:</b> <a href="lacze__do__gnuplota_8hh_source.html#l00468">lacze_do_gnuplota.hh:468</a></div></div>
+<div class="ttc" id="amatrix3x3_8hh_html_a027d7f5b7cb4dbdc9e95cc6b5871f7d8"><div class="ttname"><a href="matrix3x3_8hh.html#a027d7f5b7cb4dbdc9e95cc6b5871f7d8">Fill_matrix_OY</a></div><div class="ttdeci">Matrix3x3 Fill_matrix_OY(double const angle)</div><div class="ttdef"><b>Definition:</b> <a href="matrix3x3_8cpp_source.html#l00030">matrix3x3.cpp:30</a></div></div>
+<div class="ttc" id="aapp_2main_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="app_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="app_2main_8cpp_source.html#l00030">app/main.cpp:30</a></div></div>
+<div class="ttc" id="aclass_matrix_html_ab44f2b44f6003b43b11e24b0e2fa601e"><div class="ttname"><a href="class_matrix.html#ab44f2b44f6003b43b11e24b0e2fa601e">Matrix::reset_matrix</a></div><div class="ttdeci">Matrix&lt; Size &gt; reset_matrix()</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hh_source.html#l00134">matrix.hh:134</a></div></div>
+<div class="ttc" id="aclass_pz_g_1_1_lacze_do_g_n_u_plota_html_a34bd48f57c0fd69c12bf4127a1cacd8f"><div class="ttname"><a href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a34bd48f57c0fd69c12bf4127a1cacd8f">PzG::LaczeDoGNUPlota::DodajNazwePliku</a></div><div class="ttdeci">bool DodajNazwePliku(const char *NazwaPliku, RodzajRysowania RodzRys=RR_Ciagly, int Szerokosc=1)</div><div class="ttdoc">Dodaje nazwę pliku.</div><div class="ttdef"><b>Definition:</b> <a href="lacze__do__gnuplota_8cpp_source.html#l00102">lacze_do_gnuplota.cpp:102</a></div></div>
+<div class="ttc" id="aclass_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdef"><b>Definition:</b> <a href="scene_8hh_source.html#l00015">scene.hh:15</a></div></div>
+<div class="ttc" id="aclass_scene_html_a8acb4afea40217735406565926c4ba07"><div class="ttname"><a href="class_scene.html#a8acb4afea40217735406565926c4ba07">Scene::how_many_cuboids</a></div><div class="ttdeci">unsigned int how_many_cuboids()</div><div class="ttdef"><b>Definition:</b> <a href="scene_8cpp_source.html#l00039">scene.cpp:39</a></div></div>
+<div class="ttc" id="acuboid_8hh_html"><div class="ttname"><a href="cuboid_8hh.html">cuboid.hh</a></div></div>
+<div class="ttc" id="amatrix2x2_8hh_html"><div class="ttname"><a href="matrix2x2_8hh.html">matrix2x2.hh</a></div></div>
+<div class="ttc" id="aclass_scene_html_aeb561fa13f66e613c1e20c51b9776aa2"><div class="ttname"><a href="class_scene.html#aeb561fa13f66e613c1e20c51b9776aa2">Scene::update_vector</a></div><div class="ttdeci">void update_vector(Vector3D const &amp;vec, unsigned int index)</div><div class="ttdef"><b>Definition:</b> <a href="scene_8cpp_source.html#l00030">scene.cpp:30</a></div></div>
+<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector&lt; 3 &gt;</a></div></div>
+<div class="ttc" id="aclass_scene_html_ab1474297a3dd7a45e2161ace73354291"><div class="ttname"><a href="class_scene.html#ab1474297a3dd7a45e2161ace73354291">Scene::update_matrix</a></div><div class="ttdeci">void update_matrix(Matrix3x3 const &amp;mtx, unsigned int index)</div><div class="ttdef"><b>Definition:</b> <a href="scene_8cpp_source.html#l00025">scene.cpp:25</a></div></div>
+<div class="ttc" id="ascene_8hh_html"><div class="ttname"><a href="scene_8hh.html">scene.hh</a></div></div>
+<div class="ttc" id="aclass_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">Klasa modelujaca w programie pojecie macierzy.   Klasa posiada prywatne pole &quot;value&quot;,...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hh_source.html#l00025">matrix.hh:25</a></div></div>
+<div class="ttc" id="amatrix3x3_8hh_html"><div class="ttname"><a href="matrix3x3_8hh.html">matrix3x3.hh</a></div></div>
+<div class="ttc" id="amatrix3x3_8hh_html_a8ec09e862d862c55ce380b0479a7f831"><div class="ttname"><a href="matrix3x3_8hh.html#a8ec09e862d862c55ce380b0479a7f831">Fill_matrix_OX</a></div><div class="ttdeci">Matrix3x3 Fill_matrix_OX(double const angle)</div><div class="ttdef"><b>Definition:</b> <a href="matrix3x3_8cpp_source.html#l00015">matrix3x3.cpp:15</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="app_2main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Wygenerowano przez
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

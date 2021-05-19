@@ -59,18 +59,7 @@ void Scene::Add_cuboid(Vector3D const & center, double const & tra_OX, double co
     cub_apx[6] = cub_apx[6] - VecOX - VecOY + VecOZ;
     cub_apx[7] = cub_apx[7] + VecOX - VecOY + VecOZ;
 
-/*  
-    cub_apx[1] = cub_apx[1] + VecOX;
-    cub_apx[2] = cub_apx[2] + VecOY;
-    cub_apx[3] = cub_apx[3] + VecOX; cub_apx[3] = cub_apx[3] + VecOY;
-    cub_apx[4] = cub_apx[4] + VecOY; cub_apx[4] = cub_apx[4] + VecOZ;
-    cub_apx[5] = cub_apx[5] + VecOX; cub_apx[5] = cub_apx[5] + VecOY; cub_apx[5] = cub_apx[5] + VecOZ;
-    cub_apx[6] = cub_apx[6] + VecOZ;
-    cub_apx[7] = cub_apx[7] + VecOX; cub_apx[7] = cub_apx[7] + VecOZ; */
-    std::cout << "Add_cuboid srodek: " << center << std::endl;
     Cuboid cuboid_dummy(cub_apx[0],cub_apx[1],cub_apx[2],cub_apx[3],cub_apx[4],cub_apx[5],cub_apx[6],cub_apx[7],center);
-    
-    std::cout << "Add_cuboid srodek_cuboid: " << cuboid_dummy.center_of_cub << std::endl;
 
     solid_figures.push_back(cuboid_dummy); 
     Rotation_matrix.push_back(initial_mtx);

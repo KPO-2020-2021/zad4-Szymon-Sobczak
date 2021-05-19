@@ -6,57 +6,78 @@
 #include <cstdlib>
 #include <cmath>
 
-/*************************************************************************************
- | Klasa modelujaca w programie pojecie macierzy.                                    |
- | Klasa posiada prywatne pole "value", stanowi ono zbior wartosci macierzy rotacji. |
- |  Jest to tablica dwuwymiarowa dla warosci typu double.                            |
- | Klasa posiada publiczny interfejs pozwalajacy na wprowazdanie,                    |
- |  zmiane i odczytywanie danych z macierzy rotacji.                                 |
- | Klasa zawiera publiczne przeciazenia operatorow funkcyjnych opowiedzialnych       |
- |  za wprowadzanie i odczytywanie wartosci z macierzy rotacji, oraz przeciazenie    |
- |  operatora mnozenia macierzy razy wetkor i przeciazenia operatora dodawania       |
- |  dwoch macierzy.                                                                  | 
- | Klasa posiada metode inicjujaca macierz wartosciami funkcji trygonometrycznych    |
- |  dla zadanego konta obrotu.                                                       |
- | W roli modyfikacji zadania, dodano metode wyznaczajaca wyznacznik macierzy.       |
+/*!
+    \file Definicja metod klasy Cuboid
+    \brief Prototyp i definicja szablonu kalsy Matrix<Size>.
+
+    Prototypy i definicja metod szablonu kalsy Matrix<Size>.
  */
+
+
+/*!
+  \brief Szablon Klasy modelujacej w programie pojecie macierzy.   
+
+  Klasa posiada prywatne pole "value", stanowi ono zbior wartosci macierzy rotacji. Jest to tablica dwuwymiarowa dla warosci typu double.                            
+  Klasa posiada publiczny interfejs pozwalajacy na wprowazdanie, zmiane i odczytywanie danych z macierzy rotacji.                                 
+  Klasa zawiera publiczne przeciazenia operatorow funkcyjnych opowiedzialnych za wprowadzanie i odczytywanie wartosci z macierzy rotacji, oraz przeciazenie    
+  operatora mnozenia macierzy razy wetkor i przeciazenia operatora dodawania dwoch macierzy.                                                                   
+  Klasa posiada metode inicjujaca macierz wartosciami funkcji trygonometrycznych dla zadanego konta obrotu.                                                       
+  W roli modyfikacji zadania, dodano metode wyznaczajaca wyznacznik macierzy.       
+*/
 
 template <unsigned int Size>
 class Matrix{
 private:
-    double value[Size][Size];            /* Wartosci macierzy */
+    /*! \brief Wartosci macierzy */
+    double value[Size][Size];  
+
 public:
-    Matrix();                            /* Bezparametryczny konstruktor klasy */       
-    Matrix(double [Size][Size]);         /* Konstruktor klasy z parametrem */
+    /*! \brief Bezparametryczny konstruktor klasy */  
+    Matrix();                 
 
-    Vector<Size> operator * (Vector<Size> const &tmp);    /* Operator mnożenia przez wektor */
+    /*! \brief Konstruktor klasy z parametrem */                
+    Matrix(double [Size][Size]);         
+
+    /*! \brief Operator mnożenia macierzy przez wektor */
+    Vector<Size> operator * (Vector<Size> const &tmp);
+
+    /*! \brief Operator mnożenia macierzy przez inna macierz */    
     Matrix<Size> operator * (Matrix<Size> const &tmp);
+
+    /*! \brief Operator dzielenia macierzy przez skalar*/  
     Matrix<Size>  operator / (const double &tmp);
-    Matrix operator + (Matrix const &tmp);    /* Operator dodwania dwoch macierzy */
 
-    Matrix<Size> reset_matrix();
+    /*! \brief Operator dodwania dwoch macierzy */
+    Matrix operator + (Matrix const &tmp);    
 
+    /*! \brief Metoda czyszczaca macierz- zprzywracajaca postac macierzy jedynkowej */
+    Matrix reset_matrix();
+
+    /*! \brief Operator porownania dwoch macierzy */
     bool operator == (Matrix const &tmp);  
 
-    double determinant_of_the_matrix() const; /* Obliczenie wyznacznika macierzy */
-    
-    double & operator () (unsigned int row, unsigned int column); /* Przeciazenia operatora funkcyjnego */
+    /*! \brief Przeciazenie operatora funkcyjnego */
+    double & operator () (unsigned int row, unsigned int column); 
+
+    /*! \brief Przeciazenie operatora funkcyjnego */
     const double & operator () (unsigned int row, unsigned int column) const;
 };
 
-template <unsigned int Size>
-std::ostream & operator << (std::ostream &out, Matrix<Size> const &mat); /* Przeciazenie operatora << sluzace wyswietlaniu macierzy */ 
+/*! \brief Przeciazenie operatora << sluzace wyswietlaniu macierzy */
 
 template <unsigned int Size>
-std::istream & operator >> (std::istream &in, Matrix<Size> &mat);        /* Przeciazenie operatora >> sluzace wczytywaniu wartosci do macierzy */ 
+std::ostream & operator << (std::ostream &out, Matrix<Size> const &mat);  
 
-/******************************************************************************
- |  Konstruktor klasy Matrix.                                                 |
- |  Argumenty:                                                                |
- |      Brak argumentow.                                                      |
- |  Zwraca:                                                                   |
- |      Macierz wypelnione wartoscia 0.                                       |
- */
+/*! \brief Przeciazenie operatora >> sluzace wczytywaniu wartosci do macierzy */
+template <unsigned int Size>
+std::istream & operator >> (std::istream &in, Matrix<Size> &mat);        
+
+/*!
+    \brief Konstruktor klasy Matrix.                                                 
+                                                                                                
+    \return  Macierz wypelnione wartoscia 0.                                       
+*/
+
 template <unsigned int Size>
 Matrix<Size>::Matrix(){
     for (unsigned int i = 0; i < Size; ++i){
@@ -66,13 +87,14 @@ Matrix<Size>::Matrix(){
     }
 }
 
-/******************************************************************************
- |  Konstruktor parametryczny klasy Matrix.                                   |
- |  Argumenty:                                                                |
- |      tmp - dwuwymiarowa tablica z elementami typu double.                  |
- |  Zwraca:                                                                   |
- |      Macierz wypelniona wartosciami podanymi w argumencie.                 |
- */
+/*!
+    Konstruktor parametryczny klasy Matrix.                                                                                                   
+    
+    \param[in] tmp - dwuwymiarowa tablica z elementami typu double.                  
+                                                                  
+    \return  Macierz wypelniona wartosciami podanymi w argumencie.                 
+*/
+
 template <unsigned int Size>
 Matrix<Size>::Matrix(double tmp[Size][Size]){
     for (unsigned int i = 0; i < Size; ++i){
@@ -82,14 +104,15 @@ Matrix<Size>::Matrix(double tmp[Size][Size]){
     }
 }
 
-/******************************************************************************
- |  Realizuje mnozenie macierzy przez wektor.                                 |
- |  Argumenty:                                                                |
- |      this - macierz, czyli pierwszy skladnik mnozenia,                     |
- |      v - wektor, czyli drugi skladnik mnozenia.                            |
- |  Zwraca:                                                                   |
- |      Iloczyn dwoch skladnikow przekazanych jako wektor.                    |
- */
+/*!
+    Realizuje mnozenie macierzy przez wektor.                                 
+                                                                   
+    \param[in]    this - macierz, czyli pierwszy skladnik mnozenia,                     
+    \param[in]    v - wektor, czyli drugi skladnik mnozenia.                            
+                                                                   
+    \return  Iloczyn dwoch skladnikow przekazanych jako wektor.                    
+*/
+
 template <unsigned int Size>
 Vector<Size> Matrix<Size>::operator * (Vector<Size> const &tmp){
     Vector<Size> result;
@@ -100,6 +123,15 @@ Vector<Size> Matrix<Size>::operator * (Vector<Size> const &tmp){
     }
     return result; 
 }
+
+/*!
+    Realizuje mnozenie macierzy przez macierz.                                 
+                                                                   
+    \param[in]    this - macierz, czyli pierwszy skladnik mnozenia,                     
+    \param[in]   tmp - macierz, czyli drugi skladnik mnozenia.                            
+                                                                   
+    \return  result - Iloczyn dwoch skladnikow przekazanych jako macierz.                    
+*/
 
 template <unsigned int Size>
 Matrix<Size> Matrix<Size>::operator * (Matrix<Size> const &tmp){
@@ -115,6 +147,15 @@ Matrix<Size> Matrix<Size>::operator * (Matrix<Size> const &tmp){
     return result; 
 }
 
+/*!
+    Realizuje dzielenie macierzy przez wartosc typu double.                                 
+                                                                   
+    \param[in] this - macierz, czyli pierwszy skladnik mnozenia,                     
+    \param[in] tmp - double, czyli dzielnik macierzy.                            
+                                                                   
+    \return  result - Iloraz macierzy i skalara przekazanych jako macierz.                    
+*/
+
 template <unsigned int Size>
 Matrix<Size> Matrix<Size>::operator / (const double &tmp){
     Matrix<Size> result;
@@ -127,6 +168,12 @@ Matrix<Size> Matrix<Size>::operator / (const double &tmp){
     return result;
 }
 
+/*!
+    Realizuje czyszczenie macierzy, przywracajac ja do stanu macierzy jednykowej.                                 
+                                                                       
+    \return  Macierz jedynkowa.                    
+*/
+
 template <unsigned int Size>
 Matrix<Size> Matrix<Size>::reset_matrix(){
     for (unsigned int i = 0; i < Size; ++i){
@@ -137,6 +184,15 @@ Matrix<Size> Matrix<Size>::reset_matrix(){
     return *this;
 }
 
+/*!
+    Realizuje porownywanie wartosci w dwoch macierzach.                                 
+                                                                   
+    \param[in]   this - macierz, czyli pierwszy skladnik porownania,                     
+    \param[in]   tmp - macierz, czyli drugi skladnik porownania.                            
+                                                                   
+    \return  true - jesli macierze sa rowne.          
+    \return  false - jesli macierze nie sa rowne.           
+*/
 
 template <unsigned int Size>
 bool Matrix<Size>::operator == (Matrix const &tmp){
@@ -148,16 +204,15 @@ bool Matrix<Size>::operator == (Matrix const &tmp){
 }
 
 
-/******************************************************************************
- |  Funktor macierzy                                                          |
- |  Argumenty:                                                                |
- |      row - numer wiersza.                                                  |
- |      column - numer kolumny.                                               |
- |  Zwraca:                                                                   |
- |      Wartosc macierzy w danym miejscu tablicy.                             |
- */
+/*!                                                                                                     
+    \param[in] row - numer wiersza.                                                  
+    \param[in] column - numer kolumny.                                               
+
+    \return Wartosc macierzy w danym miejscu tablicy.                             
+*/
+
 template <unsigned int Size>
-double & Matrix<Size>::operator()(unsigned int row, unsigned int column){
+double & Matrix<Size>::operator ()(unsigned int row, unsigned int column){
     if (row >= Size) 
         throw std::runtime_error("Bledna wartosc indeksu macierzy");
     if (column >= Size)
@@ -166,14 +221,13 @@ double & Matrix<Size>::operator()(unsigned int row, unsigned int column){
 }
 
 
-/******************************************************************************
- |  Funktor macierzy                                                          |
- |  Argumenty:                                                                |
- |      row - numer wiersza.                                                  |
- |      column - numer kolumny.                                               |
- |  Zwraca:                                                                   |
- |      Wartosc macierzy w danym miejscu tablicy jako stala.                  |
- */
+/*!                                  
+    \param[in] row - numer wiersza.                                                  
+    \param[in] column - numer kolumny.                                               
+                                                                     
+    \return Wartosc macierzy w danym miejscu tablicy jako stala.                  
+*/
+
 template <unsigned int Size>
 const double & Matrix<Size>::operator ()(unsigned int row, unsigned int column) const{
     if (row >= Size)
@@ -183,14 +237,15 @@ const double & Matrix<Size>::operator ()(unsigned int row, unsigned int column) 
     return value[row][column];
 }
 
-/******************************************************************************
- |  Przeciążenie dodawania macierzy                                           |
- |  Argumenty:                                                                |
- |      this - macierz, czyli pierwszy skladnik dodawania,                    |
- |      v - wektor, czyli drugi skladnik dodawania.                           |
- |  Zwraca:                                                                   |
- |      Macierz - iloczyn dwóch podanych macierzy.                            |
- */
+/*!
+    Przeciążenie dodawania macierzy  
+                                                             
+    \param[in] this - macierz, czyli pierwszy skladnik dodawania,                    
+    \param[in] v - wektor, czyli drugi skladnik dodawania.                           
+                                                                   
+    \return  Macierz - suma dwóch podanych macierzy.                            
+*/
+
 template <unsigned int Size>
 Matrix<Size> Matrix<Size>::operator + (Matrix<Size> const &tmp){
     Matrix result;
@@ -202,14 +257,15 @@ Matrix<Size> Matrix<Size>::operator + (Matrix<Size> const &tmp){
     return result;
 }
 
-/******************************************************************************
- |  Przeciazenie operatora >>                                                 |
- |  Argumenty:                                                                |
- |      in - strumien wyjsciowy,                                              |
- |      mat - macierz.                                                        |
- */
+/*!
+    Przeciazenie operatora >>                                                                                                                 
+    
+    \param[in]    in - strumien wyjsciowy,                                              
+    \param[in]    mat - macierz.                                                        
+*/
+
 template <unsigned int Size>
-std::istream & operator>>(std::istream &in, Matrix<Size> &mat){
+std::istream & operator >> (std::istream &in, Matrix<Size> &mat){
     for (unsigned int i = 0; i < Size; ++i){
         for (unsigned int j = 0; j < Size; ++j){
             in >> mat(i, j);
@@ -220,43 +276,20 @@ std::istream & operator>>(std::istream &in, Matrix<Size> &mat){
     return in;
 }
 
-/******************************************************************************
- |  Przeciazenie operatora <<                                                 |
- |  Argumenty:                                                                |
- |      out - strumien wejsciowy,                                             |
- |      mat - macierz.                                                        |
+/*!
+    Przeciazenie operatora <<                                                 
+
+    \param[in] out - strumien wejsciowy,                                             
+    \param[in] mat - macierz.                                                        
  */
+
 template <unsigned int Size>
-std::ostream & operator<<(std::ostream &out, const Matrix<Size> &mat){
+std::ostream & operator << (std::ostream &out, const Matrix<Size> &mat){
     for (unsigned int i = 0; i < Size; ++i){
         for (unsigned int j = 0; j < Size; ++j){
-            out << "| " << mat(i, j) << " | "; //warto ustalic szerokosc wyswietlania dokladnosci liczb
+            out << " " << mat(i, j) << "  "; //warto ustalic szerokosc wyswietlania dokladnosci liczb
         }
         std::cout << std::endl;
     }
     return out;
-}
-
-/********************************************************************************************
- |  Metoda klasy Matrix obliczajaca wyznacznik macierzy z uzyciem metody eliminacji Gaussa  |
- |  Argumenty:                                                                              |
- |      this - macierz, ktorej wyznacznik bedzie obliczany.                                 |
- |  Zwraca:                                                                                 |
- |      Wartosc wyznacznika macierzy typu double                                            |
- */
-template <unsigned int Size>
-double Matrix<Size>::determinant_of_the_matrix() const{
-    double ratio;
-    Matrix temp_matrix = *this; /* Stworzenie nowej tymczasowej macierzy sluzacej do obliczen */
-    for(unsigned int i = 0; i < Size; i++){
-        if(temp_matrix(i,i) == 0.0)
-            throw std::runtime_error(":/ Podczas wyznaczania wyznacznika, napotkano 0 w macierzy ");
-        for(unsigned int j = i + 1; j < Size; j++){
-            ratio = temp_matrix(j,i) / temp_matrix(i,i);
-            for(unsigned int k = 0; k < Size; k++){
-                temp_matrix(j,k) -=  ratio * value[i][k];
-            }
-        }
-    }
-    return temp_matrix(0,0) * temp_matrix(1,1);
 }

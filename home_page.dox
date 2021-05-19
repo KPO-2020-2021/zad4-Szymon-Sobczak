@@ -1,0 +1,15 @@
+/*!
+    \mainpage Rotacja3D - Zadanie 4.
+    
+    \author Szymon Sobczak nr 259275
+    \date 24.05.2021
+    \version 1.0
+
+    Aplikacja realizuje rotację prostopadłościanu wokół osi. 
+    
+    \section etykieta-cel-cw Cel ćwiczenia
+    Wykształcenie umiejętnosci modelowania kluczowych dla danego problemu pojęć.\n
+    Geberowanienie dokumentacji z wykorzystaniem systemu doxygen. 
+
+    \section etykieta-najw-elem Najwazniejsze elementy
+*/

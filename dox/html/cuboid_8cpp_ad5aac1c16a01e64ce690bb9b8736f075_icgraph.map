@@ -1,0 +1,4 @@
+<map id="orientation" name="orientation">
+<area shape="rect" id="node1" title="Funkcja pomocnicza metody detekcji kolizji, sluzy do sprawdzenia orientacji polozenia 3 punktow...." alt="" coords="183,5,276,32"/>
+<area shape="rect" id="node2" href="$class_cuboid.html#a577685d1e3f426bd334261ea1cfc1dd9" title="Detekcja kolizji dwoch prostokatow." alt="" coords="5,5,135,32"/>
+</map>

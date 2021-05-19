@@ -17,7 +17,6 @@ class Scene{
         std::vector <Cuboid> solid_figures;
         std::vector <Matrix3x3> Rotation_matrix;
         std::vector <Vector3D> Translation_vector;
-        
     public:
         Scene();
         ~Scene();

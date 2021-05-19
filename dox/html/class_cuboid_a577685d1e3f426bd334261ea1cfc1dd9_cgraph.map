@@ -1,0 +1,5 @@
+<map id="Cuboid::collision" name="Cuboid::collision">
+<area shape="rect" id="node1" title="Detekcja kolizji dwoch prostokatow." alt="" coords="5,31,135,57"/>
+<area shape="rect" id="node2" href="$cuboid_8cpp.html#a7799f3552ea11206bbaa6c24fb1e5021" title="Funkcja pomocnicza metody detekcji kolizji, sluzy do sprawdzenia, czy punkt q lezy na odcingu pr...." alt="" coords="183,5,279,32"/>
+<area shape="rect" id="node3" href="$cuboid_8cpp.html#ad5aac1c16a01e64ce690bb9b8736f075" title="Funkcja pomocnicza metody detekcji kolizji, sluzy do sprawdzenia orientacji polozenia 3 punktow...." alt="" coords="184,56,277,83"/>
+</map>

@@ -3,6 +3,7 @@
 /* Executables must have the following defined if the library contains
 doctest definitions. For builds with this disabled, e.g. code shipped to
 users, this can be left out. */
+
 #ifdef ENABLE_DOCTEST_IN_LIBRARY
 #define DOCTEST_CONFIG_IMPLEMENT
 #include "../tests/doctest/doctest.h"
@@ -41,26 +42,26 @@ int main(){
     adresses_of_files.push_back("../datasets/cuboid1.dat");
       
     /*!
-        Wspolrzedne wierzcholkow beda zapisywane w pliku "prostokat.dat"           
-        Ponizsze metody powoduja, ze dane z pliku beda wizualizowane na dwa sposoby:
-        1.Rysowane jako linia ciagla o grubosci 2 piksele                           
-    */
+     *  Wspolrzedne wierzcholkow beda zapisywane w pliku "prostokat.dat"    
+     *  Ponizsze metody powoduja, ze dane z pliku beda wizualizowane na dwa sposoby:
+     *  1.Rysowane jako linia ciagla o grubosci 2 piksele         
+     *                
+     */
    
     std::cout << adresses_of_files[active_cuboid] << std::endl;
     Link.DodajNazwePliku(adresses_of_files.at(0).c_str(),PzG::RR_Ciagly,2);
     std::cout << adresses_of_files[active_cuboid].c_str() << std::endl;
 
     /*!
-        Ustawienie trybu rysowania gnuplot na 3D.                                   
-    */
+     *  Ustawienie trybu rysowania gnuplot na 3D.                                   
+     */
+    
     Link.ZmienTrybRys(PzG::TR_3D);
 
-    Link.UstawZakresY(-310,310);
-    Link.UstawZakresX(-310,310);
-    Link.UstawZakresZ(-310,310); 
+    Link.UstawZakresY(-255,255);
+    Link.UstawZakresX(-255,255);
+    Link.UstawZakresZ(-255,255); 
 
-
-    
     try{
         Scenery[active_cuboid].Write_cub_to_file(adresses_of_files.at(active_cuboid).c_str()); /* Wyswietlenie w GNUplot stanu poczatkowego prostokata */
         Link.Rysuj();
