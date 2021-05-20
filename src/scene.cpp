@@ -38,9 +38,9 @@ Scene::~Scene(){
 */
 
 const Cuboid & Scene::operator [] (unsigned int index) const{
-    if (index>=solid_figures.size())
+    if (index>=set_of_cuboids.size())
         throw std::runtime_error("Bledna wartosc indeksu macierzy");
-    return solid_figures.at(index);
+    return set_of_cuboids.at(index);
 }
 
 /*!
@@ -52,7 +52,7 @@ const Cuboid & Scene::operator [] (unsigned int index) const{
 */
 
 Matrix3x3 Scene::get_matrix(unsigned int index){
-    return Rotation_matrix.at(index);
+    return set_of_rotation_matrixes.at(index);
 }
 
 /*!
@@ -65,7 +65,7 @@ Matrix3x3 Scene::get_matrix(unsigned int index){
 
 void Scene::update_matrix(Matrix3x3 const & mtx, unsigned int index){
     Matrix3x3 temp_matrix = mtx;
-    Rotation_matrix.at(index) = temp_matrix * Rotation_matrix.at(index);
+    set_of_rotation_matrixes.at(index) = temp_matrix * set_of_rotation_matrixes.at(index);
 }
 
 /*!
@@ -78,7 +78,7 @@ void Scene::update_matrix(Matrix3x3 const & mtx, unsigned int index){
 
 void Scene::update_vector(Vector3D const & vec, unsigned int index){
     Vector3D temp_vector = vec;
-    Translation_vector.at(index) = Translation_vector.at(index) + temp_vector;
+    set_of_translation_vectors.at(index) = set_of_translation_vectors.at(index) + temp_vector;
 }
 
 /*!
@@ -88,7 +88,7 @@ void Scene::update_vector(Vector3D const & vec, unsigned int index){
 */
 
 void Scene::Move_figure(unsigned int index){
-    solid_figures.at(index).Move_cuboid(Translation_vector.at(index), Rotation_matrix.at(index));
+    set_of_cuboids.at(index).Move_cuboid(set_of_translation_vectors.at(index), set_of_rotation_matrixes.at(index));
 }
 
 /*!
@@ -98,7 +98,7 @@ void Scene::Move_figure(unsigned int index){
 */
 
 unsigned int Scene::how_many_cuboids(){
-    return solid_figures.size();
+    return set_of_cuboids.size();
 }
 
 /*!
@@ -130,7 +130,7 @@ void Scene::Add_cuboid(Vector3D const & center, double const & tra_OX, double co
     Cuboid cuboid_dummy(cub_apx[0], cub_apx[1], cub_apx[2], cub_apx[3], cub_apx[4], cub_apx[5], cub_apx[6], cub_apx[7], center);
 
 
-    solid_figures.push_back(cuboid_dummy); 
-    Rotation_matrix.push_back(Matrix3x3());
-    Translation_vector.push_back(Vector3D());   
+    set_of_cuboids.push_back(cuboid_dummy); 
+    set_of_rotation_matrixes.push_back(Matrix3x3());
+    set_of_translation_vectors.push_back(Vector3D());   
 }

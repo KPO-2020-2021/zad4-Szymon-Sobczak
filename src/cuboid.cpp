@@ -16,6 +16,7 @@
 Cuboid::Cuboid(){
     for (int i=0;i<CORNERS;i++)
         Corners[i] = Vector3D();    
+    center_of_cub =  Vector3D();
 }
  
 /*!

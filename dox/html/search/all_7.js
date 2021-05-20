@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['get_5fmatrix_45',['get_matrix',['../class_scene.html#a9e078c0611ab336b747641cd566837d7',1,'Scene']]]
+  ['home_5fpage_2edox_42',['home_page.dox',['../home__page_8dox.html',1,'']]],
+  ['how_5fmany_5fcuboids_43',['how_many_cuboids',['../class_scene.html#a8acb4afea40217735406565926c4ba07',1,'Scene']]]
 ];

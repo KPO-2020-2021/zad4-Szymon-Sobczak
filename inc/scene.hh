@@ -38,13 +38,13 @@
 class Scene{
     private:
         /*! \brief Pole klasy reprezentujace zbior poszczególnych prostopadloscianow na scenie. */
-        std::vector <Cuboid> solid_figures;
+        std::vector <Cuboid> set_of_cuboids;
         
         /*! \brief Pole klasy reprezentujace zbior macierzy rotacji dla poszczególnych prostopadloscianow na scenie. */
-        std::vector <Matrix3x3> Rotation_matrix;
+        std::vector <Matrix3x3> set_of_rotation_matrixes;
 
         /*! \brief Pole klasy reprezentujace zbior wektorow przesuniecia dla poszczególnych prostopadloscianow na scenie. */
-        std::vector <Vector3D> Translation_vector;
+        std::vector <Vector3D> set_of_translation_vectors;
 
     public:
         /*! \brief Konstruktor bezparametryczny. */

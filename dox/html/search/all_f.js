@@ -1,16 +1,15 @@
 var searchData=
 [
-  ['rotacja3d_20_2d_20zadanie_204_2e_86',['Rotacja3D - Zadanie 4.',['../index.html',1,'']]],
-  ['readme_2emd_87',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['reset_5fmatrix_88',['reset_matrix',['../class_matrix.html#ab44f2b44f6003b43b11e24b0e2fa601e',1,'Matrix']]],
-  ['rodzajrysowania_89',['RodzajRysowania',['../namespace_pz_g.html#a705c92106f39b7d0c34a6739d10ff0b6',1,'PzG']]],
-  ['rotacjax_90',['RotacjaX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#addf0b844f626f3f5220de70efcbbdbb3',1,'PzG::LaczeDoGNUPlota']]],
-  ['rotacjaz_91',['RotacjaZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9dac73754fab10644b287756003e9c79',1,'PzG::LaczeDoGNUPlota']]],
-  ['rotation_5fmatrix_92',['Rotation_matrix',['../class_scene.html#a1c4fa73b9751882663c9508bbdf1f080',1,'Scene']]],
-  ['rotation_5fmatrix_5f2x2_93',['Rotation_matrix_2x2',['../matrix2x2_8hh.html#a8b3fdc42844a013a595f1daadae284b6',1,'Rotation_matrix_2x2(double const angle):&#160;matrix2x2.cpp'],['../matrix2x2_8cpp.html#a8b3fdc42844a013a595f1daadae284b6',1,'Rotation_matrix_2x2(double const angle):&#160;matrix2x2.cpp']]],
-  ['roz_5flinii_94',['ROZ_LINII',['../lacze__do__gnuplota_8cpp.html#a2b501945c8d86114fcf6420cc1ee6306',1,'lacze_do_gnuplota.cpp']]],
-  ['rr_5fciagly_95',['RR_Ciagly',['../namespace_pz_g.html#a705c92106f39b7d0c34a6739d10ff0b6a927eaa159aa4bd3198f0a330b967746d',1,'PzG']]],
-  ['rr_5fpunktowy_96',['RR_Punktowy',['../namespace_pz_g.html#a705c92106f39b7d0c34a6739d10ff0b6aa01097ee8266d6402b752ef6f9a4690c',1,'PzG']]],
-  ['rysuj_97',['Rysuj',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335',1,'PzG::LaczeDoGNUPlota']]],
-  ['rysujdopliku_98',['RysujDoPliku',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#addae9ac156ae2fb227f792faff3aa148',1,'PzG::LaczeDoGNUPlota']]]
+  ['scene_94',['Scene',['../class_scene.html',1,'Scene'],['../class_scene.html#ad10176d75a9cc0da56626f682d083507',1,'Scene::Scene()']]],
+  ['scene_2ecpp_95',['scene.cpp',['../scene_8cpp.html',1,'']]],
+  ['scene_2ehh_96',['scene.hh',['../scene_8hh.html',1,'']]],
+  ['set_5fof_5fcuboids_97',['set_of_cuboids',['../class_scene.html#ad3f831ed2a2f03fd98c8c96ce96a4c6e',1,'Scene']]],
+  ['set_5fof_5frotation_5fmatrixes_98',['set_of_rotation_matrixes',['../class_scene.html#a3552b200483b806d6ac71f4065d2d2c3',1,'Scene']]],
+  ['set_5fof_5ftranslation_5fvectors_99',['set_of_translation_vectors',['../class_scene.html#a25b1d860ad24cd170cf63de8c6342100',1,'Scene']]],
+  ['size_100',['size',['../class_vector.html#af8d2f9e7e9102eb94607a5292a72f068',1,'Vector']]],
+  ['size_2ehh_101',['size.hh',['../size_8hh.html',1,'']]],
+  ['skalax_102',['SkalaX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a4b1eb252fd785a5aeff938e7b2dce2b1',1,'PzG::LaczeDoGNUPlota']]],
+  ['skalaz_103',['SkalaZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a44f922ccbc508d6cd7809c669238dae3',1,'PzG::LaczeDoGNUPlota']]],
+  ['stdin_104',['STDIN',['../lacze__do__gnuplota_8cpp.html#ac00bfb46347d26fdc58568fe1ab5fa5b',1,'lacze_do_gnuplota.cpp']]],
+  ['stdout_105',['STDOUT',['../lacze__do__gnuplota_8cpp.html#a8875037d0772a4fc34516f1e03d7e238',1,'lacze_do_gnuplota.cpp']]]
 ];

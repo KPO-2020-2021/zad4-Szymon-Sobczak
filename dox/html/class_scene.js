@@ -9,7 +9,7 @@ var class_scene =
     [ "operator[]", "class_scene.html#a8ebc2585d304df85402ffc45cb76c4e3", null ],
     [ "update_matrix", "class_scene.html#ab1474297a3dd7a45e2161ace73354291", null ],
     [ "update_vector", "class_scene.html#aeb561fa13f66e613c1e20c51b9776aa2", null ],
-    [ "Rotation_matrix", "class_scene.html#a1c4fa73b9751882663c9508bbdf1f080", null ],
-    [ "solid_figures", "class_scene.html#a240af64a8a8e1a3a95e394c945923e74", null ],
-    [ "Translation_vector", "class_scene.html#a8a060c73681f6a19fa5d3a71ff41e284", null ]
+    [ "set_of_cuboids", "class_scene.html#ad3f831ed2a2f03fd98c8c96ce96a4c6e", null ],
+    [ "set_of_rotation_matrixes", "class_scene.html#a3552b200483b806d6ac71f4065d2d2c3", null ],
+    [ "set_of_translation_vectors", "class_scene.html#a25b1d860ad24cd170cf63de8c6342100", null ]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rotacja3d_20_2d_20zadanie_204_2e_315',['Rotacja3D - Zadanie 4.',['../index.html',1,'']]]
+  ['rotacja3d_20_2d_20zadanie_204_2e_306',['Rotacja3D - Zadanie 4.',['../index.html',1,'']]]
 ];

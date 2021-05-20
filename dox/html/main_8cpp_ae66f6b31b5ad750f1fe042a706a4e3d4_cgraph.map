@@ -1,7 +1,7 @@
 <map id="main" name="main">
 <area shape="rect" id="node1" title="Glowna funkcja programu." alt="" coords="5,375,60,402"/>
 <area shape="rect" id="node2" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a34bd48f57c0fd69c12bf4127a1cacd8f" title="Dodaje nazwę pliku." alt="" coords="120,5,293,47"/>
-<area shape="rect" id="node4" href="$matrix4x4_8hh.html#a1dacdc838115fb081f39421e5329ea0a" title=" " alt="" coords="110,71,303,98"/>
+<area shape="rect" id="node4" href="$matrix4x4_8hh.html#a1dacdc838115fb081f39421e5329ea0a" title="Funkcja wypelniajaca Matrix4x4 wartosciaciami polaczonej macierzy obrotu i translacji dla zadanych ka..." alt="" coords="110,71,303,98"/>
 <area shape="rect" id="node5" href="$matrix3x3_8hh.html#a8ec09e862d862c55ce380b0479a7f831" title="Funkcja wypelniajaca Matrix3x3 wartosciaciami macierzy obrotu 3D w osi OX, dla zadanego kata." alt="" coords="148,122,265,149"/>
 <area shape="rect" id="node6" href="$matrix3x3_8hh.html#a027d7f5b7cb4dbdc9e95cc6b5871f7d8" title="Funkcja wypelniajaca Matrix3x3 wartosciaciami macierzy obrotu 3D w osi OY, dla zadanego kata." alt="" coords="149,173,265,199"/>
 <area shape="rect" id="node7" href="$matrix3x3_8hh.html#a09eb2fbe2cced0556e119e17cd95a8dd" title="Funkcja wypelniajaca Matrix3x3 wartosciaciami macierzy obrotu 3D w osi OZ, dla zadanego kata." alt="" coords="148,223,265,250"/>

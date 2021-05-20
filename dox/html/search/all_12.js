@@ -1,18 +1,12 @@
 var searchData=
 [
-  ['uruchamianie_20programu_113',['Uruchamianie Programu',['../md__r_e_a_d_m_e.html',1,'']]],
-  ['update_5fmatrix_114',['update_matrix',['../class_scene.html#ab1474297a3dd7a45e2161ace73354291',1,'Scene']]],
-  ['update_5fvector_115',['update_vector',['../class_scene.html#aeb561fa13f66e613c1e20c51b9776aa2',1,'Scene']]],
-  ['ustawrotacjex_116',['UstawRotacjeX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a88324c53a70846fb6bc9d918ce21fd56',1,'PzG::LaczeDoGNUPlota']]],
-  ['ustawrotacjexz_117',['UstawRotacjeXZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a94d8527fd78048ed6cb32ffb29e5f903',1,'PzG::LaczeDoGNUPlota']]],
-  ['ustawrotacjez_118',['UstawRotacjeZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a458399aa2a8f4b3f00ccd5b272857ea1',1,'PzG::LaczeDoGNUPlota']]],
-  ['ustawskalex_119',['UstawSkaleX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a855b8338bfe3e5d294d719f24b11090e',1,'PzG::LaczeDoGNUPlota']]],
-  ['ustawskalexz_120',['UstawSkaleXZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a4308151b54e105d302803146a3238699',1,'PzG::LaczeDoGNUPlota']]],
-  ['ustawskalez_121',['UstawSkaleZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#ab0486db3166d8db6580a221079af241f',1,'PzG::LaczeDoGNUPlota']]],
-  ['ustawzakresx_122',['UstawZakresX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9c91987dfc869d6fcea96205c581daef',1,'PzG::LaczeDoGNUPlota']]],
-  ['ustawzakresy_123',['UstawZakresY',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a54c6e9cf9ab2eae479451fd953c2717c',1,'PzG::LaczeDoGNUPlota']]],
-  ['ustawzakresz_124',['UstawZakresZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a1dbbb2b86fb13b8632e6bad9df2a82e3',1,'PzG::LaczeDoGNUPlota']]],
-  ['usunostatnianazwe_125',['UsunOstatniaNazwe',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a75f599f17413ea8602c6dbba09f36407',1,'PzG::LaczeDoGNUPlota']]],
-  ['usunwszystkienazwyplikow_126',['UsunWszystkieNazwyPlikow',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a89a1d90d017d264cd26398464d074073',1,'PzG::LaczeDoGNUPlota']]],
-  ['utworzprocespotomny_127',['UtworzProcesPotomny',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a1c7b9acc40de8d8bbb40fb0722512933',1,'PzG::LaczeDoGNUPlota']]]
+  ['value_124',['value',['../class_matrix.html#a10f33870797838072ca4ea56bd5fe56c',1,'Matrix']]],
+  ['vector_125',['Vector',['../class_vector.html',1,'Vector&lt; Size &gt;'],['../class_vector.html#a14c3a232bcf39100618dffbbf11b16d1',1,'Vector::Vector()'],['../class_vector.html#a160ceaa8e66ee7cf79ae1668247ce14b',1,'Vector::Vector(double[Size])']]],
+  ['vector_2ehh_126',['vector.hh',['../vector_8hh.html',1,'']]],
+  ['vector2d_127',['Vector2D',['../vector2_d_8hh.html#af4760457e8ece71e04104c08ad65bbce',1,'vector2D.hh']]],
+  ['vector2d_2ehh_128',['vector2D.hh',['../vector2_d_8hh.html',1,'']]],
+  ['vector3d_129',['Vector3D',['../vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0',1,'vector3D.hh']]],
+  ['vector3d_2ehh_130',['vector3D.hh',['../vector3_d_8hh.html',1,'']]],
+  ['vector_3c_203_20_3e_131',['Vector&lt; 3 &gt;',['../class_vector.html',1,'']]],
+  ['vector_5flength_132',['vector_length',['../vector_8hh.html#a929ea1c63656cd8395d15f97393c4f65',1,'vector.hh']]]
 ];

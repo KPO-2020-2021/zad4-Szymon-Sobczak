@@ -1,8 +1,15 @@
 var searchData=
 [
-  ['pokazos_5fox_81',['PokazOs_OX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a11421d7c67deab6b7524cc492407e897',1,'PzG::LaczeDoGNUPlota::PokazOs_OX(bool Pokaz)'],['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#ae112972af57167c3b053bf922bce6bbf',1,'PzG::LaczeDoGNUPlota::PokazOs_OX() const']]],
-  ['pokazos_5foy_82',['PokazOs_OY',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a7c3db909b266fc30808e86406c04b516',1,'PzG::LaczeDoGNUPlota::PokazOs_OY(bool Pokaz)'],['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a7298f469f6932f5c808dcf620650b4b8',1,'PzG::LaczeDoGNUPlota::PokazOs_OY() const']]],
-  ['pokazos_5foz_83',['PokazOs_OZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9fabfe88cb1801a5de8923f45f514b99',1,'PzG::LaczeDoGNUPlota::PokazOs_OZ(bool Pokaz)'],['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a22c708af33c57bf3b5d1b4e82b4017b7',1,'PzG::LaczeDoGNUPlota::PokazOs_OZ() const']]],
-  ['przeslijdognuplota_84',['PrzeslijDoGNUPlota',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a5063854b7232a7951d120a21df63f2b7',1,'PzG::LaczeDoGNUPlota']]],
-  ['pzg_85',['PzG',['../namespace_pz_g.html',1,'']]]
+  ['rotacja3d_20_2d_20zadanie_204_2e_82',['Rotacja3D - Zadanie 4.',['../index.html',1,'']]],
+  ['readme_2emd_83',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['reset_5fmatrix_84',['reset_matrix',['../class_matrix.html#ab44f2b44f6003b43b11e24b0e2fa601e',1,'Matrix']]],
+  ['rodzajrysowania_85',['RodzajRysowania',['../namespace_pz_g.html#a705c92106f39b7d0c34a6739d10ff0b6',1,'PzG']]],
+  ['rotacjax_86',['RotacjaX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#addf0b844f626f3f5220de70efcbbdbb3',1,'PzG::LaczeDoGNUPlota']]],
+  ['rotacjaz_87',['RotacjaZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9dac73754fab10644b287756003e9c79',1,'PzG::LaczeDoGNUPlota']]],
+  ['rotation_5fmatrix_5f2x2_88',['Rotation_matrix_2x2',['../matrix2x2_8hh.html#a8b3fdc42844a013a595f1daadae284b6',1,'Rotation_matrix_2x2(double const angle):&#160;matrix2x2.cpp'],['../matrix2x2_8cpp.html#a8b3fdc42844a013a595f1daadae284b6',1,'Rotation_matrix_2x2(double const angle):&#160;matrix2x2.cpp']]],
+  ['roz_5flinii_89',['ROZ_LINII',['../lacze__do__gnuplota_8cpp.html#a2b501945c8d86114fcf6420cc1ee6306',1,'lacze_do_gnuplota.cpp']]],
+  ['rr_5fciagly_90',['RR_Ciagly',['../namespace_pz_g.html#a705c92106f39b7d0c34a6739d10ff0b6a927eaa159aa4bd3198f0a330b967746d',1,'PzG']]],
+  ['rr_5fpunktowy_91',['RR_Punktowy',['../namespace_pz_g.html#a705c92106f39b7d0c34a6739d10ff0b6aa01097ee8266d6402b752ef6f9a4690c',1,'PzG']]],
+  ['rysuj_92',['Rysuj',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335',1,'PzG::LaczeDoGNUPlota']]],
+  ['rysujdopliku_93',['RysujDoPliku',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#addae9ac156ae2fb227f792faff3aa148',1,'PzG::LaczeDoGNUPlota']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['infoplikudorysowania_157',['InfoPlikuDoRysowania',['../class_pz_g_1_1_info_pliku_do_rysowania.html',1,'PzG']]]
+  ['laczedognuplota_153',['LaczeDoGNUPlota',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html',1,'PzG']]]
 ];

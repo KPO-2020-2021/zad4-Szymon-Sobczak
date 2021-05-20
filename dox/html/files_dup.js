@@ -2,10 +2,6 @@ var files_dup =
 [
     [ "cuboid.cpp", "cuboid_8cpp.html", "cuboid_8cpp" ],
     [ "cuboid.hh", "cuboid_8hh.html", "cuboid_8hh" ],
-    [ "example.cpp", "example_8cpp.html", null ],
-    [ "example.h", "example_8h.html", [
-      [ "Dummy", "class_dummy.html", "class_dummy" ]
-    ] ],
     [ "lacze_do_gnuplota.cpp", "lacze__do__gnuplota_8cpp.html", "lacze__do__gnuplota_8cpp" ],
     [ "lacze_do_gnuplota.hh", "lacze__do__gnuplota_8hh.html", "lacze__do__gnuplota_8hh" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],

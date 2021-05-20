@@ -11,7 +11,7 @@
 <area shape="rect" id="node10" href="$vector_8hh.html" title=" " alt="" coords="632,379,715,405"/>
 <area shape="rect" id="node14" href="$matrix_8hh.html" title=" " alt="" coords="377,304,463,331"/>
 <area shape="rect" id="node16" href="$vector3_d_8hh.html" title="Plik zawierajacy definicje konkretyzacji szablonu klasy Vector do instancji Vector3D &#45; wektora o dlug..." alt="" coords="277,229,379,256"/>
-<area shape="rect" id="node17" href="$matrix4x4_8hh.html" title=" " alt="" coords="277,155,387,181"/>
+<area shape="rect" id="node17" href="$matrix4x4_8hh.html" title="Plik zawiera definicje konkretyzacji szablonu Matrix do postaci macierzy 4x4 oraz funkcji wypelniajac..." alt="" coords="277,155,387,181"/>
 <area shape="rect" id="node18" href="$matrix3x3_8hh.html" title="Plik zawierajacy definicje konkretyzacji szablonu klasy Matrix do instancji Matrix2x2 &#45; macierzy kwad..." alt="" coords="403,229,512,256"/>
 <area shape="rect" id="node19" href="$matrix2x2_8hh.html" title="Plik zawierajacy definicje konkretyzacji szablonu klasy Matrix do instancji Matrix2x2 &#45; macierzy kwad..." alt="" coords="43,155,152,181"/>
 <area shape="rect" id="node20" href="$cuboid_8hh.html" title="Definicja klasy Cuboid." alt="" coords="680,155,765,181"/>

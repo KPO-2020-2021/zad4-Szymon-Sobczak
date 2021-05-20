@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['value_128',['value',['../class_matrix.html#a10f33870797838072ca4ea56bd5fe56c',1,'Matrix']]],
-  ['vector_129',['Vector',['../class_vector.html',1,'Vector&lt; Size &gt;'],['../class_vector.html#a14c3a232bcf39100618dffbbf11b16d1',1,'Vector::Vector()'],['../class_vector.html#a160ceaa8e66ee7cf79ae1668247ce14b',1,'Vector::Vector(double[Size])']]],
-  ['vector_2ehh_130',['vector.hh',['../vector_8hh.html',1,'']]],
-  ['vector2d_131',['Vector2D',['../vector2_d_8hh.html#af4760457e8ece71e04104c08ad65bbce',1,'vector2D.hh']]],
-  ['vector2d_2ehh_132',['vector2D.hh',['../vector2_d_8hh.html',1,'']]],
-  ['vector3d_133',['Vector3D',['../vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0',1,'vector3D.hh']]],
-  ['vector3d_2ehh_134',['vector3D.hh',['../vector3_d_8hh.html',1,'']]],
-  ['vector_3c_203_20_3e_135',['Vector&lt; 3 &gt;',['../class_vector.html',1,'']]],
-  ['vector_5flength_136',['vector_length',['../vector_8hh.html#a929ea1c63656cd8395d15f97393c4f65',1,'vector.hh']]]
+  ['weznazwepliku_133',['WezNazwePliku',['../class_pz_g_1_1_info_pliku_do_rysowania.html#ac92a5dc258f9b6164631e2ea5247a7a7',1,'PzG::InfoPlikuDoRysowania']]],
+  ['wezrodzrys_134',['WezRodzRys',['../class_pz_g_1_1_info_pliku_do_rysowania.html#a6a46f3c7b7a08dfa9d694f387f873234',1,'PzG::InfoPlikuDoRysowania']]],
+  ['wezszerokosc_135',['WezSzerokosc',['../class_pz_g_1_1_info_pliku_do_rysowania.html#a627bb615c50f3b03374774e6b974488b',1,'PzG::InfoPlikuDoRysowania']]],
+  ['weztrybrys_136',['WezTrybRys',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a7c417f27b4b112f58a5be3ce6ea8d1fe',1,'PzG::LaczeDoGNUPlota']]],
+  ['write_5fcub_5fto_5ffile_137',['Write_cub_to_file',['../class_cuboid.html#aafd7e97dc8f9d48715ad2a6295f0d328',1,'Cuboid']]],
+  ['wyswietlajkomunikatybledow_138',['WyswietlajKomunikatyBledow',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a4531e6d166faf2e2c8bb4a54a9c9e1f8',1,'PzG::LaczeDoGNUPlota']]]
 ];

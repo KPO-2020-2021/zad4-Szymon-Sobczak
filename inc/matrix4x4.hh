@@ -12,4 +12,4 @@
 typedef Matrix<4> Matrix4x4;
 
 /*! \brief Funkcja wypelniajaca Matrix4x4 wartosciaciami polaczonej macierzy obrotu i translacji dla zadanych katow i wektora */
-Matrix4x4 Fill_combined_matrix_4x4(double alpha, double beta, double gamma, Vector3D translation);
+Matrix4x4 Fill_combined_matrix_4x4(double alpha_x, double beta_y, double gamma_z, Vector3D translation);

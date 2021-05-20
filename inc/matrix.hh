@@ -106,8 +106,8 @@ Matrix<Size>::Matrix(double tmp[Size][Size]){
 /*!
     Realizuje mnozenie macierzy przez wektor.                                 
                                                                    
-    \param[in]    this - macierz, czyli pierwszy skladnik mnozenia,                     
-    \param[in]    v - wektor, czyli drugi skladnik mnozenia.                            
+    \param[in] this - macierz, czyli pierwszy skladnik mnozenia,                     
+    \param[in] tmp - wektor, czyli drugi skladnik mnozenia.                            
                                                                    
     \return  Iloczyn dwoch skladnikow przekazanych jako wektor.                    
 */
@@ -126,8 +126,8 @@ Vector<Size> Matrix<Size>::operator * (Vector<Size> const &tmp){
 /*!
     Realizuje mnozenie macierzy przez macierz.                                 
                                                                    
-    \param[in]    this - macierz, czyli pierwszy skladnik mnozenia,                     
-    \param[in]   tmp - macierz, czyli drugi skladnik mnozenia.                            
+    \param[in] this - macierz, czyli pierwszy skladnik mnozenia,                     
+    \param[in] tmp - macierz, czyli drugi skladnik mnozenia.                            
                                                                    
     \return  result - Iloczyn dwoch skladnikow przekazanych jako macierz.                    
 */
@@ -244,7 +244,7 @@ const double & Matrix<Size>::operator ()(unsigned int row, unsigned int column) 
     Przeciążenie operatora dodawania dwoch macierzy.  
                                                              
     \param[in] this - Macierz, czyli pierwszy skladnik dodawania.                    
-    \param[in] v - Wektor, czyli drugi skladnik dodawania.                           
+    \param[in] tmp - Macierz, czyli drugi skladnik dodawania.                           
                                                                    
     \return  Macierz - suma dwóch podanych macierzy.                            
 */
@@ -296,7 +296,7 @@ template <unsigned int Size>
 std::ostream & operator << (std::ostream &out, const Matrix<Size> &mat){
     for (unsigned int i = 0; i < Size; ++i){
         for (unsigned int j = 0; j < Size; ++j){
-            out  << " " << std::fixed << std::setprecision(10) << mat(i, j) << "  "; 
+            out  << " " << std::fixed << std::setprecision(10) << mat(i, j) << "\t"; 
         }
         std::cout << std::endl;
     }

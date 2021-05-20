@@ -37,7 +37,7 @@ int main(){
     
     double val[3]= {1,2,3};
     Vector3D trans(val);
-    Matrix4x4 test_matrix4x4 = Fill_combined_matrix_4x4(90,90,90,trans);
+    Matrix4x4 test_matrix4x4 = Fill_combined_matrix_4x4(30,60,90,trans);
     std::cout << test_matrix4x4;
 
     unsigned int active_cuboid = 0;   /* Inicjalizacja zmiennych tymczasowych */

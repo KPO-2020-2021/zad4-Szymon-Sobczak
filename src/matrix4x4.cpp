@@ -8,37 +8,38 @@
 /*! 
     Funkcja wypelnia macierz o wielkosci 4 wartosciaciami pozwalajacymi obrot wielu osiach i translacje o wektor w 3D, dla zadanch katow i wektora przesuniecia. 
     
-    \param[in] alpha - Kat obrotu wokol osi OX.
-    \param[in] beta - Kat obrotu wokol osi OY.
-    \param[in] gamma - Kat obrotu wokol osi OZ.
+    \param[in] alpha - Kat obrotu wokol osi OX - roll.
+    \param[in] beta - Kat obrotu wokol osi OY - pitch.
+    \param[in] gamma - Kat obrotu wokol osi OZ - yaw.
     \param[in] translation - Wektor przesuniecia.
 
-    \return rotation_matrix - macierz2x2 uzupelniona warosciami rotacji dla zadanego kata.
+    \return rotation_matrix - macierz4x4 uzupelniona warosciami rotacji dla zadanych katow i wektorem przesuniecia.
 */
-Matrix4x4 Fill_combined_matrix_4x4(double alpha, double beta, double gamma, Vector3D translation){
-    Matrix4x4 temp;
+
+Matrix4x4 Fill_combined_matrix_4x4(double alpha_x, double beta_y, double gamma_z, Vector3D translation){
+    Matrix4x4 combined_matrix;
 
     for (unsigned int i = 0; i < 4; ++i)
-        temp(i,i) = 0; 
+        combined_matrix(i,i) = 0; 
         
-    double alpha_rad = alpha * M_PI / 180.0, beta_rad = beta * M_PI / 180.0,gamma_rad = gamma * M_PI / 180.0;;
+    double X_angle = alpha_x * M_PI / 180.0, Y_angle = beta_y * M_PI / 180.0, Z_angle = gamma_z * M_PI / 180.0;
 
-    temp(0,0) = cos(alpha_rad)*cos(beta_rad); 
-    temp(0,1) = cos(alpha_rad)*sin(beta_rad)*sin(gamma_rad)-sin(alpha_rad)*cos(gamma_rad); 
-    temp(0,2) = cos(alpha_rad)*sin(beta_rad)*cos(gamma_rad)+sin(alpha_rad)*sin(gamma_rad); 
-    temp(0,3) = translation[0];
+    combined_matrix(0,0) = cos(Z_angle) * cos(Y_angle); 
+    combined_matrix(0,1) = cos(Z_angle) * sin(Y_angle) * sin(X_angle) - sin(Z_angle) * cos(X_angle); 
+    combined_matrix(0,2) = cos(Z_angle) * sin(Y_angle) * cos(X_angle) + sin(Z_angle) * sin(X_angle); 
+    combined_matrix(0,3) = translation[0];
   
-    temp(1,0) = sin(alpha_rad)*cos(beta_rad); 
-    temp(1,1) = sin(alpha_rad)*sin(beta_rad)*sin(gamma_rad)+cos(alpha_rad)*cos(gamma_rad); 
-    temp(1,2) = sin(alpha_rad)*sin(beta_rad)*cos(gamma_rad)-cos(alpha_rad)*sin(gamma_rad); 
-    temp(1,3) = translation[1];
+    combined_matrix(1,0) = sin(Z_angle) * cos(Y_angle); 
+    combined_matrix(1,1) = sin(Z_angle) * sin(Y_angle) * sin(X_angle) + cos(Z_angle) * cos(X_angle); 
+    combined_matrix(1,2) = sin(Z_angle) * sin(Y_angle) * cos(X_angle) - cos(Z_angle) * sin(X_angle); 
+    combined_matrix(1,3) = translation[1];
 
-    temp(2,0) = -sin(beta_rad);
-    temp(2,1) = cos(beta_rad)*sin(gamma_rad);
-    temp(2,2) = cos(beta_rad)*cos(gamma_rad);
-    temp(2,3) = translation[2];
+    combined_matrix(2,0) = -sin(Y_angle);
+    combined_matrix(2,1) = cos(Y_angle) * sin(X_angle);
+    combined_matrix(2,2) = cos(Y_angle) * cos(X_angle);
+    combined_matrix(2,3) = translation[2];
   
-    temp(3,3) = 1;
+    combined_matrix(3,3) = 1;
 
-    return temp;
+    return combined_matrix;
 }

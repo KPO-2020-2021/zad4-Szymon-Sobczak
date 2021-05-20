@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['home_5fpage_2edox_46',['home_page.dox',['../home__page_8dox.html',1,'']]],
-  ['how_5fmany_5fcuboids_47',['how_many_cuboids',['../class_scene.html#a8acb4afea40217735406565926c4ba07',1,'Scene']]]
+  ['infoplikudorysowania_44',['InfoPlikuDoRysowania',['../class_pz_g_1_1_info_pliku_do_rysowania.html',1,'PzG::InfoPlikuDoRysowania'],['../class_pz_g_1_1_info_pliku_do_rysowania.html#a48bc8ad94ef5fd5120b668a566c9172e',1,'PzG::InfoPlikuDoRysowania::InfoPlikuDoRysowania()']]],
+  ['inicjalizuj_45',['Inicjalizuj',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a200ce6bdb980c314a9eafe49e8f2dd5e',1,'PzG::LaczeDoGNUPlota']]],
+  ['is_5fit_5fcub_46',['Is_it_cub',['../class_cuboid.html#adf0c2d0b6f669edba513008a916c6732',1,'Cuboid']]]
 ];

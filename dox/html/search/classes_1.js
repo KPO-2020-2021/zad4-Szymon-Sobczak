@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dummy_156',['Dummy',['../class_dummy.html',1,'']]]
+  ['infoplikudorysowania_152',['InfoPlikuDoRysowania',['../class_pz_g_1_1_info_pliku_do_rysowania.html',1,'PzG']]]
 ];
