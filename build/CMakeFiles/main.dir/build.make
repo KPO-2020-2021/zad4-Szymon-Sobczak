@@ -79,6 +79,7 @@ main_EXTERNAL_OBJECTS = \
 "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o" \
 "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles/program.dir/src/cuboid.cpp.o" \
 "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles/program.dir/src/scene.cpp.o" \
+"/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles/program.dir/src/matrix4x4.cpp.o" \
 "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles/program.dir/src/matrix3x3.cpp.o" \
 "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles/program.dir/src/matrix2x2.cpp.o"
 
@@ -86,6 +87,7 @@ main: CMakeFiles/main.dir/app/main.cpp.o
 main: CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o
 main: CMakeFiles/program.dir/src/cuboid.cpp.o
 main: CMakeFiles/program.dir/src/scene.cpp.o
+main: CMakeFiles/program.dir/src/matrix4x4.cpp.o
 main: CMakeFiles/program.dir/src/matrix3x3.cpp.o
 main: CMakeFiles/program.dir/src/matrix2x2.cpp.o
 main: CMakeFiles/main.dir/build.make

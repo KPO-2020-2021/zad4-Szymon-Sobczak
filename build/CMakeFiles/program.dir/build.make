@@ -96,9 +96,22 @@ CMakeFiles/program.dir/src/scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/scene.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/scene.cpp" -o CMakeFiles/program.dir/src/scene.cpp.s
 
+CMakeFiles/program.dir/src/matrix4x4.cpp.o: CMakeFiles/program.dir/flags.make
+CMakeFiles/program.dir/src/matrix4x4.cpp.o: ../src/matrix4x4.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/program.dir/src/matrix4x4.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/matrix4x4.cpp.o -c "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix4x4.cpp"
+
+CMakeFiles/program.dir/src/matrix4x4.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/program.dir/src/matrix4x4.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix4x4.cpp" > CMakeFiles/program.dir/src/matrix4x4.cpp.i
+
+CMakeFiles/program.dir/src/matrix4x4.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/matrix4x4.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix4x4.cpp" -o CMakeFiles/program.dir/src/matrix4x4.cpp.s
+
 CMakeFiles/program.dir/src/matrix3x3.cpp.o: CMakeFiles/program.dir/flags.make
 CMakeFiles/program.dir/src/matrix3x3.cpp.o: ../src/matrix3x3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/program.dir/src/matrix3x3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/program.dir/src/matrix3x3.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/matrix3x3.cpp.o -c "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix3x3.cpp"
 
 CMakeFiles/program.dir/src/matrix3x3.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/program.dir/src/matrix3x3.cpp.s: cmake_force
 
 CMakeFiles/program.dir/src/matrix2x2.cpp.o: CMakeFiles/program.dir/flags.make
 CMakeFiles/program.dir/src/matrix2x2.cpp.o: ../src/matrix2x2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/program.dir/src/matrix2x2.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/program.dir/src/matrix2x2.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/matrix2x2.cpp.o -c "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix2x2.cpp"
 
 CMakeFiles/program.dir/src/matrix2x2.cpp.i: cmake_force
@@ -125,6 +138,7 @@ CMakeFiles/program.dir/src/matrix2x2.cpp.s: cmake_force
 program: CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o
 program: CMakeFiles/program.dir/src/cuboid.cpp.o
 program: CMakeFiles/program.dir/src/scene.cpp.o
+program: CMakeFiles/program.dir/src/matrix4x4.cpp.o
 program: CMakeFiles/program.dir/src/matrix3x3.cpp.o
 program: CMakeFiles/program.dir/src/matrix2x2.cpp.o
 program: CMakeFiles/program.dir/build.make

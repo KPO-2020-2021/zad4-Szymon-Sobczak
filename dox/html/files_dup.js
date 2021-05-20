@@ -14,6 +14,8 @@ var files_dup =
     [ "matrix2x2.hh", "matrix2x2_8hh.html", "matrix2x2_8hh" ],
     [ "matrix3x3.cpp", "matrix3x3_8cpp.html", "matrix3x3_8cpp" ],
     [ "matrix3x3.hh", "matrix3x3_8hh.html", "matrix3x3_8hh" ],
+    [ "matrix4x4.cpp", "matrix4x4_8cpp.html", "matrix4x4_8cpp" ],
+    [ "matrix4x4.hh", "matrix4x4_8hh.html", "matrix4x4_8hh" ],
     [ "scene.cpp", "scene_8cpp.html", null ],
     [ "scene.hh", "scene_8hh.html", [
       [ "Scene", "class_scene.html", "class_scene" ]

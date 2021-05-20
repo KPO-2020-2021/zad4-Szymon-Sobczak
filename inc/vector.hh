@@ -8,45 +8,63 @@
 #include <cmath>
 
 /*!
-  Klasa modelujaca w programie pojecie wektora.                                        
-  Klasa posiada prywatne pole "size" bedace tablica- zbiorem wspolrzednych wekotra.    
-  Klasa posiada publiczny interfejs pozwalajacy na wprowazdanie, zmiane i odczytywanie 
-    danych o wspolrzednych wektora.                                                    
-  Klasa zawiera publiczne przeciazenia operatorow indeksujacych opowiedzialnych za     
-    wprowadzanie i odczytywanie wspolrzendych wektora oraz przeciazenie operatora      
-    dodawania, odejmowania dwoch wektorow i mnozenia, dzielenia wektora razy skalar.   
+   \brief Szablon klasy modelujacej w programie pojecie wektora.      
+    
+    Utworzona klasa zawiera:
+        - konstruktor bezparametryczny, tworzacy wektor zerowy o zadanej dlugosci. 
+        - konstruktor wieloparametryczny, tworzacy wektor o zadanej dlugosci wypelniony warosciami pochodzacymi z parametru - tablicy wartosci typu double.   
+        - prywatne pole "size" bedace tablica- zbiorem wspolrzednych wekotra. 
+        - publiczne przeciazenia operatorow indeksujacych opowiedzialnych za wprowadzanie i odczytywanie wspolrzendych wektora.
+        - przeciazenie operatora  dodawania, odejmowania dwoch wektorow i mnozenia, dzielenia wektora razy skalar.      
 */
 
 template <unsigned int Size>
 class Vector{
-private:
-    double size[Size];     /* Tablica wartosci wektora */
-public:
-    Vector();              /* Bezparametryczny konstruktor klasy */
-    Vector(double [Size]); /* Konstruktor klasy z parametrem */
-    Vector operator + (const Vector &v);    /* Operator dodawania dwoch wektorow */
-    Vector operator - (const Vector &v);    /* Operator odejmowania dwoch wektorow */
-    Vector operator * (const double &tmp);  /* Operator mnozenia wektora i liczby typu double */
-    Vector operator / (const double &tmp);  /* Operator dzielenia wektora i liczby typu double */
-    const double & operator [] (unsigned int index) const; /* Przeciazenia operatora indeksujacego */
-    double & operator [] (unsigned int index);
+    private:
+        /*! \brief Tablica wartosci wektora. */
+        double size[Size];     
+
+    public:
+        /*! \brief Bezparametryczny konstruktor klasy. */
+        Vector();  
+
+        /*! \brief Konstruktor klasy z parametrem. */
+        Vector(double [Size]); 
+        
+        /*! \brief Operator dodawania dwoch wektorow. */
+        Vector operator + (const Vector &v);   
+        
+        /*! \brief Operator odejmowania dwoch wektorow. */
+        Vector operator - (const Vector &v);    
+        
+        /*! \brief Operator mnozenia wektora i liczby typu double. */
+        Vector operator * (const double &tmp);  
+        
+        /*! \brief Operator dzielenia wektora i liczby typu double. */
+        Vector operator / (const double &tmp); 
+        
+        /*! \brief Przeciazenia operatora indeksujacego. */
+        const double & operator [] (unsigned int index) const; 
+        
+        /*! \brief Przeciazenia operatora indeksujacego. */
+        double & operator [] (unsigned int index);
 };
 
+/*! \brief Przeciazenie operatora << sluzace do wyswietlana wektora. */ 
 template <unsigned int Size>
-std::ostream & operator << (std::ostream &out, Vector<Size> const &tmp); /* Przeciazenie operatora << sluzace do wyswietlana wektora */ 
+std::ostream & operator << (std::ostream &out, Vector<Size> const &tmp); 
 
+/*! \brief Przeciazenie operatora >> sluzace do wczytywania wartosci do wektora. */
 template <unsigned int Size>
-std::istream & operator >> (std::istream &in, Vector<Size> &tmp); /* Przeciazenie operatora >> sluzace do wczytywania wartosci do wektora */
+std::istream & operator >> (std::istream &in, Vector<Size> &tmp); 
 
 
 
- /*!
-   Konstruktor klasy Vector.                                                 
-   Argumenty:                                                                
-       Brak argumentow.                                                      
-   Zwraca:                                                                   
-       Tablice wypelniona wartoscia 0.                                       
- */
+/*!
+    Konstruktor bezparametryczny klasy Vector tworzacy wektor zerowy o zadanej dlugosci.                                              
+
+    \return Tablice wypelniona wartoscia 0.                                       
+*/
 
 template <unsigned int Size>
 Vector<Size>::Vector(){
@@ -56,11 +74,11 @@ Vector<Size>::Vector(){
 }
 
 /*!
-   Konstruktor klasy Vector.                                                 
-   Argumenty:                                                                
-       tmp - Jednowymiarowa tablica typu double.                             
-   Zwraca:                                                                   
-       Tablice wypelniona wartosciami podanymi w argumencie.                 
+    Konstruktor wieloparametryczny klasy Vector tworzacy wektor o zadanej dlugosci wypelniony warosciami pochodzacymi z parametru - tablicy wartosci typu double.                                                 
+
+    \param [in] tmp - Jednowymiarowa tablica typu double.                             
+                                                             
+    \return  Tablice wypelniona wartosciami podanymi w argumencie.                 
  */
 template <unsigned int Size>
 Vector<Size>::Vector(double tmp[Size]){
@@ -70,13 +88,12 @@ Vector<Size>::Vector(double tmp[Size]){
 }
 
 /*!
-   Realizuje dodawanie dwoch wektorow.                                       
-   Argumenty:                                                                
-       this - pierwszy skladnik dodawania,                                   
-       v - drugi skladnik dodawania.                                         
+    Realizuje dodawanie dwoch wektorow.                                       
+                                                                  
+    \param [in]    this - pierwszy skladnik dodawania,                                   
+    \param [in]    v - drugi skladnik dodawania.                                         
    Zwraca:                                                                   
-       Sume dwoch skladnikow przekazanych jako wskaznik                      
-       na parametr.                                                          
+    \return Sume dwoch skladnikow przekazanych jako wskaznik na parametr.                                                          
 */
 
 template <unsigned int Size>
@@ -89,13 +106,12 @@ Vector<Size>  Vector<Size>::operator + (const Vector<Size> &v){
 }
 
 /*!
-   Realizuje odejmowanie dwoch wektorow.                                     
-   Argumenty:                                                                
-       this - pierwszy skladnik odejmowania,                                 
-       v - drugi skladnik odejmowania.                                       
-   Zwraca:                                                                   
-       Roznice dwoch skladnikow przekazanych jako wskaznik                   
-       na parametr.                                                          
+    Realizuje odejmowanie dwoch wektorow.                                     
+                                                                  
+    \param [in]    this - pierwszy skladnik odejmowania,                                 
+    \param [in]    v - drugi skladnik odejmowania.                                       
+                                                               
+    \return   Roznice dwoch skladnikow przekazanych jako wskaznik na parametr.                                                          
  */
 
 template <unsigned int Size>
@@ -108,13 +124,12 @@ Vector<Size> Vector<Size>::operator - (const Vector<Size> &v){
 }
 
 /*!
-   Realizuje mnozenie wektora przez liczbe zmiennoprzecinkowa.               
-   Argumenty:                                                                
-       this - pierwszy skladnik mnozenia (wektor),                           
-       v - drugi skladnik mnozenia (liczba typu double).                     
-   Zwraca:                                                                   
-       Iloczyn dwoch skladnikow przekazanych jako wskaznik                   
-       na parametr.                                                          
+    Realizuje mnozenie wektora przez liczbe zmiennoprzecinkowa.               
+                                                                   
+    \param [in]    this - pierwszy skladnik mnozenia (wektor),                           
+    \param [in]    v - drugi skladnik mnozenia (liczba typu double).                     
+                                                                   
+    \return Iloczyn dwoch skladnikow przekazanych jako wskaznik na parametr.                                                          
  */
 
 template <unsigned int Size>
@@ -127,13 +142,12 @@ Vector<Size> Vector<Size>::operator * (const double &tmp){
 }
 
 /*!
-   Realizuje dzielenie dwoch wektorow.                                       
-   Argumenty:                                                                
-       this - licznik dzielenia,                                             
-       v - mianownik dzielenia.                                              
-   Zwraca:                                                                   
-       Iloraz dwoch skladnikow przekazanych jako wskaznik                    
-       na parametr.                                                          
+    Realizuje dzielenie wektora przez skalar.                                       
+                                                                 
+    \param [in]    this - licznik dzielenia,                                             
+    \param [in]    v - mianownik dzielenia.                                              
+                                                                    
+    \return Iloraz dwoch skladnikow przekazanych jako wskaznik na parametr.                                                          
 */
 
 template <unsigned int Size>
@@ -148,11 +162,11 @@ Vector<Size> Vector<Size>::operator / (const double &tmp){
 }
 
 /*!
-   Funktor wektora.                                                          
-   Argumenty:                                                                
-       index - index wektora.                                                
-   Zwraca:                                                                   
-       Wartosc wektora w danym miejscu tablicy jako stala.                   
+    Funktor wektora.                                                          
+                                                                   
+    \param [in] index - index wektora.                                                
+                                                                   
+    \return Wartosc wektora w danym miejscu tablicy jako stala.                   
 */
 
 template <unsigned int Size>
@@ -163,11 +177,11 @@ const double & Vector<Size>::operator [] (unsigned int index) const{
 }
 
 /*!
-   Funktor wektora.                                                          
-   Argumenty:                                                                
-       index - index wektora.                                                
-   Zwraca:                                                                   
-       Wartosc wektora w danym miejscu tablicy.                              
+    Funktor wektora.                                                          
+                                                                  
+    \param [in] index - index wektora.                                                
+                                                                     
+    \return Wartosc wektora w danym miejscu tablicy.                              
  */
 template <unsigned int Size>
 double & Vector<Size>::operator[](unsigned int index){
@@ -177,10 +191,12 @@ double & Vector<Size>::operator[](unsigned int index){
 }
 
 /*!
-   Przeciazenie operatora <<                                                 
-   Argumenty:                                                                
-       out - strumien wejsciowy,                                             
-       tmp - wektor.                                                         
+    Funkcja wykonujaca operacje przeciazenia operatora <<. Funkcja sluzy do wypisywania na wskazany strumien wyjsciowy, wartosci wektora.                                                      
+
+    \param [in] out - strumien wejsciowy,                                             
+    \param [in] tmp - wektor.   
+
+    \return Wypisane wartosci wskazanego wektora, w odpowiedniej formie na wskazane wyjscie.                                                        
  */
 template <unsigned int Size>
 std::ostream & operator << (std::ostream &out, Vector<Size> const &tmp){
@@ -191,10 +207,12 @@ std::ostream & operator << (std::ostream &out, Vector<Size> const &tmp){
 }
 
 /*!
-   Przeciazenie operatora >>                                                 
-   Argumenty:                                                                
-       in - strumien wyjsciowy,                                              
-       tmp - wektor.                                                         
+    Funkcja wykonujaca operacje przeciazenia operatora >>. Funkcja sluzy do wprowadzania wartosci wektora ze wskazanego strumienia wejsciowego.                                                  
+                                                             
+    \param [in]    in - strumien wyjsciowy,                                              
+    \param [in]    tmp - wektor.    
+
+    \return Wczytany obiekt- wektor.                                                      
  */
 
 template <unsigned int Size>

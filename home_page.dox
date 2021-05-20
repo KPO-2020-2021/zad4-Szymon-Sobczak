@@ -1,7 +1,7 @@
 /*!
     \mainpage Rotacja3D - Zadanie 4.
     
-    \author Szymon Sobczak nr 259275
+    \author Szymon Sobczak nr 259275.
     \date 24.05.2021
     \version 1.0
 
@@ -9,7 +9,17 @@
     
     \section etykieta-cel-cw Cel ćwiczenia
     Wykształcenie umiejętnosci modelowania kluczowych dla danego problemu pojęć.\n
-    Geberowanienie dokumentacji z wykorzystaniem systemu doxygen. 
+    Generowanienie dokumentacji z wykorzystaniem systemu doxygen. 
 
-    \section etykieta-najw-elem Najwazniejsze elementy
+    \section etykieta-najw-elem Najwazniejsze elementy programu.
+        - Obrot bryly o zadane katy wzgledem wybranych osi z zadana iloscia powtorzen wraz ze sprawdzeniem dlugosci przeciwleglych bokow.
+        - Potwatrzanie poprzedniego obrotu.
+        - Wyswietlanie macierzy rotacji.
+        - Przesuniecie bryly o zadany wektor.
+        - Wyswietlanie wspolrzednych wierzcholkow.
+        - Wyswietlanie menu.
+
+    \section etykieta-dodatkowe-elem Najwazniejsze elementy programu.
+        - Dodawnie wielu prostopadloscianow do sceny. 
+        - Rysowanie pelnych prostopadloscianow.
 */

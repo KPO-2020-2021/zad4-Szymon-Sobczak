@@ -52,6 +52,12 @@ matrix.hh
 matrix.hh
 ../inc/matrix.hh
 
+../inc/matrix4x4.hh
+matrix.hh
+../inc/matrix.hh
+vector3D.hh
+../inc/vector3D.hh
+
 ../inc/scene.hh
 iostream
 -
@@ -119,6 +125,8 @@ matrix.hh
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/app/matrix.hh
 vector3D.hh
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/app/vector3D.hh
+matrix4x4.hh
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/app/matrix4x4.hh
 matrix3x3.hh
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/app/matrix3x3.hh
 matrix2x2.hh

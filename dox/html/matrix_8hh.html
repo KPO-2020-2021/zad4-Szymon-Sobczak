@@ -101,7 +101,7 @@ Wykres zależności załączania dla matrix.hh:</div>
 <div class="center"><img src="matrix_8hh__incl.png" border="0" usemap="#matrix_8hh" alt=""/></div>
 <map name="matrix_8hh" id="matrix_8hh">
 <area shape="rect" title=" " alt="" coords="197,5,282,32"/>
-<area shape="rect" href="size_8hh.html" title=" " alt="" coords="5,155,73,181"/>
+<area shape="rect" href="size_8hh.html" title="definicje stalych wystepujacych w programie." alt="" coords="5,155,73,181"/>
 <area shape="rect" href="vector_8hh.html" title=" " alt="" coords="198,80,281,107"/>
 <area shape="rect" title=" " alt="" coords="98,155,178,181"/>
 <area shape="rect" title=" " alt="" coords="509,155,572,181"/>
@@ -116,16 +116,18 @@ Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten 
 <div class="dyncontent">
 <div class="center"><img src="matrix_8hh__dep__incl.png" border="0" usemap="#matrix_8hhdep" alt=""/></div>
 <map name="matrix_8hhdep" id="matrix_8hhdep">
-<area shape="rect" title=" " alt="" coords="252,5,338,32"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="158,304,240,331"/>
-<area shape="rect" href="matrix3x3_8hh.html" title=" " alt="" coords="240,80,350,107"/>
-<area shape="rect" href="cuboid_8hh.html" title=" " alt="" coords="378,155,463,181"/>
-<area shape="rect" href="scene_8hh.html" title=" " alt="" coords="431,229,511,256"/>
-<area shape="rect" href="matrix2x2_8hh.html" title=" " alt="" coords="48,80,158,107"/>
-<area shape="rect" href="matrix3x3_8cpp.html" title=" " alt="" coords="237,155,353,181"/>
-<area shape="rect" href="cuboid_8cpp.html" title="Definicja metod klasy Cuboid." alt="" coords="264,229,356,256"/>
-<area shape="rect" href="scene_8cpp.html" title=" " alt="" coords="428,304,514,331"/>
-<area shape="rect" href="matrix2x2_8cpp.html" title=" " alt="" coords="45,155,161,181"/>
+<area shape="rect" title=" " alt="" coords="352,5,437,32"/>
+<area shape="rect" href="main_8cpp.html" title="Plik zawierajacy glowna funkcje programu." alt="" coords="286,304,369,331"/>
+<area shape="rect" href="matrix3x3_8hh.html" title="Plik zawierajacy definicje konkretyzacji szablonu klasy Matrix do instancji Matrix2x2 &#45; macierzy kwad..." alt="" coords="429,80,538,107"/>
+<area shape="rect" href="cuboid_8hh.html" title="Definicja klasy Cuboid." alt="" coords="602,155,688,181"/>
+<area shape="rect" href="scene_8hh.html" title="Definicja klasy Scene." alt="" coords="656,229,736,256"/>
+<area shape="rect" href="matrix2x2_8hh.html" title="Plik zawierajacy definicje konkretyzacji szablonu klasy Matrix do instancji Matrix2x2 &#45; macierzy kwad..." alt="" coords="126,80,236,107"/>
+<area shape="rect" href="matrix4x4_8hh.html" title=" " alt="" coords="273,80,382,107"/>
+<area shape="rect" href="matrix3x3_8cpp.html" title="definicje funkcji wypelniajacej Matrix3x3 wartosciaciami macierzy obrotu 3D w osi OX,..." alt="" coords="462,155,578,181"/>
+<area shape="rect" href="cuboid_8cpp.html" title="Definicja metod klasy Cuboid." alt="" coords="488,229,580,256"/>
+<area shape="rect" href="scene_8cpp.html" title="Definicje metod klasy Scene." alt="" coords="652,304,739,331"/>
+<area shape="rect" href="matrix2x2_8cpp.html" title="definicje funkcji wypelniajacej Matrix2x2 wartosciaciami macierzy obrotu w 2D dla zadanego kata." alt="" coords="27,155,143,181"/>
+<area shape="rect" href="matrix4x4_8cpp.html" title=" " alt="" coords="270,155,386,181"/>
 </map>
 </div>
 </div>
@@ -134,7 +136,7 @@ Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten 
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Komponenty</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html">Matrix&lt; Size &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Szablon Klasy modelujacej w programie pojecie macierzy. <br  />
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Szablon klasy modelujacej w programie pojecie macierzy. <br  />
   <a href="class_matrix.html#details">Więcej...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -179,19 +181,21 @@ template&lt;unsigned int Size&gt; </div>
 </div><div class="memdoc">
 
 <p>Przeciazenie operatora &lt;&lt; sluzace wyswietlaniu macierzy. </p>
-<p>Przeciazenie operatora &lt;&lt; <br  />
+<p>Funkcja realizujaca przeciazenia operatora &lt;&lt;. Funkcja sluzy do wypisywania na wskazany strumien wyjsciowy, wartosci wspolrzednych macierzy. <br  />
 </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">out</td><td>- strumien wejsciowy, <br  />
+    <tr><td class="paramdir">[in]</td><td class="paramname">out</td><td>- Strumien wejsciowy. <br  />
  </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mat</td><td>- macierz. <br  />
- </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mat</td><td>- Macierz. <br  />
+</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Wypisane wspolrzende wskazanego prostopadloscianu, w odpowiedniej formie na wskazane wyjscie. <br  />
+ </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00287">287</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00296">296</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 
 </div>
 </div>
@@ -224,19 +228,20 @@ template&lt;unsigned int Size&gt; </div>
 </div><div class="memdoc">
 
 <p>Przeciazenie operatora &gt;&gt; sluzace wczytywaniu wartosci do macierzy. </p>
-<p>Przeciazenie operatora &gt;&gt; <br  />
+<p>Funkcja realizujaca przeciazenia operatora &gt;&gt;. Funkcja sluzy do wczytywania ze wskazanego strumiena wejsciowego, wartosci wspolrzednych macierzy. <br  />
 </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>- strumien wyjsciowy, <br  />
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>- Strumien wejsciowy. <br  />
  </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mat</td><td>- macierz. <br  />
- </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mat</td><td>- Macierz. <br  />
+</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Zwraca</dt><dd>wczytany obiekt - macierz. </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00268">268</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00274">274</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 
 </div>
 </div>

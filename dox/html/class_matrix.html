@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('class_matrix.html',''); initResizable(
 </div><!--header-->
 <div class="contents">
 
-<p>Szablon Klasy modelujacej w programie pojecie macierzy. <br  />
+<p>Szablon klasy modelujacej w programie pojecie macierzy. <br  />
   
  <a href="class_matrix.html#details">Więcej...</a></p>
 
@@ -118,12 +118,12 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:a44fe3309eb974344953db92711d47b87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a44fe3309eb974344953db92711d47b87">operator+</a> (<a class="el" href="class_matrix.html">Matrix</a> const &amp;tmp)</td></tr>
 <tr class="memdesc:a44fe3309eb974344953db92711d47b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator dodwania dwoch macierzy.  <a href="class_matrix.html#a44fe3309eb974344953db92711d47b87">Więcej...</a><br /></td></tr>
 <tr class="separator:a44fe3309eb974344953db92711d47b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab44f2b44f6003b43b11e24b0e2fa601e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ab44f2b44f6003b43b11e24b0e2fa601e">reset_matrix</a> ()</td></tr>
-<tr class="memdesc:ab44f2b44f6003b43b11e24b0e2fa601e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda czyszczaca macierz- zprzywracajaca postac macierzy jedynkowej.  <a href="class_matrix.html#ab44f2b44f6003b43b11e24b0e2fa601e">Więcej...</a><br /></td></tr>
-<tr class="separator:ab44f2b44f6003b43b11e24b0e2fa601e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec4bebd5bf22f3f1aba42aa4debad1de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#aec4bebd5bf22f3f1aba42aa4debad1de">operator==</a> (<a class="el" href="class_matrix.html">Matrix</a> const &amp;tmp)</td></tr>
 <tr class="memdesc:aec4bebd5bf22f3f1aba42aa4debad1de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator porownania dwoch macierzy.  <a href="class_matrix.html#aec4bebd5bf22f3f1aba42aa4debad1de">Więcej...</a><br /></td></tr>
 <tr class="separator:aec4bebd5bf22f3f1aba42aa4debad1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab44f2b44f6003b43b11e24b0e2fa601e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ab44f2b44f6003b43b11e24b0e2fa601e">reset_matrix</a> ()</td></tr>
+<tr class="memdesc:ab44f2b44f6003b43b11e24b0e2fa601e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda czyszczaca macierz - przywracajaca postac macierzy jednostkowej.  <a href="class_matrix.html#ab44f2b44f6003b43b11e24b0e2fa601e">Więcej...</a><br /></td></tr>
+<tr class="separator:ab44f2b44f6003b43b11e24b0e2fa601e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca43ed83a5f9f47c8add81c6af8ee0bb"><td class="memItemLeft" align="right" valign="top">double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#aca43ed83a5f9f47c8add81c6af8ee0bb">operator()</a> (unsigned int row, unsigned int column)</td></tr>
 <tr class="memdesc:aca43ed83a5f9f47c8add81c6af8ee0bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przeciazenie operatora funkcyjnego.  <a href="class_matrix.html#aca43ed83a5f9f47c8add81c6af8ee0bb">Więcej...</a><br /></td></tr>
 <tr class="separator:aca43ed83a5f9f47c8add81c6af8ee0bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,17 +141,20 @@ Atrybuty prywatne</h2></td></tr>
 <div class="textblock"><h3>template&lt;unsigned int Size&gt;<br />
 class Matrix&lt; Size &gt;</h3>
 
-<p>Szablon Klasy modelujacej w programie pojecie macierzy. <br  />
+<p>Szablon klasy modelujacej w programie pojecie macierzy. <br  />
  </p>
-<p>Klasa posiada prywatne pole "value", stanowi ono zbior wartosci macierzy rotacji. Jest to tablica dwuwymiarowa dla warosci typu double. <br  />
- Klasa posiada publiczny interfejs pozwalajacy na wprowazdanie, zmiane i odczytywanie danych z macierzy rotacji. <br  />
- Klasa zawiera publiczne przeciazenia operatorow funkcyjnych opowiedzialnych za wprowadzanie i odczytywanie wartosci z macierzy rotacji, oraz przeciazenie <br  />
- operatora mnozenia macierzy razy wetkor i przeciazenia operatora dodawania dwoch macierzy. <br  />
- Klasa posiada metode inicjujaca macierz wartosciami funkcji trygonometrycznych dla zadanego konta obrotu. <br  />
- W roli modyfikacji zadania, dodano metode wyznaczajaca wyznacznik macierzy. <br  />
- </p>
+<p>Utworzona klasa zawiera:</p><ul>
+<li>publiczny konstruktor domyśly tworzacy macierz jednykowa oraz konstruktor pozwalajacy na inicjowanie macierzy za pomoca tablicy dwuwymiarowej double.</li>
+<li>prywatne pole "value", stanowi ono zbior wartosci macierzy rotacji. Jest to kwadratowa tablica warosci typu double, o ustalonym parametrem rozmiarze.</li>
+<li>publiczny interfejs pozwalajacy na wprowazdanie, zmiane i odczytywanie danych z macierzy zrealizowany za pomoca przeciazenia operatora funcyjnego. <br  />
+</li>
+<li>przeciazenia operatorow porownania, dodawania, odejmowania, mnozenia dla dwoch macierzy oraz przeciazenia operatorw mnozenia i dzielenia macierzy i skalara. <br  />
+</li>
+<li>metode "czyszczaca" macierz - przwyracajaca jej poczatkowy stan macierzy jednostkowej. <br  />
+ </li>
+</ul>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00029">29</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00028">28</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 </div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
 <a id="a80c1366959dd6b71f6da4b1a04178b24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a80c1366959dd6b71f6da4b1a04178b24">&#9670;&nbsp;</a></span>Matrix() <span class="overload">[1/2]</span></h2>
@@ -168,12 +171,12 @@ template&lt;unsigned int Size&gt; </div>
 </div><div class="memdoc">
 
 <p>Bezparametryczny konstruktor klasy. </p>
-<p>Konstruktor klasy <a class="el" href="class_matrix.html" title="Szablon Klasy modelujacej w programie pojecie macierzy.">Matrix</a>. <br  />
+<p>Konstruktor bezparametryczny klasy <a class="el" href="class_matrix.html" title="Szablon klasy modelujacej w programie pojecie macierzy.">Matrix</a>. <br  />
 </p>
 <dl class="section return"><dt>Zwraca</dt><dd>Macierz wypelnione wartoscia 0. <br  />
  </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00082">82</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00081">81</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 
 </div>
 </div>
@@ -196,7 +199,7 @@ template&lt;unsigned int Size&gt; </div>
 </div><div class="memdoc">
 
 <p>Konstruktor klasy z parametrem. </p>
-<p>Konstruktor parametryczny klasy <a class="el" href="class_matrix.html" title="Szablon Klasy modelujacej w programie pojecie macierzy.">Matrix</a>. <br  />
+<p>Konstruktor parametryczny klasy <a class="el" href="class_matrix.html" title="Szablon klasy modelujacej w programie pojecie macierzy.">Matrix</a>. <br  />
 </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
@@ -208,7 +211,7 @@ template&lt;unsigned int Size&gt; </div>
 <dl class="section return"><dt>Zwraca</dt><dd>Macierz wypelniona wartosciami podanymi w argumencie. <br  />
  </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00099">99</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00098">98</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 
 </div>
 </div>
@@ -242,6 +245,7 @@ template&lt;unsigned int Size&gt; </div>
 </div><div class="memdoc">
 
 <p>Przeciazenie operatora funkcyjnego. </p>
+<p>Przeciazenie operatora funkcyjnego sluzace zmienieniu zawartosci macierzy.</p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">row</td><td>- numer wiersza. <br  />
@@ -254,7 +258,7 @@ template&lt;unsigned int Size&gt; </div>
 <dl class="section return"><dt>Zwraca</dt><dd>Wartosc macierzy w danym miejscu tablicy. <br  />
  </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00215">215</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00216">216</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 
 </div>
 </div>
@@ -287,6 +291,8 @@ template&lt;unsigned int Size&gt; </div>
 </div><div class="memdoc">
 
 <p>Przeciazenie operatora funkcyjnego. </p>
+<p>Przeciazenie operatora funkcyjnego sluzace podgladaniu zawartosci macierzy. <br  />
+</p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">row</td><td>- numer wiersza. <br  />
@@ -299,7 +305,7 @@ template&lt;unsigned int Size&gt; </div>
 <dl class="section return"><dt>Zwraca</dt><dd>Wartosc macierzy w danym miejscu tablicy jako stala. <br  />
  </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00232">232</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00235">235</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 
 </div>
 </div>
@@ -336,7 +342,7 @@ template&lt;unsigned int Size&gt; </div>
 <dl class="section return"><dt>Zwraca</dt><dd>result - Iloczyn dwoch skladnikow przekazanych jako macierz. <br  />
  </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00137">137</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00136">136</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 
 </div>
 </div>
@@ -373,7 +379,7 @@ template&lt;unsigned int Size&gt; </div>
 <dl class="section return"><dt>Zwraca</dt><dd>Iloczyn dwoch skladnikow przekazanych jako wektor. <br  />
  </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00117">117</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00116">116</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 
 </div>
 </div>
@@ -396,13 +402,13 @@ template&lt;unsigned int Size&gt; </div>
 </div><div class="memdoc">
 
 <p>Operator dodwania dwoch macierzy. </p>
-<p>Przeciążenie dodawania macierzy <br  />
+<p>Przeciążenie operatora dodawania dwoch macierzy. <br  />
 </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">this</td><td>- macierz, czyli pierwszy skladnik dodawania, <br  />
+    <tr><td class="paramdir">[in]</td><td class="paramname">this</td><td>- Macierz, czyli pierwszy skladnik dodawania. <br  />
  </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>- wektor, czyli drugi skladnik dodawania. <br  />
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>- Wektor, czyli drugi skladnik dodawania. <br  />
 </td></tr>
   </table>
   </dd>
@@ -410,7 +416,7 @@ template&lt;unsigned int Size&gt; </div>
 <dl class="section return"><dt>Zwraca</dt><dd>Macierz - suma dwóch podanych macierzy. <br  />
  </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00250">250</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00253">253</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 
 </div>
 </div>
@@ -433,7 +439,7 @@ template&lt;unsigned int Size&gt; </div>
 </div><div class="memdoc">
 
 <p>Operator dzielenia macierzy przez skalar. </p>
-<p>Realizuje dzielenie macierzy przez wartosc typu double. <br  />
+<p>Realizuje dzielenie macierzy przez skalar - wartosc typu double. <br  />
 </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
@@ -447,7 +453,7 @@ template&lt;unsigned int Size&gt; </div>
 <dl class="section return"><dt>Zwraca</dt><dd>result - Iloraz macierzy i skalara przekazanych jako macierz. <br  />
  </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00160">160</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00159">159</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 
 </div>
 </div>
@@ -487,7 +493,7 @@ template&lt;unsigned int Size&gt; </div>
 false - jesli macierze nie sa rowne. <br  />
  </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00198">198</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00197">197</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 
 </div>
 </div>
@@ -505,20 +511,20 @@ template&lt;unsigned int Size&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Metoda czyszczaca macierz- zprzywracajaca postac macierzy jedynkowej. </p>
+<p>Metoda czyszczaca macierz - przywracajaca postac macierzy jednostkowej. </p>
 <p>Realizuje czyszczenie macierzy, przywracajac ja do stanu macierzy jednykowej. <br  />
 </p>
 <dl class="section return"><dt>Zwraca</dt><dd>Macierz jedynkowa. <br  />
  </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00178">178</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00177">177</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_matrix_ab44f2b44f6003b43b11e24b0e2fa601e_icgraph.png" border="0" usemap="#class_matrix_ab44f2b44f6003b43b11e24b0e2fa601e_icgraph" alt=""/></div>
 <map name="class_matrix_ab44f2b44f6003b43b11e24b0e2fa601e_icgraph" id="class_matrix_ab44f2b44f6003b43b11e24b0e2fa601e_icgraph">
-<area shape="rect" title="Metoda czyszczaca macierz&#45; zprzywracajaca postac macierzy jedynkowej." alt="" coords="108,5,263,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Metoda czyszczaca macierz &#45; przywracajaca postac macierzy jednostkowej." alt="" coords="108,5,263,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Glowna funkcja programu." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -549,7 +555,7 @@ template&lt;unsigned int Size&gt; </div>
 
 <p>Wartosci macierzy. </p>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00032">32</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="matrix_8hh_source.html#l00031">31</a> pliku <a class="el" href="matrix_8hh_source.html">matrix.hh</a>.</p>
 
 </div>
 </div>

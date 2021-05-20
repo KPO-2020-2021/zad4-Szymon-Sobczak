@@ -43,6 +43,7 @@ set(SOURCES          # All .cpp files in src/
     src/lacze_do_gnuplota
     src/cuboid.cpp
     src/scene.cpp
+    src/matrix4x4.cpp
     src/matrix3x3.cpp
     src/matrix2x2.cpp
 )

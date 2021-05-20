@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['frames_292',['FRAMES',['../size_8hh.html#a4d30c843f7d998f6369ab4a7ac8619b6',1,'size.hh']]]
+  ['max_5fvalue_5fdiff_294',['MAX_VALUE_DIFF',['../size_8hh.html#a14964ebd7b58743d65afbdbf901ef699',1,'size.hh']]]
 ];

@@ -1,18 +1,19 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,354,60,381"/>
+<area shape="rect" id="node1" title="Glowna funkcja programu." alt="" coords="5,375,60,402"/>
 <area shape="rect" id="node2" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a34bd48f57c0fd69c12bf4127a1cacd8f" title="Dodaje nazwę pliku." alt="" coords="120,5,293,47"/>
-<area shape="rect" id="node4" href="$matrix3x3_8hh.html#a8ec09e862d862c55ce380b0479a7f831" title=" " alt="" coords="148,71,265,98"/>
-<area shape="rect" id="node5" href="$matrix3x3_8hh.html#a027d7f5b7cb4dbdc9e95cc6b5871f7d8" title=" " alt="" coords="149,122,265,149"/>
-<area shape="rect" id="node6" href="$matrix3x3_8hh.html#a09eb2fbe2cced0556e119e17cd95a8dd" title=" " alt="" coords="148,173,265,199"/>
-<area shape="rect" id="node7" href="$class_scene.html#a8acb4afea40217735406565926c4ba07" title=" " alt="" coords="108,223,305,250"/>
-<area shape="rect" id="node8" href="$class_scene.html#aba1b1578d9bc822c0ecbe542d9b88c85" title=" " alt="" coords="132,274,281,301"/>
-<area shape="rect" id="node9" href="$class_matrix.html#ab44f2b44f6003b43b11e24b0e2fa601e" title="Metoda czyszczaca macierz&#45; zprzywracajaca postac macierzy jedynkowej." alt="" coords="129,325,284,351"/>
-<area shape="rect" id="node10" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335" title=" " alt="" coords="120,376,293,417"/>
-<area shape="rect" id="node11" href="$class_scene.html#ab1474297a3dd7a45e2161ace73354291" title=" " alt="" coords="125,442,289,469"/>
-<area shape="rect" id="node12" href="$class_scene.html#aeb561fa13f66e613c1e20c51b9776aa2" title=" " alt="" coords="125,493,288,519"/>
-<area shape="rect" id="node13" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9c91987dfc869d6fcea96205c581daef" title="Ustawia zakres osi OX." alt="" coords="120,544,293,585"/>
-<area shape="rect" id="node14" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a54c6e9cf9ab2eae479451fd953c2717c" title="Ustawia zakres osi OY." alt="" coords="120,609,293,651"/>
-<area shape="rect" id="node15" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a1dbbb2b86fb13b8632e6bad9df2a82e3" title="Ustawia zakres osi OZ." alt="" coords="120,675,293,716"/>
-<area shape="rect" id="node16" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a10950349b348fd3a3d4143e95337527c" title="Zmienia tryb rysowania." alt="" coords="120,740,293,781"/>
+<area shape="rect" id="node4" href="$matrix4x4_8hh.html#a1dacdc838115fb081f39421e5329ea0a" title=" " alt="" coords="110,71,303,98"/>
+<area shape="rect" id="node5" href="$matrix3x3_8hh.html#a8ec09e862d862c55ce380b0479a7f831" title="Funkcja wypelniajaca Matrix3x3 wartosciaciami macierzy obrotu 3D w osi OX, dla zadanego kata." alt="" coords="148,122,265,149"/>
+<area shape="rect" id="node6" href="$matrix3x3_8hh.html#a027d7f5b7cb4dbdc9e95cc6b5871f7d8" title="Funkcja wypelniajaca Matrix3x3 wartosciaciami macierzy obrotu 3D w osi OY, dla zadanego kata." alt="" coords="149,173,265,199"/>
+<area shape="rect" id="node7" href="$matrix3x3_8hh.html#a09eb2fbe2cced0556e119e17cd95a8dd" title="Funkcja wypelniajaca Matrix3x3 wartosciaciami macierzy obrotu 3D w osi OZ, dla zadanego kata." alt="" coords="148,223,265,250"/>
+<area shape="rect" id="node8" href="$class_scene.html#a8acb4afea40217735406565926c4ba07" title="Metoda wyznaczajaca aktualna ilosc prostopadloscianow na scenie." alt="" coords="108,274,305,301"/>
+<area shape="rect" id="node9" href="$class_scene.html#aba1b1578d9bc822c0ecbe542d9b88c85" title="Metoda pozwalajaca na przemieszczenie globalne figury na scenie." alt="" coords="132,325,281,351"/>
+<area shape="rect" id="node10" href="$class_matrix.html#ab44f2b44f6003b43b11e24b0e2fa601e" title="Metoda czyszczaca macierz &#45; przywracajaca postac macierzy jednostkowej." alt="" coords="129,375,284,402"/>
+<area shape="rect" id="node11" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335" title=" " alt="" coords="120,427,293,468"/>
+<area shape="rect" id="node12" href="$class_scene.html#ab1474297a3dd7a45e2161ace73354291" title="Metoda pozwalajaca na skladnie kolejnych macierzy rotacji w odpowiednim polu struktury." alt="" coords="125,493,289,519"/>
+<area shape="rect" id="node13" href="$class_scene.html#aeb561fa13f66e613c1e20c51b9776aa2" title="Metoda pozwalajaca na skladnie kolejnych wektorow przesuniecia w odpowiednim polu struktury." alt="" coords="125,543,288,570"/>
+<area shape="rect" id="node14" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9c91987dfc869d6fcea96205c581daef" title="Ustawia zakres osi OX." alt="" coords="120,595,293,636"/>
+<area shape="rect" id="node15" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a54c6e9cf9ab2eae479451fd953c2717c" title="Ustawia zakres osi OY." alt="" coords="120,660,293,701"/>
+<area shape="rect" id="node16" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a1dbbb2b86fb13b8632e6bad9df2a82e3" title="Ustawia zakres osi OZ." alt="" coords="120,725,293,767"/>
+<area shape="rect" id="node17" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a10950349b348fd3a3d4143e95337527c" title="Zmienia tryb rysowania." alt="" coords="120,791,293,832"/>
 <area shape="rect" id="node3" href="$namespace_pz_g.html#ae1ae4d36f66c77879380ba73da8e20e3" title=" " alt="" coords="353,13,480,39"/>
 </map>

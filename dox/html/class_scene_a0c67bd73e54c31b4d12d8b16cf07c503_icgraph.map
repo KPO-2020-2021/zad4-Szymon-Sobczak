@@ -1,4 +1,4 @@
 <map id="Scene::Add_cuboid" name="Scene::Add_cuboid">
-<area shape="rect" id="node1" title=" " alt="" coords="161,5,305,32"/>
-<area shape="rect" id="node2" href="$class_scene.html#ad10176d75a9cc0da56626f682d083507" title=" " alt="" coords="5,5,113,32"/>
+<area shape="rect" id="node1" title="Metoda realizujaca dodawnie kolejnych prostopadloscianow do sceny" alt="" coords="161,5,305,32"/>
+<area shape="rect" id="node2" href="$class_scene.html#ad10176d75a9cc0da56626f682d083507" title="Konstruktor bezparametryczny." alt="" coords="5,5,113,32"/>
 </map>

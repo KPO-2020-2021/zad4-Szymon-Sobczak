@@ -90,20 +90,21 @@ $(document).ready(function(){initNavTree('matrix2x2_8cpp_source.html',''); initR
 <a href="matrix2x2_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="matrix2x2_8hh.html">matrix2x2.hh</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="matrix2x2_8cpp.html#a8b3fdc42844a013a595f1daadae284b6">    4</a></span>&#160;<a class="code" href="class_matrix.html">Matrix2x2</a> <a class="code" href="matrix2x2_8cpp.html#a8b3fdc42844a013a595f1daadae284b6">Rotation_matrix_2x2</a> (<span class="keywordtype">double</span> <span class="keyword">const</span> angle){</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="class_matrix.html">Matrix2x2</a> tmp;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">double</span> angle_radians = angle * M_PI / 180.0;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    tmp(0,0) = cos(angle_radians);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    tmp(0,1) = -sin(angle_radians);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    tmp(1,0) = sin(angle_radians);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    tmp(1,1) = cos(angle_radians);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="matrix2x2_8cpp.html#a8b3fdc42844a013a595f1daadae284b6">   16</a></span>&#160;<a class="code" href="class_matrix.html">Matrix2x2</a> <a class="code" href="matrix2x2_8cpp.html#a8b3fdc42844a013a595f1daadae284b6">Rotation_matrix_2x2</a> (<span class="keywordtype">double</span> <span class="keyword">const</span> angle){</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_matrix.html">Matrix2x2</a> rotation_matrix;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">double</span> angle_radians = angle * M_PI / 180.0;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    rotation_matrix(0,0) = cos(angle_radians);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    rotation_matrix(0,1) = -sin(angle_radians);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    rotation_matrix(1,0) = sin(angle_radians);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    rotation_matrix(1,1) = cos(angle_radians);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> rotation_matrix;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="amatrix2x2_8hh_html"><div class="ttname"><a href="matrix2x2_8hh.html">matrix2x2.hh</a></div></div>
-<div class="ttc" id="amatrix2x2_8cpp_html_a8b3fdc42844a013a595f1daadae284b6"><div class="ttname"><a href="matrix2x2_8cpp.html#a8b3fdc42844a013a595f1daadae284b6">Rotation_matrix_2x2</a></div><div class="ttdeci">Matrix2x2 Rotation_matrix_2x2(double const angle)</div><div class="ttdef"><b>Definition:</b> <a href="matrix2x2_8cpp_source.html#l00004">matrix2x2.cpp:4</a></div></div>
-<div class="ttc" id="aclass_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">Szablon Klasy modelujacej w programie pojecie macierzy.</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hh_source.html#l00029">matrix.hh:29</a></div></div>
+<div class="ttc" id="amatrix2x2_8hh_html"><div class="ttname"><a href="matrix2x2_8hh.html">matrix2x2.hh</a></div><div class="ttdoc">Plik zawierajacy definicje konkretyzacji szablonu klasy Matrix do instancji Matrix2x2 - macierzy kwad...</div></div>
+<div class="ttc" id="amatrix2x2_8cpp_html_a8b3fdc42844a013a595f1daadae284b6"><div class="ttname"><a href="matrix2x2_8cpp.html#a8b3fdc42844a013a595f1daadae284b6">Rotation_matrix_2x2</a></div><div class="ttdeci">Matrix2x2 Rotation_matrix_2x2(double const angle)</div><div class="ttdoc">Funkcja wypelniajaca Matrix2x2 wartosciaciami macierzy obrotu w 2D dla zadanego kata.</div><div class="ttdef"><b>Definition:</b> <a href="matrix2x2_8cpp_source.html#l00016">matrix2x2.cpp:16</a></div></div>
+<div class="ttc" id="aclass_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">Szablon klasy modelujacej w programie pojecie macierzy.</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hh_source.html#l00028">matrix.hh:28</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

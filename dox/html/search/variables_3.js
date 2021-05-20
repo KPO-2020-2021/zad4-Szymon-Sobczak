@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['max_5fvalue_5fdiff_293',['MAX_VALUE_DIFF',['../size_8hh.html#a14964ebd7b58743d65afbdbf901ef699',1,'size.hh']]]
+  ['origin_5fcorners_295',['Origin_Corners',['../class_cuboid.html#a84c46c3a1841dd28cc3d476afea7c1d0',1,'Cuboid']]]
 ];

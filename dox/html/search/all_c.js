@@ -10,7 +10,10 @@ var searchData=
   ['matrix3x3_62',['Matrix3x3',['../matrix3x3_8hh.html#ac0b1a54ceafb28519afcbd8939668a70',1,'matrix3x3.hh']]],
   ['matrix3x3_2ecpp_63',['matrix3x3.cpp',['../matrix3x3_8cpp.html',1,'']]],
   ['matrix3x3_2ehh_64',['matrix3x3.hh',['../matrix3x3_8hh.html',1,'']]],
-  ['max_5fvalue_5fdiff_65',['MAX_VALUE_DIFF',['../size_8hh.html#a14964ebd7b58743d65afbdbf901ef699',1,'size.hh']]],
-  ['move_5fcuboid_66',['Move_cuboid',['../class_cuboid.html#ad1b37f5676c9a955b8ecd35e47ca8061',1,'Cuboid']]],
-  ['move_5ffigure_67',['Move_figure',['../class_scene.html#aba1b1578d9bc822c0ecbe542d9b88c85',1,'Scene']]]
+  ['matrix4x4_65',['Matrix4x4',['../matrix4x4_8hh.html#a42f35538281a26c2423335fa5837a5f6',1,'matrix4x4.hh']]],
+  ['matrix4x4_2ecpp_66',['matrix4x4.cpp',['../matrix4x4_8cpp.html',1,'']]],
+  ['matrix4x4_2ehh_67',['matrix4x4.hh',['../matrix4x4_8hh.html',1,'']]],
+  ['max_5fvalue_5fdiff_68',['MAX_VALUE_DIFF',['../size_8hh.html#a14964ebd7b58743d65afbdbf901ef699',1,'size.hh']]],
+  ['move_5fcuboid_69',['Move_cuboid',['../class_cuboid.html#a20d49aa2bad1faf97f10b482b574a86d',1,'Cuboid']]],
+  ['move_5ffigure_70',['Move_figure',['../class_scene.html#aba1b1578d9bc822c0ecbe542d9b88c85',1,'Scene']]]
 ];

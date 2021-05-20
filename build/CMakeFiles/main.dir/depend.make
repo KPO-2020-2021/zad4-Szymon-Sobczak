@@ -6,6 +6,7 @@ CMakeFiles/main.dir/app/main.cpp.o: ../inc/lacze_do_gnuplota.hh
 CMakeFiles/main.dir/app/main.cpp.o: ../inc/matrix.hh
 CMakeFiles/main.dir/app/main.cpp.o: ../inc/matrix2x2.hh
 CMakeFiles/main.dir/app/main.cpp.o: ../inc/matrix3x3.hh
+CMakeFiles/main.dir/app/main.cpp.o: ../inc/matrix4x4.hh
 CMakeFiles/main.dir/app/main.cpp.o: ../inc/scene.hh
 CMakeFiles/main.dir/app/main.cpp.o: ../inc/size.hh
 CMakeFiles/main.dir/app/main.cpp.o: ../inc/vector.hh

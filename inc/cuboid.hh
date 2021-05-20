@@ -11,31 +11,37 @@
 #include "matrix.hh"
 #include "lacze_do_gnuplota.hh"
 
-/*!
-  \brief Klasa modelujaca w programie pojecie prostokata, ktorego wierzcholki sa wyrazone za pomoca wektorow.
 
-  Klasa posiada prywatne pole "Corners" bedace tablica wektorow, opisuje ono wektorowo pozycje wierzcholkow prosotkata.
-  Klasa posiada publiczny konstruktor domyśly oraz konstruktor pozwalajacy na inicjowanie prostokata za pomoca wektorow.
-  Klasa posiada publiczne metody pozwalajace na:                                                                        
-    - sprawdzenie czy prostokat posiada rowne przeciwlegle boki i wyswietlenie  informacji o tym na standarowe wyjscie, 
-    - translacje prostokata o zadany wektor,                                                                            
-    - obrot prostokata wokol srodka ukladu wspolrzednych o zadany kat, wybrana ilosc razy.                              
-  
-  Klasa zawiera publiczne przeciazenia operatora indeksujacego opowiedzialnych za wprowadzanie i odczytywanie wartosci  
-    z wektorow.                                                                                                         
-  
-  Klasa posiada metode pozwalajaca zbadac kolizyjnosc dwoch prostokatow.                                                
+/*!
+    \file
+        \brief  Definicja klasy Cuboid.
+
+    Prototypy funkcji i metod klasy Cuboid.
+*/
+
+/*!
+    \brief Klasa modelujaca w programie pojecie prostopadloscianu, ktorego wierzcholki sa wyrazone za pomoca wektorow.
+
+    Klasa posiada 
+    prywatne pole "Corners" bedace tablica wektorow, opisuje ono wektorowo pozycje wierzcholkow prostopadloscianu.
+
+    Klasa posiada publiczny konstruktor domyśly oraz konstruktor pozwalajacy na inicjowanie prostopadloscianu za pomoca wektorow.
+    Klasa posiada publiczne metody pozwalajace na:
+        - Sprawdzenie, czy prostopadloscian posiada rowne przeciwlegle boki oraz wyswietlenie informacji o tym na standarowe wyjscie.
+        - Przemieszczenie prostopadloscanu w ukladzie globalnym.
+        - Zapis wartosci wierzcholkow globalnych do wskazanego pliku.
+        - Przeciazenie operatorow indeksujacych, umozliwajacych odczytywanie i zmiane wartosci reprezentujacych wierzcholki prostopadloscianu.                                                            
 */
  
 class Cuboid{
     private:  
-        /*! \brief Wartosci wektorow reprezentujace poczatkowe wierzcholki prostokata */
+        /*! \brief Tablica wektorow3D reprezentujacych rozklad wierzcholkow prostopadloscianu w ukladzie lokalnym */
         Vector3D Origin_Corners[CORNERS]; 
 
-        /*! \brief Wartosci wektorow reprezentujace poczatkowe wierzcholki prostokata */
+        /*! \brief Tablica wektorow3D reprezentujacych rozklad wierzcholkow prostopadloscianu w ukladzie globalnym */
         Vector3D Corners[CORNERS]; 
 
-        /*! \brief Wartosci wektorow reprezentujace tymaczasowe wierzcholki prostokata */
+        /*! \brief Wektor3D reprezentujacy srodek prostopadloscianu w przestrzeni globalnej */
         Vector3D center_of_cub;
 
     public:   
@@ -51,26 +57,21 @@ class Cuboid{
         /*! \brief Przeciazenie operatora indeksujacego */
         Vector3D & operator [] (int index);
 
-        /*! \brief Translacja prostokata prostokata o zadany wektor */
-        Cuboid Translate_cub(Vector3D const &vector);      
-
-        /*! \brief Obrot prostokata o zadany kat, zadana ilosc razy */
-        Cuboid Rotate_cub (Matrix3x3 const & mtx);    
-
-        /*! \brief Sprawdzenie czy dany prostokat ma rowne przeciwlegle boki */
+        /*! \brief Przmieszczenie prostopadloscianu w ukladzie globalnym */         
+        void Move_cuboid(Vector3D const &vector, Matrix3x3 const & mtx);
+   
+        /*! \brief Sprawdzenie czy dany prostopadloscian ma rowne przeciwlegle boki */
         void Is_it_cub() const;    
 
         /*! \brief Zapis wartosci wspolrzendych wierzcholkow do pliku */
         void Write_cub_to_file(const char *sNazwaPliku) const;  
-
-        /*! \brief Przmieszczenie prostopadloscianu w ukladzie globalnym */         
-        Cuboid Move_cuboid(Vector3D const &vector, Matrix3x3 const & mtx);
 };
 
+/*! \brief Funkcja pomocnicza, okresla czy podane dlugosci sa rowne. */
 bool are_sides_equal(double const array[]);
 
-/*! \brief Przeciazenie operatora << sluzace wyswietlaniu wartosci prostokata */ 
+/*! \brief Przeciazenie operatora << sluzace wyswietlaniu wartosci prostopadloscianu */ 
 std::ostream & operator << (std::ostream & Strm, const Cuboid & Rc);    
  
-/*! \brief Przeciazenie operatora >> sluzace wczytywaniu wartosci do prostokata */         
+/*! \brief Przeciazenie operatora >> sluzace wczytywaniu wartosci do prostopadloscianu */         
 std::istream & operator >> (std::ostream & Strm, Cuboid & Rc);        

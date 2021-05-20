@@ -44,9 +44,19 @@ cstdlib
 cmath
 -
 
+../inc/matrix2x2.hh
+matrix.hh
+../inc/matrix.hh
+
 ../inc/matrix3x3.hh
 matrix.hh
 ../inc/matrix.hh
+
+../inc/matrix4x4.hh
+matrix.hh
+../inc/matrix.hh
+vector3D.hh
+../inc/vector3D.hh
 
 ../inc/scene.hh
 iostream
@@ -93,6 +103,18 @@ vector.hh
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/cuboid.cpp
 cuboid.hh
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/cuboid.hh
+
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix2x2.cpp
+matrix2x2.hh
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix2x2.hh
+
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix3x3.cpp
+matrix3x3.hh
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix3x3.hh
+
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix4x4.cpp
+matrix4x4.hh
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix4x4.hh
 
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/scene.cpp
 scene.hh

@@ -1,8 +1,11 @@
-/* Przygotowal: Szymon Sobczak nr 259275 */
-
 /* Executables must have the following defined if the library contains
 doctest definitions. For builds with this disabled, e.g. code shipped to
 users, this can be left out. */
+
+/*!
+    \file
+        \brief Plik zawierajacy glowna funkcje programu.
+*/
 
 #ifdef ENABLE_DOCTEST_IN_LIBRARY
 #define DOCTEST_CONFIG_IMPLEMENT
@@ -21,49 +24,48 @@ users, this can be left out. */
 #include "vector.hh"
 #include "matrix.hh"
 #include "vector3D.hh"
+#include "matrix4x4.hh"
 #include "matrix3x3.hh"
 #include "matrix2x2.hh"
 #include "cuboid.hh"
 #include "scene.hh"
 #include "../inc/lacze_do_gnuplota.hh"
 
+/*! \brief Glowna funkcja programu.*/
+
 int main(){
-    unsigned int active_cuboid = 0;
-    double angle = 0, multiplier = 1, tr_X = 0, tr_Y = 0,tr_Z = 0; /* Inicjalizacja tablic wartosciami wierzcholkow prostokata oraz zmiennych potrzebnych w programie */
-    char Option;
-    PzG::LaczeDoGNUPlota Link;  /* Zmienna potrzebna do wizualizacji rysunku prostokata */
-    Vector3D T_vector;          /* Inicjalizacja wektorow reprezentujacych wspolrzedne wierzcholkow prostokata i wektora translacji */
-    Matrix3x3 temp_rot_matrix;
-    Scene Scenery;
-
-    Vector3D temp_vec1,temp_vec2;
-    std::vector <std::string> adresses_of_files;
-    std::string name_of_new_file;
-    adresses_of_files.push_back("../datasets/cuboid1.dat");
-      
-    /*!
-     *  Wspolrzedne wierzcholkow beda zapisywane w pliku "prostokat.dat"    
-     *  Ponizsze metody powoduja, ze dane z pliku beda wizualizowane na dwa sposoby:
-     *  1.Rysowane jako linia ciagla o grubosci 2 piksele         
-     *                
-     */
-   
-    std::cout << adresses_of_files[active_cuboid] << std::endl;
-    Link.DodajNazwePliku(adresses_of_files.at(0).c_str(),PzG::RR_Ciagly,2);
-    std::cout << adresses_of_files[active_cuboid].c_str() << std::endl;
-
-    /*!
-     *  Ustawienie trybu rysowania gnuplot na 3D.                                   
-     */
     
-    Link.ZmienTrybRys(PzG::TR_3D);
+    double val[3]= {1,2,3};
+    Vector3D trans(val);
+    Matrix4x4 test_matrix4x4 = Fill_combined_matrix_4x4(90,90,90,trans);
+    std::cout << test_matrix4x4;
 
-    Link.UstawZakresY(-255,255);
-    Link.UstawZakresX(-255,255);
-    Link.UstawZakresZ(-255,255); 
+    unsigned int active_cuboid = 0;   /* Inicjalizacja zmiennych tymczasowych */
+    double angle = 0, multiplier = 1, tr_X = 0, tr_Y = 0,tr_Z = 0; 
+    char Option;
+
+    PzG::LaczeDoGNUPlota Link;        /* Zmienna potrzebna do wizualizacji rysunku prostopadloscianu */
+    Vector3D T_vector,ctr_of_new_cub; /* Inicjalizacja wektorow tymczasowych */
+    Matrix3x3 temp_rot_matrix;        /* Inicjalizacja macierzy tymczasowej  */
+    
+    Scene Scenery; /* Inicjalizacja sceny */
+
+    std::vector <std::string> adresses_of_files; /* Inicjalizacja wektora zapamietujacego nazwy plikow prostopadloscianu */
+
+    std::string name_of_new_file;  /* Inicjalizacja zmiennej typu string - nazwy pojedynczego pliku z wspolrzednymi prostopadloscianu */
+    
+    adresses_of_files.push_back("../datasets/cuboid1.dat");  
+
+    Link.DodajNazwePliku(adresses_of_files.at(0).c_str(),PzG::RR_Ciagly,2); /* Rysowane prostopadloscianu jako linia ciagla o grubosci 2 piksele. */ 
+
+    Link.ZmienTrybRys(PzG::TR_3D); /* Ustawienie trybu rysowania w gnuplot na 3D. */
+
+    Link.UstawZakresY(-150,150);   /* Uwstawienie zakresu osi OX, OY i OZ */ 
+    Link.UstawZakresX(-150,150);
+    Link.UstawZakresZ(-150,150); 
 
     try{
-        Scenery[active_cuboid].Write_cub_to_file(adresses_of_files.at(active_cuboid).c_str()); /* Wyswietlenie w GNUplot stanu poczatkowego prostokata */
+        Scenery[active_cuboid].Write_cub_to_file(adresses_of_files.at(active_cuboid).c_str()); /*Zapis i wyswietlenie w GNUplot stanu poczatkowego, pierwszego, przykladowego prostopadloscianu */
         Link.Rysuj();
  
         std::cout << "Poczatkowy stan bokow prostopadloscianu: " << std::endl;
@@ -87,7 +89,7 @@ int main(){
             std::cin >> Option;
             switch(Option){
                 
-                case 'a':
+                case 'a': /* Opcja pozwalajaca na zmiane aktywnego prostopaloscianu */
                     while (true){
                         try{
                             std::cout << "Podaj numer prostopadloscianu, ktory ma byc aktywny: " << std::endl;;
@@ -106,9 +108,9 @@ int main(){
                     } 
                 break;
 
-                case 'o': /* Opcja obrotu prostokata */
+                case 'o': /* Opcja pozwalajaca na zadanie sekwencji obrotu prostopadloscianu */
                     temp_rot_matrix.reset_matrix();
-                    std::cout << "Podaj sekwencje: " << std::endl; /* Okreslenie parametrow obrotu prostokata- kata i ilosci obrotow */
+                    std::cout << "Podaj sekwencje: " << std::endl; /* Okreslenie sekwencji obrotow prostopadloscianu */
                     while (Option !='.'){  
                         try{
                             std::cin >> Option;
@@ -116,7 +118,7 @@ int main(){
                                 case 'x':
                                 std::cin >> angle;
                                 if(std::cin.fail())
-                                    throw std::invalid_argument(":/ Podano bledna wartosc kata obrotu ");
+                                    throw std::invalid_argument(":/ Podano bledna wartosc kata obrotu "); /*  */
                                 else 
                                     temp_rot_matrix = Fill_matrix_OX(angle) * temp_rot_matrix;
                                 break;
@@ -148,7 +150,7 @@ int main(){
                                 break;            
                               } 
                         }
-                        catch (std::invalid_argument & d){ /* W wyniku wyrzucenia bledu program poinformuje o tym i zakonczy swoje dzialanie */
+                        catch (std::invalid_argument & d){ /* W wyniku wyrzucenia bledu dot. wprowadzania liczby program poinformuje o tym i usunie blad ze strumienia */
                             std::cerr << d.what() << std::endl << ":/ Sprobuj jeszcze raz"  << std::endl;
                             std::cin.clear();
                             std::cin.ignore(10000,'\n');   
@@ -157,14 +159,14 @@ int main(){
 
                     while (true){
                         try{
-                            std::cout << "Ile razy operacja obrotu ma byc powtorzona? "<< std::endl;;
-                            std::cin >> multiplier; /* !!!!!!!!!!!!ASERCJA!!!!!!!!! */
+                            std::cout << "Ile razy operacja obrotu ma byc powtorzona? "<< std::endl; /* Okreslenie ile razy wprowadzony obrot ma sie wykonac*/
+                            std::cin >> multiplier; 
                             if(std::cin.fail() || multiplier < 0)
                                 throw std::invalid_argument(":/ Podano bledna wartosc mnoznika ");
                             else   
                                 break;
                         }
-                        catch (std::invalid_argument & f){ /* W wyniku wyrzucenia bledu program poinformuje o tym i zakonczy swoje dzialanie */
+                        catch (std::invalid_argument & f){ /* W wyniku wyrzucenia bledu dot. wprowadzania liczby program poinformuje o tym i usunie blad ze strumienia */
                             std::cerr << f.what() << std::endl << ":/ Sprobuj jeszcze raz"  << std::endl;
                             std::cin.clear();
                             std::cin.ignore(10000,'\n');   
@@ -174,7 +176,7 @@ int main(){
                     for (unsigned int i=0; i<multiplier;++i)
                         Scenery.update_matrix(temp_rot_matrix, active_cuboid);
                     
-                    Scenery.Move_figure(active_cuboid);
+                    Scenery.Move_figure(active_cuboid); 
                     Scenery[active_cuboid].Is_it_cub();
                     Scenery[active_cuboid].Write_cub_to_file(adresses_of_files.at(active_cuboid).c_str());
                     Link.Rysuj();
@@ -193,7 +195,7 @@ int main(){
                     Link.Rysuj();
                 break;
 
-                case 'w': /* Opcja wyswietlajaca wspolrzedne prsotokata */
+                case 'w': /* Opcja wyswietlajaca wspolrzedne prostopadloscianu */
                     std::cout << "Aktualne wspolrzedne prostopadloscianu: " << std::endl;
                     std::cout << Scenery[active_cuboid];
                 break;
@@ -207,7 +209,7 @@ int main(){
                     Link.Rysuj();
                 break;
 
-                case 'r':
+                case 'r': /* Opcja ponawiajaca ostatni obrot prostopadloscianu */   
                     std::cout << "Macierz rotacji " << std::endl << Scenery.get_matrix(active_cuboid) << std::endl; 
                 break;
 
@@ -229,16 +231,16 @@ int main(){
                     std::cout << ":) Konczenie pracy programu" << std::endl;
                 break;
 
-                case 's': /* Opcja wyswietlajaca wspolrzedne prsotokata */
+                case 's': /* Opcja wyswietlajaca wspolrzedne prostopadloscianu */
                     Scenery[active_cuboid].Is_it_cub();
                 break;
 
-                case 'd': /* Opcja konczaca program */
+                case 'd': /* Opcja dodajaca do sceny nowy prostopadloscian */
                     std::cout << "Podaj wspolrzedne punktow, na ktorych zostanie rozpiety nowy prostopadloscian: " << std::endl; 
                     std::cout << "Podaj wspolrzedne x y z pierwszego punktu: "; 
-                    std::cin >> temp_vec1;
+                    std::cin >> ctr_of_new_cub;
                     std::cout << "Podaj wartosci dlugosci o jakie punkt ma zostac rozsuniety na osiach OX, OY, OZ " << std::endl; 
-                    std::cin >>tr_X >> tr_Y >> tr_Z;
+                    std::cin >> tr_X >> tr_Y >> tr_Z;
                     if (std::cin.fail() || (tr_X == 0 && tr_Y == 0 && tr_Z == 0)){
                         std::cerr << ":( Niepoprawne oznaczenie dlugosci, dodawanie przerwane." << std::endl; 
                         std::cin.clear();
@@ -247,13 +249,14 @@ int main(){
                     }
 
                     name_of_new_file = "../datasets/cuboid.dat";
-                    name_of_new_file.insert(18,std::to_string(Scenery.how_many_cuboids()+1));
+                    name_of_new_file.insert(18, std::to_string(Scenery.how_many_cuboids() + 1));
                     adresses_of_files.push_back(name_of_new_file);
-                    Link.DodajNazwePliku(name_of_new_file.c_str(),PzG::RR_Ciagly,2);
+                    Link.DodajNazwePliku(name_of_new_file.c_str(),PzG::RR_Ciagly, 2);
 
-                    Scenery.Add_cuboid(temp_vec1,tr_X,tr_Y,tr_Z);
+                    Scenery.Add_cuboid(ctr_of_new_cub,tr_X,tr_Y,tr_Z);
 
                     Scenery[Scenery.how_many_cuboids()-1].Write_cub_to_file(name_of_new_file.c_str());
+
                     Link.Rysuj();
                 break;
 
@@ -266,5 +269,6 @@ int main(){
         std::cerr << ":O Wystapil blad!"<< std::endl << e.what() << std::endl;
         exit(1);
     }
+
     return 0;
 } 

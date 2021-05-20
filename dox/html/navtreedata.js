@@ -25,7 +25,8 @@ var NAVTREE =
   [ "Rotacje 3D", "index.html", [
     [ "Rotacja3D - Zadanie 4.", "index.html", [
       [ "Cel ćwiczenia", "index.html#etykieta-cel-cw", null ],
-      [ "Najwazniejsze elementy", "index.html#etykieta-najw-elem", null ]
+      [ "Najwazniejsze elementy programu.", "index.html#etykieta-najw-elem", null ],
+      [ "Najwazniejsze elementy programu.", "index.html#etykieta-dodatkowe-elem", null ]
     ] ],
     [ "Uruchamianie Programu", "md__r_e_a_d_m_e.html", [
       [ "Uruchamianie Testów Programu", "md__r_e_a_d_m_e.html#autotoc_md1", null ],

@@ -21,6 +21,11 @@
 },
 {
   "directory": "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build",
+  "command": "/usr/bin/c++  -DENABLE_DOCTEST_IN_LIBRARY -I\"/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build\" -I\"/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/inc\" -I\"/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/external/doctest/doctest\"  -g   -Wall -Wextra -Wpedantic -Wno-switch-enum -Werror -std=c++17 -o CMakeFiles/program.dir/src/matrix4x4.cpp.o -c \"/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix4x4.cpp\"",
+  "file": "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix4x4.cpp"
+},
+{
+  "directory": "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build",
   "command": "/usr/bin/c++  -DENABLE_DOCTEST_IN_LIBRARY -I\"/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build\" -I\"/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/inc\" -I\"/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/external/doctest/doctest\"  -g   -Wall -Wextra -Wpedantic -Wno-switch-enum -Werror -std=c++17 -o CMakeFiles/program.dir/src/matrix3x3.cpp.o -c \"/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix3x3.cpp\"",
   "file": "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/src/matrix3x3.cpp"
 },
