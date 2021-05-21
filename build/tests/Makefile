@@ -178,6 +178,33 @@ main.cpp.s:
 	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+test_cuboid.o: test_cuboid.cpp.o
+
+.PHONY : test_cuboid.o
+
+# target to build an object file
+test_cuboid.cpp.o:
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/test_cuboid.cpp.o
+.PHONY : test_cuboid.cpp.o
+
+test_cuboid.i: test_cuboid.cpp.i
+
+.PHONY : test_cuboid.i
+
+# target to preprocess a source file
+test_cuboid.cpp.i:
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/test_cuboid.cpp.i
+.PHONY : test_cuboid.cpp.i
+
+test_cuboid.s: test_cuboid.cpp.s
+
+.PHONY : test_cuboid.s
+
+# target to generate assembly for a file
+test_cuboid.cpp.s:
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/test_cuboid.cpp.s
+.PHONY : test_cuboid.cpp.s
+
 test_matrix2x2.o: test_matrix2x2.cpp.o
 
 .PHONY : test_matrix2x2.o
@@ -204,6 +231,87 @@ test_matrix2x2.s: test_matrix2x2.cpp.s
 test_matrix2x2.cpp.s:
 	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/test_matrix2x2.cpp.s
 .PHONY : test_matrix2x2.cpp.s
+
+test_matrix3x3.o: test_matrix3x3.cpp.o
+
+.PHONY : test_matrix3x3.o
+
+# target to build an object file
+test_matrix3x3.cpp.o:
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.o
+.PHONY : test_matrix3x3.cpp.o
+
+test_matrix3x3.i: test_matrix3x3.cpp.i
+
+.PHONY : test_matrix3x3.i
+
+# target to preprocess a source file
+test_matrix3x3.cpp.i:
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.i
+.PHONY : test_matrix3x3.cpp.i
+
+test_matrix3x3.s: test_matrix3x3.cpp.s
+
+.PHONY : test_matrix3x3.s
+
+# target to generate assembly for a file
+test_matrix3x3.cpp.s:
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.s
+.PHONY : test_matrix3x3.cpp.s
+
+test_matrix4x4.o: test_matrix4x4.cpp.o
+
+.PHONY : test_matrix4x4.o
+
+# target to build an object file
+test_matrix4x4.cpp.o:
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.o
+.PHONY : test_matrix4x4.cpp.o
+
+test_matrix4x4.i: test_matrix4x4.cpp.i
+
+.PHONY : test_matrix4x4.i
+
+# target to preprocess a source file
+test_matrix4x4.cpp.i:
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.i
+.PHONY : test_matrix4x4.cpp.i
+
+test_matrix4x4.s: test_matrix4x4.cpp.s
+
+.PHONY : test_matrix4x4.s
+
+# target to generate assembly for a file
+test_matrix4x4.cpp.s:
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.s
+.PHONY : test_matrix4x4.cpp.s
+
+test_scene.o: test_scene.cpp.o
+
+.PHONY : test_scene.o
+
+# target to build an object file
+test_scene.cpp.o:
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/test_scene.cpp.o
+.PHONY : test_scene.cpp.o
+
+test_scene.i: test_scene.cpp.i
+
+.PHONY : test_scene.i
+
+# target to preprocess a source file
+test_scene.cpp.i:
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/test_scene.cpp.i
+.PHONY : test_scene.cpp.i
+
+test_scene.s: test_scene.cpp.s
+
+.PHONY : test_scene.s
+
+# target to generate assembly for a file
+test_scene.cpp.s:
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build" && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/test_scene.cpp.s
+.PHONY : test_scene.cpp.s
 
 test_vector2D.o: test_vector2D.cpp.o
 
@@ -273,9 +381,21 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... test_cuboid.o"
+	@echo "... test_cuboid.i"
+	@echo "... test_cuboid.s"
 	@echo "... test_matrix2x2.o"
 	@echo "... test_matrix2x2.i"
 	@echo "... test_matrix2x2.s"
+	@echo "... test_matrix3x3.o"
+	@echo "... test_matrix3x3.i"
+	@echo "... test_matrix3x3.s"
+	@echo "... test_matrix4x4.o"
+	@echo "... test_matrix4x4.i"
+	@echo "... test_matrix4x4.s"
+	@echo "... test_scene.o"
+	@echo "... test_scene.i"
+	@echo "... test_scene.s"
 	@echo "... test_vector2D.o"
 	@echo "... test_vector2D.i"
 	@echo "... test_vector2D.s"

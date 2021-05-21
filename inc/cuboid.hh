@@ -36,13 +36,13 @@
 class Cuboid{
     private:  
         /*! \brief Tablica wektorow3D reprezentujacych rozklad wierzcholkow prostopadloscianu w ukladzie lokalnym */
-        Vector3D Origin_Corners[CORNERS]; 
+        Vector3D Local_corners[CORNERS]; 
 
         /*! \brief Tablica wektorow3D reprezentujacych rozklad wierzcholkow prostopadloscianu w ukladzie globalnym */
-        Vector3D Corners[CORNERS]; 
+        Vector3D Global_corners[CORNERS]; 
 
         /*! \brief Wektor3D reprezentujacy srodek prostopadloscianu w przestrzeni globalnej */
-        Vector3D center_of_cub;
+        Vector3D Center_of_cub;
 
     public:   
         /*! \brief Bezparametryczny konstuktor klasy */
@@ -57,6 +57,9 @@ class Cuboid{
         /*! \brief Przeciazenie operatora indeksujacego */
         Vector3D & operator [] (int index);
 
+        /*! \brief Metoda sluzaca do podgladania wspolrzednych lokalnych prostopadloscianu w celu testowania dzialania programu */
+        const Vector3D & operator () (int index) const;
+ 
         /*! \brief Przmieszczenie prostopadloscianu w ukladzie globalnym */         
         void Move_cuboid(Vector3D const &vector, Matrix3x3 const & mtx);
    
@@ -73,5 +76,3 @@ bool are_sides_equal(double const array[]);
 /*! \brief Przeciazenie operatora << sluzace wyswietlaniu wartosci prostopadloscianu */ 
 std::ostream & operator << (std::ostream & Strm, const Cuboid & Rc);    
  
-/*! \brief Przeciazenie operatora >> sluzace wczytywaniu wartosci do prostopadloscianu */         
-std::istream & operator >> (std::ostream & Strm, Cuboid & Rc);        

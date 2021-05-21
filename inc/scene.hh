@@ -24,7 +24,6 @@
   \brief Klasa modelujaca w programie pojecie Sceny.   
 
   Utworzona klasa zawiera:
-    - Publiczny konstruktor domyśly tworzacy scene zawierajaca jeden przykladowy prostopadloscian.
     - Publiczny destrukor czyszczacy pliki tymczasowe, w ktorych zapisywane sa wspolrzedne globalne prostopadloscianow. 
     - Metode pozwaljaca modyfikowac macierz rotacji wskazanego prostopadloscianu na scenie.
     - Metode pozwaljaca modyfikowac wektor przesuniecia wskazanego prostopadloscianu na scenie.
@@ -47,8 +46,6 @@ class Scene{
         std::vector <Vector3D> set_of_translation_vectors;
 
     public:
-        /*! \brief Konstruktor bezparametryczny. */
-        Scene();
 
         /*! \brief Destruktor klasy Scene. */
         ~Scene();
@@ -64,6 +61,9 @@ class Scene{
         
         /*! \brief Metoda pozwalajaca odczytac wartosci macierzy rotacji dla wskazanego prostopadloscianu */
         Matrix3x3 get_matrix(unsigned int index);
+
+        /*! \brief Metoda pozwalajaca odczytac wartosci wektora przesuniecia dla wskazanego prostopadloscianu */
+        Vector3D get_vector(unsigned int index);
         
         /*! \brief Przeciazenie operatora indeksujacego, sluzace do podgladania wartosci wierzcholkow prospoadloscianow zawarych w scenie. */
         const Cuboid & operator [] (unsigned int index) const;

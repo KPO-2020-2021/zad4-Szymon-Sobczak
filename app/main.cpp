@@ -35,10 +35,10 @@ users, this can be left out. */
 
 int main(){
     
-    double val[3]= {1,2,3};
+    /*     double val[3]= {10,20,30};
     Vector3D trans(val);
-    Matrix4x4 test_matrix4x4 = Fill_combined_matrix_4x4(30,60,90,trans);
-    std::cout << test_matrix4x4;
+    Matrix4x4 test_matrix4x4 = Fill_combined_matrix_4x4(90,60,30,trans);
+    std::cout << test_matrix4x4; */
 
     unsigned int active_cuboid = 0;   /* Inicjalizacja zmiennych tymczasowych */
     double angle = 0, multiplier = 1, tr_X = 0, tr_Y = 0,tr_Z = 0; 
@@ -65,6 +65,9 @@ int main(){
     Link.UstawZakresZ(-150,150); 
 
     try{
+        double Apx1[]={50,60,40}; /* Dodanie do sceny pierwszego, przykladowego prostopadloscianu*/
+        Vector3D A(Apx1);
+        Scenery.Add_cuboid(A,40,30,20);
         Scenery[active_cuboid].Write_cub_to_file(adresses_of_files.at(active_cuboid).c_str()); /*Zapis i wyswietlenie w GNUplot stanu poczatkowego, pierwszego, przykladowego prostopadloscianu */
         Link.Rysuj();
  

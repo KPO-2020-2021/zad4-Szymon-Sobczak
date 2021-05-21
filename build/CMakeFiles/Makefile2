@@ -990,12 +990,12 @@ tests/CMakeFiles/coverage.dir/clean:
 tests/CMakeFiles/unit_tests.dir/all: CMakeFiles/program.dir/all
 	$(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/depend
 	$(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" --progress-num=10,11,12,13,14 "Built target unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" --progress-num=10,11,12,13,14,15,16,17,18 "Built target unit_tests"
 .PHONY : tests/CMakeFiles/unit_tests.dir/all
 
 # Build rule for subdir invocation for target.
 tests/CMakeFiles/unit_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" 11
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" 15
 	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/unit_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" 0
 .PHONY : tests/CMakeFiles/unit_tests.dir/rule

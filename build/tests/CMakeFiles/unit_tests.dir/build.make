@@ -109,12 +109,68 @@ tests/CMakeFiles/unit_tests.dir/test_matrix2x2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test_matrix2x2.cpp.s"
 	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_matrix2x2.cpp" -o CMakeFiles/unit_tests.dir/test_matrix2x2.cpp.s
 
+tests/CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.o: ../tests/test_matrix3x3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.o"
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.o -c "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_matrix3x3.cpp"
+
+tests/CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.i"
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_matrix3x3.cpp" > CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.s"
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_matrix3x3.cpp" -o CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.s
+
+tests/CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.o: ../tests/test_matrix4x4.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.o"
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.o -c "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_matrix4x4.cpp"
+
+tests/CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.i"
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_matrix4x4.cpp" > CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.s"
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_matrix4x4.cpp" -o CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.s
+
+tests/CMakeFiles/unit_tests.dir/test_cuboid.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/test_cuboid.cpp.o: ../tests/test_cuboid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tests/CMakeFiles/unit_tests.dir/test_cuboid.cpp.o"
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/test_cuboid.cpp.o -c "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_cuboid.cpp"
+
+tests/CMakeFiles/unit_tests.dir/test_cuboid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/test_cuboid.cpp.i"
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_cuboid.cpp" > CMakeFiles/unit_tests.dir/test_cuboid.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/test_cuboid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test_cuboid.cpp.s"
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_cuboid.cpp" -o CMakeFiles/unit_tests.dir/test_cuboid.cpp.s
+
+tests/CMakeFiles/unit_tests.dir/test_scene.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/test_scene.cpp.o: ../tests/test_scene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object tests/CMakeFiles/unit_tests.dir/test_scene.cpp.o"
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/test_scene.cpp.o -c "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_scene.cpp"
+
+tests/CMakeFiles/unit_tests.dir/test_scene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/test_scene.cpp.i"
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_scene.cpp" > CMakeFiles/unit_tests.dir/test_scene.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/test_scene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test_scene.cpp.s"
+	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_scene.cpp" -o CMakeFiles/unit_tests.dir/test_scene.cpp.s
+
 # Object files for target unit_tests
 unit_tests_OBJECTS = \
 "CMakeFiles/unit_tests.dir/main.cpp.o" \
 "CMakeFiles/unit_tests.dir/test_vector2D.cpp.o" \
 "CMakeFiles/unit_tests.dir/test_vector3D.cpp.o" \
-"CMakeFiles/unit_tests.dir/test_matrix2x2.cpp.o"
+"CMakeFiles/unit_tests.dir/test_matrix2x2.cpp.o" \
+"CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.o" \
+"CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.o" \
+"CMakeFiles/unit_tests.dir/test_cuboid.cpp.o" \
+"CMakeFiles/unit_tests.dir/test_scene.cpp.o"
 
 # External object files for target unit_tests
 unit_tests_EXTERNAL_OBJECTS = \
@@ -129,6 +185,10 @@ unit_tests: tests/CMakeFiles/unit_tests.dir/main.cpp.o
 unit_tests: tests/CMakeFiles/unit_tests.dir/test_vector2D.cpp.o
 unit_tests: tests/CMakeFiles/unit_tests.dir/test_vector3D.cpp.o
 unit_tests: tests/CMakeFiles/unit_tests.dir/test_matrix2x2.cpp.o
+unit_tests: tests/CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.o
+unit_tests: tests/CMakeFiles/unit_tests.dir/test_matrix4x4.cpp.o
+unit_tests: tests/CMakeFiles/unit_tests.dir/test_cuboid.cpp.o
+unit_tests: tests/CMakeFiles/unit_tests.dir/test_scene.cpp.o
 unit_tests: CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o
 unit_tests: CMakeFiles/program.dir/src/cuboid.cpp.o
 unit_tests: CMakeFiles/program.dir/src/scene.cpp.o
@@ -137,7 +197,7 @@ unit_tests: CMakeFiles/program.dir/src/matrix3x3.cpp.o
 unit_tests: CMakeFiles/program.dir/src/matrix2x2.cpp.o
 unit_tests: tests/CMakeFiles/unit_tests.dir/build.make
 unit_tests: tests/CMakeFiles/unit_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ../unit_tests"
 	cd "/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/build/tests" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unit_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

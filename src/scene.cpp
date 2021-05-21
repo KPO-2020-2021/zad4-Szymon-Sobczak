@@ -7,17 +7,6 @@
     Plik zawiera definicje metod klasy Scene.
 */
 
-/*!
-    Konstruktor bezparametryczny klasy Scene tworzacy instancje sceny zawierajaca 1 przykladowy prostpadloscian.   
-    
-    \return Scene zawierajaca przykladowy prostopadloscian. 
-*/
-
-Scene::Scene(){
-    double Apx1[]={50,60,40};
-    Vector3D A(Apx1);
-    Add_cuboid(A,40,30,20);
-}
 
 /*!
     Publiczny destrukor czyszczacy pliki tymczasowe, w ktorych zapisywane sa wspolrzedne globalne prostopadloscianow. 
@@ -54,6 +43,19 @@ const Cuboid & Scene::operator [] (unsigned int index) const{
 Matrix3x3 Scene::get_matrix(unsigned int index){
     return set_of_rotation_matrixes.at(index);
 }
+
+/*!
+    Metoda pozwalajaca pobrac wartosci wektora translacji wskazanego prostopadloscianu ze sceny.
+
+    \param [in] index - Indeks wskazanego prostopadloscianu.
+
+    \return Wskazany wektor translacji - obiekt typu Vector3D.
+*/
+
+Vector3D Scene::get_vector(unsigned int index){
+    return set_of_translation_vectors.at(index);
+}
+
 
 /*!
     Metoda pozwaljaca modyfikowac macierz rotacji wskazanego prostopadloscianu na scenie.

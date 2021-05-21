@@ -15,8 +15,8 @@
  */
 Cuboid::Cuboid(){
     for (int i=0;i<CORNERS;i++)
-        Corners[i] = Vector3D();    
-    center_of_cub =  Vector3D();
+        Global_corners[i] = Vector3D();    
+    Center_of_cub =  Vector3D();
 }
  
 /*!
@@ -37,47 +37,65 @@ Cuboid::Cuboid(){
  */
 
  Cuboid::Cuboid(Vector3D  CornerA, Vector3D  CornerB, Vector3D CornerC, Vector3D CornerD, Vector3D  CornerE,Vector3D  CornerF,Vector3D  CornerG,Vector3D  CornerH, Vector3D center_of_cuboid){
-    center_of_cub = center_of_cuboid;
+    Center_of_cub = center_of_cuboid;
 
-    Origin_Corners[0] = CornerA; 
-    Origin_Corners[1] = CornerB;
-    Origin_Corners[2] = CornerC; 
-    Origin_Corners[3] = CornerD;
-    Origin_Corners[4] = CornerE;
-    Origin_Corners[5] = CornerF;
-    Origin_Corners[6] = CornerG;
-    Origin_Corners[7] = CornerH;
+    Local_corners[0] = CornerA; 
+    Local_corners[1] = CornerB;
+    Local_corners[2] = CornerC; 
+    Local_corners[3] = CornerD;
+    Local_corners[4] = CornerE;
+    Local_corners[5] = CornerF;
+    Local_corners[6] = CornerG;
+    Local_corners[7] = CornerH;
 
     for(int i = 0; i < CORNERS; ++i)   
-        Corners[i] = Origin_Corners[i] + center_of_cuboid; 
+        Global_corners[i] = Local_corners[i] + center_of_cuboid; 
 }
 
 /*!                                                                                                         
-    \param[in] index - index wierzcholka prostopadloscianu.                                             
+    \param[in] index - index wierzcholka globalnego prostopadloscianu.                                             
                                                                    
-    \return Wartosc wierzcholka prostopadloscianu w danym miejscu tablicy jako stala.                
+    \return Wartosc wierzcholka globalnego prostopadloscianu w danym miejscu tablicy jako stala.                
  */
 
 const Vector3D & Cuboid::operator [] (int index) const {
     if (index < 0 || index >= CORNERS) {
-        throw std::runtime_error("Bledna wartosc indeksu prostopadloscianu");
+        throw std::runtime_error("Bledna wartosc indeksu wierzcholka prostopadloscianu");
     } 
-    return Corners[index];
+    return Global_corners[index];
 }
 
 /*!                                                                                                 
-    \param[in]  index - index wierzcholka prostopadloscianu.                                             
+    \param[in]  index - index wierzcholka globalnego prostopadloscianu.                                             
                                                                   
-    \return Wartosc wierzcholka prostopadloscianu w danym miejscu tablicy.                           
+    \return Wartosc wierzcholka globalnego prostopadloscianu w danym miejscu tablicy.                           
 */
 
  Vector3D & Cuboid::operator[](int index) {
+    if (index < 0 || index >= CORNERS) {
+        throw std::runtime_error("Bledna wartosc indeksu wierzcholka prostopadloscianu");
+    } 
     return const_cast <Vector3D &> (const_cast <const Cuboid *> (this)->operator[](index));
 }
 
+/*!          
+    Metoda klasy prostopadloscian sluzaca do sprawdzania wartosci wspolrzednych wierzcholkow lokalnych.
+    Metoda stworzona do testow progamu.
+
+    \param[in] index - index wierzcholka lokalnego prostopadloscianu.                                             
+                                                                   
+    \return Wartosc lokalna wierzcholka prostopadloscianu w danym miejscu tablicy jako stala.                
+ */
+
+const Vector3D & Cuboid::operator () (int index) const {
+    if (index < 0 || index >= CORNERS) {
+        throw std::runtime_error("Bledna wartosc indeksu wierzcholka prostopadloscianu");
+    } 
+    return Local_corners[index];
+}
 
 /*!  
-    PMetoda realizjaca proces transformacji miedzy lokalnym ukladem wspolrzednych prostopadloscianu do ukladu globalnego.
+    Metoda realizjaca proces transformacji miedzy lokalnym ukladem wspolrzednych prostopadloscianu do ukladu globalnego.
 
     \param [in] vector - Wektor przesuniecia srodka prostopadloscianu.
     \param [in] mtx - Macierz rotacji. 
@@ -86,7 +104,7 @@ const Vector3D & Cuboid::operator [] (int index) const {
 void Cuboid::Move_cuboid(Vector3D const & vector, Matrix3x3 const & mtx){
     Matrix3x3 temp = mtx; 
     for(int i = 0; i < CORNERS; ++i)
-        Corners[i] = (temp * Origin_Corners[i]) + center_of_cub + vector;  
+        Global_corners[i] = (temp * Local_corners[i]) + Center_of_cub + vector;  
 }
 
 /*!
@@ -107,23 +125,6 @@ std::ostream & operator << (std::ostream & Out, const Cuboid & Rc){
 }
 
 /*!
-    Funkcja wykonujaca operacje przeciazenia operatora >>. Funkcja sluzy do wprowadzania wartosci wspolrzednych wierzcholkow prostopadloscianu ze wskazanego strumienia wejsciowego.   
-                                                                                                  
-    \param[in] Strm - Referencja do strumienia typu istream, z ktorego maja zostac wczytane wspolrzedne wierzcholkow prostopadloscianu. 
-    \param[in] Vec - Referencja do prostopadloscianu, do ktorego maja zostac wpisane podane wspolrzedne weirzcholkow.                   
-
-    \return Wczytany obiekt- prostopadloscian.                                                                                        
- */
-
-std::istream & operator >> (std::istream & In,Cuboid & Rc){
-    for (int i=0; i<CORNERS;i++){
-        In >> Rc[i];
-    }
-    return In;
-}
-
-
-/*!
     Metoda klasy Cuboid realizujaca zapis wartosci wspolrzednych wierzcholkow globalnych prostopadloscianu do pliku.                    
                                                                                                                                                                                                                                                        
     \param[in] this - prostopadloscian do zapisu.                                                                           
@@ -132,7 +133,7 @@ std::istream & operator >> (std::istream & In,Cuboid & Rc){
 
 void Cuboid::Write_cub_to_file(const char *sNazwaPliku) const{
     std::ofstream  FileStrm;
-    Vector3D P1,P2, temp_vec[]={Corners[0],Corners[7],Corners[2],Corners[5]};
+    Vector3D P1,P2, temp_vec[]={Global_corners[0],Global_corners[7],Global_corners[2],Global_corners[5]};
     
     FileStrm.open(sNazwaPliku);
     if (!FileStrm.is_open()){
@@ -143,43 +144,42 @@ void Cuboid::Write_cub_to_file(const char *sNazwaPliku) const{
     P2 = (temp_vec[2] + temp_vec[3])/2;
 
     FileStrm << P1 << std::endl
-             << Corners[6] << std::endl
-             << Corners[4] << std::endl
+             << Global_corners[6] << std::endl
+             << Global_corners[4] << std::endl
              << P2 << std::endl
              << '#' << std::endl
              << std::endl;
 
     FileStrm << P1 << std::endl
-             << Corners[7] << std::endl
-             << Corners[5] << std::endl
+             << Global_corners[7] << std::endl
+             << Global_corners[5] << std::endl
              << P2 << std::endl
              << '#' << std::endl
              << std::endl; 
 
     FileStrm << P1 << std::endl
-             << Corners[1] << std::endl
-             << Corners[3] << std::endl
+             << Global_corners[1] << std::endl
+             << Global_corners[3] << std::endl
              << P2 << std::endl
              << '#' << std::endl
              << std::endl; 
 
     FileStrm << P1 << std::endl
-             << Corners[0] << std::endl
-             << Corners[2] << std::endl
+             << Global_corners[0] << std::endl
+             << Global_corners[2] << std::endl
              << P2 << std::endl
              << '#' << std::endl
              << std::endl; 
 
     FileStrm << P1 << std::endl
-             << Corners[6] << std::endl
-             << Corners[4] << std::endl
+             << Global_corners[6] << std::endl
+             << Global_corners[4] << std::endl
              << P2 << std::endl
              << '#' << std::endl
              << std::endl; 
 
     FileStrm.close();
 }
-
 
 /*!
     Metoda klasy Cuboid wykonujaca operacje sprawdzenia, czy podane w parametrze dlugosci bokow sa sobie rowne.
@@ -209,9 +209,9 @@ bool are_sides_equal(double const array[]){
 
 void Cuboid::Is_it_cub() const{
  
-    double  A[4] = {vector_length(Corners[0],Corners[1]), vector_length(Corners[2],Corners[3]), vector_length(Corners[4],Corners[5]), vector_length(Corners[6],Corners[7])},
-            B[4] = {vector_length(Corners[0],Corners[2]), vector_length(Corners[1],Corners[3]), vector_length(Corners[4],Corners[6]), vector_length(Corners[5],Corners[7])},
-            C[4] = {vector_length(Corners[0],Corners[6]), vector_length(Corners[1],Corners[7]), vector_length(Corners[2],Corners[4]), vector_length(Corners[3],Corners[5])};
+    double  A[4] = {vector_length(Global_corners[0],Global_corners[1]), vector_length(Global_corners[2],Global_corners[3]), vector_length(Global_corners[4],Global_corners[5]), vector_length(Global_corners[6],Global_corners[7])},
+            B[4] = {vector_length(Global_corners[0],Global_corners[2]), vector_length(Global_corners[1],Global_corners[3]), vector_length(Global_corners[4],Global_corners[6]), vector_length(Global_corners[5],Global_corners[7])},
+            C[4] = {vector_length(Global_corners[0],Global_corners[6]), vector_length(Global_corners[1],Global_corners[7]), vector_length(Global_corners[2],Global_corners[4]), vector_length(Global_corners[3],Global_corners[5])};
             
     if (are_sides_equal(A)){
         if (A[0] == B[0])

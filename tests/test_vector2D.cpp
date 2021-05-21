@@ -18,7 +18,7 @@ TEST_CASE("Test wpraowadzania wartosci do wektora2D z uzyciem operatora indeksow
     CHECK((Vec[0]==7 && Vec[1]==15));
 }
 
-TEST_CASE("Test konstrukora bezparametrowego dla klasy Vector2D."){
+TEST_CASE("Test konstrukora bezparametrycznego dla klasy Vector2D."){
     Vector2D Vec;
     CHECK((Vec[0]==0 && Vec[1]==0));
 }
