@@ -117,9 +117,9 @@ Wykres zależności załączania dla matrix4x4.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funkcje</h2></td></tr>
-<tr class="memitem:a1dacdc838115fb081f39421e5329ea0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="matrix4x4_8hh.html#a42f35538281a26c2423335fa5837a5f6">Matrix4x4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix4x4_8cpp.html#a1dacdc838115fb081f39421e5329ea0a">Fill_combined_matrix_4x4</a> (double alpha, double beta, double gamma, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> translation)</td></tr>
-<tr class="memdesc:a1dacdc838115fb081f39421e5329ea0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wypelniajaca Matrix4x4 wartosciaciami polaczonej macierzy obrotu i translacji dla zadanych katow i wektora.  <a href="matrix4x4_8cpp.html#a1dacdc838115fb081f39421e5329ea0a">Więcej...</a><br /></td></tr>
-<tr class="separator:a1dacdc838115fb081f39421e5329ea0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a640f9ae5699e202185977f3be34360fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="matrix4x4_8hh.html#a42f35538281a26c2423335fa5837a5f6">Matrix4x4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix4x4_8cpp.html#a640f9ae5699e202185977f3be34360fa">Fill_combined_matrix_4x4</a> (double alpha_x, double beta_y, double gamma_z, <a class="el" href="vector3_d_8hh.html#a01090a0f6a3d1e7e9606819bd0fafda0">Vector3D</a> translation)</td></tr>
+<tr class="memdesc:a640f9ae5699e202185977f3be34360fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wypelniajaca Matrix4x4 wartosciaciami polaczonej macierzy obrotu i translacji dla zadanych katow i wektora.  <a href="matrix4x4_8cpp.html#a640f9ae5699e202185977f3be34360fa">Więcej...</a><br /></td></tr>
+<tr class="separator:a640f9ae5699e202185977f3be34360fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock"><p>plik zawiera definicje funkcji wypelniajacej Matrix4x4 wartosciaciami macierzy polaczonego obrotu i translacji. </p>
@@ -128,8 +128,8 @@ Funkcje</h2></td></tr>
 
 <p class="definition">Definicja w pliku <a class="el" href="matrix4x4_8cpp_source.html">matrix4x4.cpp</a>.</p>
 </div><h2 class="groupheader">Dokumentacja funkcji</h2>
-<a id="a1dacdc838115fb081f39421e5329ea0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dacdc838115fb081f39421e5329ea0a">&#9670;&nbsp;</a></span>Fill_combined_matrix_4x4()</h2>
+<a id="a640f9ae5699e202185977f3be34360fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a640f9ae5699e202185977f3be34360fa">&#9670;&nbsp;</a></span>Fill_combined_matrix_4x4()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,19 +138,19 @@ Funkcje</h2></td></tr>
           <td class="memname"><a class="el" href="matrix4x4_8hh.html#a42f35538281a26c2423335fa5837a5f6">Matrix4x4</a> Fill_combined_matrix_4x4 </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>alpha</em>, </td>
+          <td class="paramname"><em>alpha_x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>beta</em>, </td>
+          <td class="paramname"><em>beta_y</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>gamma</em>, </td>
+          <td class="paramname"><em>gamma_z</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -170,25 +170,16 @@ Funkcje</h2></td></tr>
 <p>Funkcja wypelnia macierz o wielkosci 4 wartosciaciami pozwalajacymi obrot wielu osiach i translacje o wektor w 3D, dla zadanch katow i wektora przesuniecia.</p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">alpha</td><td>- Kat obrotu wokol osi OX. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">beta</td><td>- Kat obrotu wokol osi OY. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">gamma</td><td>- Kat obrotu wokol osi OZ. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">alpha</td><td>- Kat obrotu wokol osi OX - roll. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">beta</td><td>- Kat obrotu wokol osi OY - pitch. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gamma</td><td>- Kat obrotu wokol osi OZ - yaw. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">translation</td><td>- Wektor przesuniecia.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Zwraca</dt><dd>rotation_matrix - macierz2x2 uzupelniona warosciami rotacji dla zadanego kata. </dd></dl>
+<dl class="section return"><dt>Zwraca</dt><dd>rotation_matrix - macierz4x4 uzupelniona warosciami rotacji dla zadanych katow i wektorem przesuniecia. </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="matrix4x4_8cpp_source.html#l00018">18</a> pliku <a class="el" href="matrix4x4_8cpp_source.html">matrix4x4.cpp</a>.</p>
-<div class="dynheader">
-Oto graf wywoływań tej funkcji:</div>
-<div class="dyncontent">
-<div class="center"><img src="matrix4x4_8cpp_a1dacdc838115fb081f39421e5329ea0a_icgraph.png" border="0" usemap="#matrix4x4_8cpp_a1dacdc838115fb081f39421e5329ea0a_icgraph" alt=""/></div>
-<map name="matrix4x4_8cpp_a1dacdc838115fb081f39421e5329ea0a_icgraph" id="matrix4x4_8cpp_a1dacdc838115fb081f39421e5329ea0a_icgraph">
-<area shape="rect" title="Funkcja wypelniajaca Matrix4x4 wartosciaciami polaczonej macierzy obrotu i translacji dla zadanych ka..." alt="" coords="108,5,301,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Glowna funkcja programu." alt="" coords="5,5,60,32"/>
-</map>
-</div>
+<p class="definition">Definicja w linii <a class="el" href="matrix4x4_8cpp_source.html#l00019">19</a> pliku <a class="el" href="matrix4x4_8cpp_source.html">matrix4x4.cpp</a>.</p>
 
 </div>
 </div>

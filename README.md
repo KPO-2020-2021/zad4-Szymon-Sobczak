@@ -1,15 +1,21 @@
 ## Uruchamianie Programu
- * Aby móc poprawnie skompilować program należy najpierw stworzyc katalog build, a nastepnie użyć programu cmake do stworzenia pliku makefile w katalogu build.
+ * Aby móc poprawnie skompilować program należy najpierw stworzyć katalog build, o ile go nie ma, a następnie użyć programu cmake do stworzenia pliku makefile w katalogu build.
  * Następnie należy użyć Makefile poleceniem "make", aby skompilować program po wcześniejszym poprawnym stworzeniu pliku Makefile z pomocą cmake. 
  * Po poprawnym skompilowaniu, aby uruchomić program, należy użyć polecenia "./main" w katalogu build.
 
 ## Uruchamianie Testów Programu
  * Testy jednostkowe programu uruchamiają się po wpisaniu do terminala "./unit_tests" po poprawnej kompilacji z użyciem pliku Makefile.
 
+## Generowanie dokumentacji w Doxygen
+ * Aby wygenerować pliki dokumentacji Doxygen, w postaci HTML, należy skorzystać z pliku konfiguracyjnego "Doxyfile.in" znajdującego się w głównym katalogu repozytorum. Aby to zrobić, należy skorzystać z polecenia "doxygen Doxyfile.in" w głównym katalogu repozytorium. Wygenerowane pliki będą znajdowały się w katalogu "./dox". Do wygenerowania dokumentacji można również skorzystać z kreatora doxywizard.
+
+## Wcześniej wygenerowana dokumentacja
+ * Repozytorum posiada wcześniej wygenerowane najaktualniejsze pliki dokumentacji w katalogu "./dox".
+
 ## Informacje dodatkowe
- * Możliwe jest animowanie obrotu o zadany kąt i przesunięcie o zadany wektor.
- * Wykonując obrót o zadany kąt, należy jednak pamiętać, aby stosować tę opcję dla małych kątów, gdyż dla dużych kątów animacja jest bardzo szybka, przez co niezauważalna. 
- * Możliwe jest badanie kolizyjności prostokątów, prostokaty traktowane sa jako puste.
+ * Możliwe jest dodawanie wielu prostopadłościanów do sceny. Istnieje możliwość przemieszczania każdego z nich oddzielnie po stworzeniu nowych prostopadłościanów na scenie, by to zrobić należy zmienić aktywny prostopadłościan opcją "a". 
+ * Wizualizowane prostopadłościany w Gnuplot są pełnymi prostopadłościanami - ze wszystkimi ścianami.
+ * Test modyfikacji, wyświetlenie macierzy4x4 - macierzy połączonego obrotu i translacji, przeprowadzone w ramach autotestu. (PLIK. test_matrix4x4.cpp).
 
 ## Building
 Build by making a build directory (i.e. `build/`), run `cmake` in that dir, and then use `make` to build the desired target.

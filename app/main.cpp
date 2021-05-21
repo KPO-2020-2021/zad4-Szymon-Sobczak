@@ -12,14 +12,6 @@ users, this can be left out. */
 #include "../tests/doctest/doctest.h"
 #endif
 
-#include <iostream>
-#include <iomanip>
-#include <stdlib.h>
-#include <fstream>
-#include <string>
-#include <unistd.h>
-#include <vector>
-
 #include "exampleConfig.h"
 #include "vector.hh"
 #include "matrix.hh"
@@ -35,11 +27,6 @@ users, this can be left out. */
 
 int main(){
     
-    /*     double val[3]= {10,20,30};
-    Vector3D trans(val);
-    Matrix4x4 test_matrix4x4 = Fill_combined_matrix_4x4(90,60,30,trans);
-    std::cout << test_matrix4x4; */
-
     unsigned int active_cuboid = 0;   /* Inicjalizacja zmiennych tymczasowych */
     double angle = 0, multiplier = 1, tr_X = 0, tr_Y = 0,tr_Z = 0; 
     char Option;
@@ -52,11 +39,11 @@ int main(){
 
     std::vector <std::string> adresses_of_files; /* Inicjalizacja wektora zapamietujacego nazwy plikow prostopadloscianu */
 
-    std::string name_of_new_file;  /* Inicjalizacja zmiennej typu string - nazwy pojedynczego pliku z wspolrzednymi prostopadloscianu */
+    std::string name_of_new_file;  /* Inicjalizacja zmiennej typu string - nazwy pojedynczego pliku ze wspolrzednymi prostopadloscianu */
     
     adresses_of_files.push_back("../datasets/cuboid1.dat");  
 
-    Link.DodajNazwePliku(adresses_of_files.at(0).c_str(),PzG::RR_Ciagly,2); /* Rysowane prostopadloscianu jako linia ciagla o grubosci 2 piksele. */ 
+    Link.DodajNazwePliku(adresses_of_files.at(0).c_str(),PzG::RR_Ciagly,2); /* Rysowanie prostopadloscianu jako linia ciagla o grubosci 2 pikseli. */ 
 
     Link.ZmienTrybRys(PzG::TR_3D); /* Ustawienie trybu rysowania w gnuplot na 3D. */
 
@@ -65,10 +52,10 @@ int main(){
     Link.UstawZakresZ(-150,150); 
 
     try{
-        double Apx1[]={50,60,40}; /* Dodanie do sceny pierwszego, przykladowego prostopadloscianu*/
+        double Apx1[]={50,60,40}; /* Dodanie do sceny pierwszego, przykladowego prostopadloscianu */
         Vector3D A(Apx1);
         Scenery.Add_cuboid(A,40,30,20);
-        Scenery[active_cuboid].Write_cub_to_file(adresses_of_files.at(active_cuboid).c_str()); /*Zapis i wyswietlenie w GNUplot stanu poczatkowego, pierwszego, przykladowego prostopadloscianu */
+        Scenery[active_cuboid].Write_cub_to_file(adresses_of_files.at(active_cuboid).c_str()); /* Zapis i wyswietlenie w GNUplot stanu poczatkowego, pierwszego, przykladowego prostopadloscianu */
         Link.Rysuj();
  
         std::cout << "Poczatkowy stan bokow prostopadloscianu: " << std::endl;
@@ -203,7 +190,7 @@ int main(){
                     std::cout << Scenery[active_cuboid];
                 break;
 
-                case 't':
+                case 't': /* Opcja pozwlajaca na powtorzenie ostatniej rotacji na aktywnym prostopadloscianie */
                     for (unsigned int i=0; i<multiplier;++i)
                         Scenery.update_matrix(temp_rot_matrix,active_cuboid);  
                     Scenery.Move_figure(active_cuboid);

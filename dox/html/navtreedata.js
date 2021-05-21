@@ -30,8 +30,10 @@ var NAVTREE =
     ] ],
     [ "Uruchamianie Programu", "md__r_e_a_d_m_e.html", [
       [ "Uruchamianie Testów Programu", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Informacje dodatkowe", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-      [ "Building", "md__r_e_a_d_m_e.html#autotoc_md3", null ]
+      [ "Generowanie dokumentacji w Doxygen", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Wcześniej wygenerowana dokumentacja", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
+      [ "Informacje dodatkowe", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
+      [ "Building", "md__r_e_a_d_m_e.html#autotoc_md5", null ]
     ] ],
     [ "Przestrzenie nazw", "namespaces.html", [
       [ "Lista przestrzeni nazw", "namespaces.html", "namespaces_dup" ],

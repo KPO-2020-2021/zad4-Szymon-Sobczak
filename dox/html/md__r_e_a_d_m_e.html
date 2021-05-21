@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><ul>
-<li>Aby móc poprawnie skompilować program należy najpierw stworzyc katalog build, a nastepnie użyć programu cmake do stworzenia pliku makefile w katalogu build.</li>
+<li>Aby móc poprawnie skompilować program należy najpierw stworzyć katalog build, o ile go nie ma, a następnie użyć programu cmake do stworzenia pliku makefile w katalogu build.</li>
 <li>Następnie należy użyć Makefile poleceniem "make", aby skompilować program po wcześniejszym poprawnym stworzeniu pliku Makefile z pomocą&#160;cmake.</li>
 <li>Po poprawnym skompilowaniu, aby uruchomić program, należy użyć polecenia "./main" w katalogu build.</li>
 </ul>
@@ -98,13 +98,22 @@ Uruchamianie Testów Programu</h1>
 <li>Testy jednostkowe programu uruchamiają się po wpisaniu do terminala "./unit_tests" po poprawnej kompilacji z użyciem pliku Makefile.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
-Informacje dodatkowe</h1>
+Generowanie dokumentacji w Doxygen</h1>
 <ul>
-<li>Możliwe jest animowanie obrotu o zadany kąt i przesunięcie o zadany wektor.</li>
-<li>Wykonując obrót o zadany kąt, należy jednak pamiętać, aby stosować tę opcję dla małych kątów, gdyż dla dużych kątów animacja jest bardzo szybka, przez co niezauważalna.</li>
-<li>Możliwe jest badanie kolizyjności prostokątów, prostokaty traktowane sa jako puste.</li>
+<li>Aby wygenerować pliki dokumentacji Doxygen, w postaci HTML, należy skorzystać z pliku konfiguracyjnego "Doxyfile.in" znajdującego się w głównym katalogu repozytorum. Aby to zrobić, należy skorzystać z polecenia "doxygen Doxyfile.in" w głównym katalogu repozytorium. Wygenerowane pliki będą znajdowały się w katalogu "./dox". Do wygenerowania dokumentacji można również skorzystać z kreatora doxywizard.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md3"></a>
+Wcześniej wygenerowana dokumentacja</h1>
+<ul>
+<li>Repozytorum posiada wcześniej wygenerowane pliki dokumentacji w katalogu "./dox".</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Informacje dodatkowe</h1>
+<ul>
+<li>Możliwe jest dodawanie wielu prostopadłościanów do sceny. Istnieje możliwość przemieszczania każdego z nich oddzielnie po stworzeniu nowych prostopadłościanów na scenie, by to zrobić należy zmienić aktywny prostopadłościan opcją "a".</li>
+<li>Wizualizowane prostopadłościany w Gnuplot są pełnymi prostopadłościanami - ze wszystkimi ścianami.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Building</h1>
 <p>Build by making a build directory (i.e. <code>build/</code>), run <code>cmake</code> in that dir, and then use <code>make</code> to build the desired target.</p>
 <p>Requirements: cmake, gnuplot, doxygen + dot</p>
@@ -147,7 +156,7 @@ Building</h1>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
-<div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdoc">Glowna funkcja programu.</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00036">main.cpp:36</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdoc">Glowna funkcja programu.</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00028">main.cpp:28</a></div></div>
 <div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdoc">Szablon klasy modelujacej w programie pojecie wektora.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8hh_source.html#l00022">vector.hh:22</a></div></div>
 <div class="ttc" id="aclass_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">Szablon klasy modelujacej w programie pojecie macierzy.</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hh_source.html#l00028">matrix.hh:28</a></div></div>
 <!-- start footer part -->
