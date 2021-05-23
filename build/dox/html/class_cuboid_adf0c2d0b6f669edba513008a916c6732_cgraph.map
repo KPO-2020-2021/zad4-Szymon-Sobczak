@@ -1,5 +1,0 @@
-<map id="Cuboid::Is_it_cub" name="Cuboid::Is_it_cub">
-<area shape="rect" id="node1" title="Sprawdzenie czy dany prostopadloscian ma rowne przeciwlegle boki." alt="" coords="5,31,137,57"/>
-<area shape="rect" id="node2" href="$cuboid_8cpp.html#af5dd140a958ad0ff70e8bcb6e457479d" title="Funkcja pomocnicza, okresla czy podane dlugosci sa rowne." alt="" coords="185,5,312,32"/>
-<area shape="rect" id="node3" href="$vector_8hh.html#a929ea1c63656cd8395d15f97393c4f65" title="Funkcja pomocnicza, pozwala zmierzyc odlegosc pomiedzy dwoma wektorami, tworzacymi nowy wektor." alt="" coords="193,56,304,83"/>
-</map>
