@@ -1,4 +1,3 @@
-
 #pragma once 
 
 #include <iostream>
@@ -11,7 +10,6 @@
 #include "matrix.hh"
 #include "lacze_do_gnuplota.hh"
 
-
 /*!
     \file
         \brief  Definicja klasy Cuboid.
@@ -20,12 +18,14 @@
 */
 
 /*!
-    \brief Klasa modelujaca w programie pojecie prostopadloscianu, ktorego wierzcholki sa wyrazone za pomoca wektorow.
+    \brief Klasa modelujaca w programie pojecie prostopadloscianu, ktorego wierzcholki i centrum sa wyrazone za pomoca wektorow.
 
-    Klasa posiada 
-    prywatne pole "Corners" bedace tablica wektorow, opisuje ono wektorowo pozycje wierzcholkow prostopadloscianu.
-
-    Klasa posiada publiczny konstruktor domyśly oraz konstruktor pozwalajacy na inicjowanie prostopadloscianu za pomoca wektorow.
+    Klasa posiada:
+        - prywatne pole "Local_corners" bedace tablica wektorow, opisuje ono wektorowo pozycje wierzcholkow lokalnych prostopadloscianu.
+        - prywatne pole "Global_corners" bedace tablica wektorow, opisuje ono wektorowo pozycje wierzcholkow globalnych prostopadloscianu.
+        - prywatne pole "Center_of_cub" bedace wektorem, opisuje ono wektorowo pozycje globalnego srodka prostopadloscianu.
+        - publiczny konstruktor domyśly oraz konstruktor pozwalajacy na inicjowanie prostopadloscianu za pomoca wektorow.
+    
     Klasa posiada publiczne metody pozwalajace na:
         - Sprawdzenie, czy prostopadloscian posiada rowne przeciwlegle boki oraz wyswietlenie informacji o tym na standarowe wyjscie.
         - Przemieszczenie prostopadloscanu w ukladzie globalnym.

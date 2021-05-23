@@ -8,14 +8,21 @@
 #include <cmath>
 
 /*!
+    \file 
+        \brief Prototyp i definicja szablonu klasy Vector<Size>.
+
+    Prototypy i definicje metod szablonu klasy Vector<Size>.
+*/
+
+/*!
    \brief Szablon klasy modelujacej w programie pojecie wektora.      
     
     Utworzona klasa zawiera:
         - konstruktor bezparametryczny, tworzacy wektor zerowy o zadanej dlugosci. 
         - konstruktor wieloparametryczny, tworzacy wektor o zadanej dlugosci wypelniony warosciami pochodzacymi z parametru - tablicy wartosci typu double.   
-        - prywatne pole "size" bedace tablica- zbiorem wspolrzednych wekotra. 
-        - publiczne przeciazenia operatorow indeksujacych opowiedzialnych za wprowadzanie i odczytywanie wspolrzendych wektora.
-        - przeciazenie operatora  dodawania, odejmowania dwoch wektorow i mnozenia, dzielenia wektora razy skalar.      
+        - prywatne pole "size" bedace tablica - zbiorem wspolrzednych. 
+        - publiczne przeciazenia operatorow indeksujacych opowiedzialnych za wprowadzanie i odczytywanie wspolrzendych z wektora.
+        - przeciazenie operatora dodawania, odejmowania, mnozenia dwoch wektorow i dzielenia wektora razy skalar.      
 */
 
 template <unsigned int Size>
@@ -50,6 +57,11 @@ class Vector{
         double & operator [] (unsigned int index);
 };
 
+
+/*! \brief Funkcja pomocnicza, pozwala zmierzyc odlegosc pomiedzy dwoma wektorami, tworzacymi nowy wektor */ 
+template <unsigned int Size>
+double vector_length(Vector<Size> const & vec1, Vector<Size> const & vec2);
+
 /*! \brief Przeciazenie operatora << sluzace do wyswietlana wektora. */ 
 template <unsigned int Size>
 std::ostream & operator << (std::ostream &out, Vector<Size> const &tmp); 
@@ -57,8 +69,6 @@ std::ostream & operator << (std::ostream &out, Vector<Size> const &tmp);
 /*! \brief Przeciazenie operatora >> sluzace do wczytywania wartosci do wektora. */
 template <unsigned int Size>
 std::istream & operator >> (std::istream &in, Vector<Size> &tmp); 
-
-
 
 /*!
     Konstruktor bezparametryczny klasy Vector tworzacy wektor zerowy o zadanej dlugosci.                                              
@@ -80,6 +90,7 @@ Vector<Size>::Vector(){
                                                              
     \return  Tablice wypelniona wartosciami podanymi w argumencie.                 
  */
+
 template <unsigned int Size>
 Vector<Size>::Vector(double tmp[Size]){
     for (unsigned int i = 0; i < Size; ++i){
@@ -90,9 +101,9 @@ Vector<Size>::Vector(double tmp[Size]){
 /*!
     Realizuje dodawanie dwoch wektorow.                                       
                                                                   
-    \param [in]    this - pierwszy skladnik dodawania,                                   
-    \param [in]    v - drugi skladnik dodawania.                                         
-   Zwraca:                                                                   
+    \param [in] this - pierwszy skladnik dodawania,                                   
+    \param [in] v - drugi skladnik dodawania.                                         
+
     \return Sume dwoch skladnikow przekazanych jako wskaznik na parametr.                                                          
 */
 
@@ -108,10 +119,10 @@ Vector<Size>  Vector<Size>::operator + (const Vector<Size> &v){
 /*!
     Realizuje odejmowanie dwoch wektorow.                                     
                                                                   
-    \param [in]    this - pierwszy skladnik odejmowania,                                 
-    \param [in]    v - drugi skladnik odejmowania.                                       
+    \param [in] this - pierwszy skladnik odejmowania,                                 
+    \param [in] v - drugi skladnik odejmowania.                                       
                                                                
-    \return   Roznice dwoch skladnikow przekazanych jako wskaznik na parametr.                                                          
+    \return Roznice dwoch skladnikow przekazanych jako wskaznik na parametr.                                                          
  */
 
 template <unsigned int Size>
@@ -126,8 +137,8 @@ Vector<Size> Vector<Size>::operator - (const Vector<Size> &v){
 /*!
     Realizuje mnozenie wektora przez liczbe zmiennoprzecinkowa.               
                                                                    
-    \param [in]    this - pierwszy skladnik mnozenia (wektor),                           
-    \param [in]    v - drugi skladnik mnozenia (liczba typu double).                     
+    \param [in] this - pierwszy skladnik mnozenia (wektor),                           
+    \param [in] v - drugi skladnik mnozenia (liczba typu double).                     
                                                                    
     \return Iloczyn dwoch skladnikow przekazanych jako wskaznik na parametr.                                                          
  */
@@ -144,8 +155,8 @@ Vector<Size> Vector<Size>::operator * (const double &tmp){
 /*!
     Realizuje dzielenie wektora przez skalar.                                       
                                                                  
-    \param [in]    this - licznik dzielenia,                                             
-    \param [in]    v - mianownik dzielenia.                                              
+    \param [in] this - licznik dzielenia,                                             
+    \param [in] v - mianownik dzielenia.                                              
                                                                     
     \return Iloraz dwoch skladnikow przekazanych jako wskaznik na parametr.                                                          
 */
@@ -225,6 +236,15 @@ std::istream & operator >> (std::istream &in, Vector<Size> &tmp){
     std::cout << std::endl;
     return in;
 }
+
+/*!
+    Pozwala wyznaczyc dlugosci pomiedzy wekorami.
+
+    \param [in] vec1 - wektor poczatkowy.
+    \param [in] vec2 - wektor koncowy.
+
+    \return odleglosc pomiedzy wektorami w postaci liczby typu double.
+*/ 
 
 template <unsigned int Size>
 double vector_length(Vector<Size> const & vec1, Vector<Size> const & vec2){

@@ -98,3 +98,9 @@ TEST_CASE("Test reakcji na dzielenie wektora3D przez 0."){
     Vector3D Vec1(values1);
     WARN_THROWS (Vec1 = Vec1 / 0);
 }
+
+TEST_CASE("Test funkcji wyznaczajacej dlugosc odcinka pomiedzy dwoma wektorami w 3D."){
+    double values1[]={1,2,6},values2[]={12,2,6};
+    Vector3D Vec1(values1),Vec2(values2);
+    CHECK (vector_length(Vec1,Vec2) == 11);
+}

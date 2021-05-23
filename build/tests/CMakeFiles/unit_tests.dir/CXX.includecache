@@ -6,70 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../inc/cuboid.hh
-iostream
--
-fstream
--
-cmath
--
-iomanip
--
-vector3D.hh
-../inc/vector3D.hh
-matrix3x3.hh
-../inc/matrix3x3.hh
-matrix.hh
-../inc/matrix.hh
-lacze_do_gnuplota.hh
-../inc/lacze_do_gnuplota.hh
-
-../inc/lacze_do_gnuplota.hh
-string
--
-list
--
-vector
--
-
-../inc/matrix.hh
-size.hh
-../inc/size.hh
-vector.hh
-../inc/vector.hh
-iostream
--
-cstdlib
--
-cmath
--
-
-../inc/matrix3x3.hh
-matrix.hh
-../inc/matrix.hh
-
-../inc/scene.hh
-iostream
--
-fstream
--
-cmath
--
-iomanip
--
-filesystem
--
-vector
--
-vector.hh
-../inc/vector.hh
-matrix.hh
-../inc/matrix.hh
-cuboid.hh
-../inc/cuboid.hh
-lacze_do_gnuplota.hh
-../inc/lacze_do_gnuplota.hh
-
 ../inc/size.hh
 
 ../inc/vector.hh
@@ -85,6 +21,10 @@ stdexcept
 -
 cmath
 -
+
+../inc/vector2D.hh
+vector.hh
+../inc/vector.hh
 
 ../inc/vector3D.hh
 vector.hh
@@ -174,9 +114,19 @@ sys/time.h
 unistd.h
 -
 
-/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_scene.cpp
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_vector2D.cpp
 ../tests/doctest/doctest.h
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/doctest/doctest.h
-scene.hh
-/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/scene.hh
+vector.hh
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/vector.hh
+vector2D.hh
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/vector2D.hh
+
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/test_vector3D.cpp
+../tests/doctest/doctest.h
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/doctest/doctest.h
+vector.hh
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/vector.hh
+vector3D.hh
+/home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/vector3D.hh
 

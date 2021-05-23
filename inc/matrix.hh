@@ -7,20 +7,20 @@
 #include <cmath>
 
 /*!
-    \file Definicja metod klasy Cuboid
-    \brief Prototyp i definicja szablonu kalsy Matrix<Size>.
+    \file 
+        \brief Prototyp i definicja szablonu klasy Matrix<Size>.
 
-    Prototypy i definicje metod szablonu kalsy Matrix<Size>.
+    Prototypy i definicje metod szablonu klasy Matrix<Size>.
 */
 
 /*!
   \brief Szablon klasy modelujacej w programie pojecie macierzy.   
 
   Utworzona klasa zawiera:
-    - publiczny konstruktor domyśly tworzacy macierz jednykowa oraz konstruktor pozwalajacy na inicjowanie macierzy za pomoca tablicy dwuwymiarowej double.
+    - publiczny konstruktor domyśly tworzacy macierz jednostkowa oraz konstruktor z parametrem pozwalajacy na inicjowanie macierzy za pomoca tablicy dwuwymiarowej double.
     - prywatne pole "value", stanowi ono zbior wartosci macierzy rotacji. Jest to kwadratowa tablica warosci typu double, o ustalonym parametrem rozmiarze. 
     - publiczny interfejs pozwalajacy na wprowazdanie, zmiane i odczytywanie danych z macierzy zrealizowany za pomoca przeciazenia operatora funcyjnego.     
-    - przeciazenia operatorow porownania, dodawania, odejmowania, mnozenia dla dwoch macierzy oraz przeciazenia operatorw mnozenia i dzielenia macierzy i skalara.                            
+    - przeciazenia operatorow porownania, dodawania, odejmowania, mnozenia dla dwoch macierzy oraz przeciazenia operatorow mnozenia i dzielenia macierzy przez skalar.                            
     - metode "czyszczaca" macierz - przwyracajaca jej poczatkowy stan macierzy jednostkowej.                                                         
 */
 
@@ -44,7 +44,7 @@ public:
     Matrix<Size> operator * (Matrix<Size> const &tmp);
 
     /*! \brief Operator dzielenia macierzy przez skalar. */  
-    Matrix<Size>  operator / (const double &tmp);
+    Matrix<Size> operator / (const double &tmp);
 
     /*! \brief Operator dodwania dwoch macierzy. */
     Matrix operator + (Matrix const &tmp);    
@@ -63,7 +63,6 @@ public:
 };
 
 /*! \brief Przeciazenie operatora << sluzace wyswietlaniu macierzy. */
-
 template <unsigned int Size>
 std::ostream & operator << (std::ostream &out, Matrix<Size> const &mat);  
 
@@ -152,7 +151,7 @@ Matrix<Size> Matrix<Size>::operator * (Matrix<Size> const &tmp){
     \param[in] this - macierz, czyli pierwszy skladnik mnozenia,                     
     \param[in] tmp - double, czyli dzielnik macierzy.                            
                                                                    
-    \return  result - Iloraz macierzy i skalara przekazanych jako macierz.                    
+    \return  result - iloraz macierzy i skalara przekazanych jako macierz.                    
 */
 
 template <unsigned int Size>
@@ -168,9 +167,9 @@ Matrix<Size> Matrix<Size>::operator / (const double &tmp){
 }
 
 /*!
-    Realizuje czyszczenie macierzy, przywracajac ja do stanu macierzy jednykowej.                                 
+    Realizuje czyszczenie macierzy, przywracajac ja do stanu macierzy jednostkowej.                                 
                                                                        
-    \return  Macierz jedynkowa.                    
+    \return  Macierz jednostkowa.                    
 */
 
 template <unsigned int Size>
@@ -186,11 +185,11 @@ Matrix<Size> Matrix<Size>::reset_matrix(){
 /*!
     Realizuje porownywanie wartosci w dwoch macierzach.                                 
                                                                    
-    \param[in]   this - macierz, czyli pierwszy skladnik porownania,                     
-    \param[in]   tmp - macierz, czyli drugi skladnik porownania.                            
+    \param[in] this - macierz, czyli pierwszy skladnik porownania,                     
+    \param[in] tmp - macierz, czyli drugi skladnik porownania.                            
                                                                    
-    \return  true - jesli macierze sa rowne.          
-    \return  false - jesli macierze nie sa rowne.           
+    \return true - jesli macierze sa rowne.          
+    \return false - jesli macierze nie sa rowne.           
 */
 
 template <unsigned int Size>

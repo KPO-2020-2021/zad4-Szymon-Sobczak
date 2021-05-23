@@ -103,20 +103,6 @@ vector.hh
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/app/main.cpp
 ../tests/doctest/doctest.h
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/tests/doctest/doctest.h
-iostream
--
-iomanip
--
-stdlib.h
--
-fstream
--
-string
--
-unistd.h
--
-vector
--
 exampleConfig.h
 /home/ader/Pulpit/Zad 4 Obroty 3D GIT/zad4-Szymon-Sobczak/app/exampleConfig.h
 vector.hh

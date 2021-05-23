@@ -4,7 +4,7 @@ users, this can be left out. */
 
 /*!
     \file
-        \brief Plik zawierajacy glowna funkcje programu.
+        \brief Plik zawierajacy "main" programu.
 */
 
 #ifdef ENABLE_DOCTEST_IN_LIBRARY
@@ -31,13 +31,13 @@ int main(){
     double angle = 0, multiplier = 1, tr_X = 0, tr_Y = 0,tr_Z = 0; 
     char Option;
 
-    PzG::LaczeDoGNUPlota Link;        /* Zmienna potrzebna do wizualizacji rysunku prostopadloscianu */
-    Vector3D T_vector,ctr_of_new_cub; /* Inicjalizacja wektorow tymczasowych */
-    Matrix3x3 temp_rot_matrix;        /* Inicjalizacja macierzy tymczasowej  */
+    PzG::LaczeDoGNUPlota Link;         /* Zmienna potrzebna do wizualizacji rysunku prostopadloscianu */
+    Vector3D T_vector, ctr_of_new_cub; /* Inicjalizacja wektorow tymczasowych */
+    Matrix3x3 temp_rot_matrix;         /* Inicjalizacja macierzy tymczasowej  */
     
     Scene Scenery; /* Inicjalizacja sceny */
 
-    std::vector <std::string> adresses_of_files; /* Inicjalizacja wektora zapamietujacego nazwy plikow prostopadloscianu */
+    std::vector <std::string> adresses_of_files; /* Inicjalizacja wektora zapamietujacego nazwy plikow z danymi poszczegolnych prostopadloscianow */
 
     std::string name_of_new_file;  /* Inicjalizacja zmiennej typu string - nazwy pojedynczego pliku ze wspolrzednymi prostopadloscianu */
     
@@ -47,7 +47,7 @@ int main(){
 
     Link.ZmienTrybRys(PzG::TR_3D); /* Ustawienie trybu rysowania w gnuplot na 3D. */
 
-    Link.UstawZakresY(-150,150);   /* Uwstawienie zakresu osi OX, OY i OZ */ 
+    Link.UstawZakresY(-150,150);   /* Uwstawienie zakresu osi OX, OY i OZ w Gnuplot */ 
     Link.UstawZakresX(-150,150);
     Link.UstawZakresZ(-150,150); 
 
@@ -77,8 +77,7 @@ int main(){
             std::cout << "Numer aktywnego prostopadloscianu: " << active_cuboid << std::endl;
             std::cout << "Twoj wybor? (m - menu) > ";
             std::cin >> Option;
-            switch(Option){
-                
+            switch(Option){  
                 case 'a': /* Opcja pozwalajaca na zmiane aktywnego prostopaloscianu */
                     while (true){
                         try{
@@ -140,7 +139,7 @@ int main(){
                                 break;            
                               } 
                         }
-                        catch (std::invalid_argument & d){ /* W wyniku wyrzucenia bledu dot. wprowadzania liczby program poinformuje o tym i usunie blad ze strumienia */
+                        catch (std::invalid_argument & d){ /* W wyniku wyrzucenia bledu dot. wprowadzania liczby, program poinformuje o tym i usunie blad ze strumienia */
                             std::cerr << d.what() << std::endl << ":/ Sprobuj jeszcze raz"  << std::endl;
                             std::cin.clear();
                             std::cin.ignore(10000,'\n');   
@@ -149,31 +148,31 @@ int main(){
 
                     while (true){
                         try{
-                            std::cout << "Ile razy operacja obrotu ma byc powtorzona? "<< std::endl; /* Okreslenie ile razy wprowadzony obrot ma sie wykonac*/
+                            std::cout << "Ile razy operacja obrotu ma byc powtorzona? "<< std::endl; /* Okreslenie ile razy wprowadzony obrot ma sie wykonac */
                             std::cin >> multiplier; 
                             if(std::cin.fail() || multiplier < 0)
                                 throw std::invalid_argument(":/ Podano bledna wartosc mnoznika ");
                             else   
                                 break;
                         }
-                        catch (std::invalid_argument & f){ /* W wyniku wyrzucenia bledu dot. wprowadzania liczby program poinformuje o tym i usunie blad ze strumienia */
+                        catch (std::invalid_argument & f){ /* W wyniku wyrzucenia bledu dot. wprowadzania liczby, program poinformuje o tym i usunie blad ze strumienia */
                             std::cerr << f.what() << std::endl << ":/ Sprobuj jeszcze raz"  << std::endl;
                             std::cin.clear();
                             std::cin.ignore(10000,'\n');   
                         }
                     } 
 
-                    for (unsigned int i=0; i<multiplier;++i)
+                    for (unsigned int i=0; i<multiplier;++i) /* Uzupelnienie macierzy rotacji dla wskazanego prostopadloscianu o zadana sekwencje obrotu, zadana ilosc razy */
                         Scenery.update_matrix(temp_rot_matrix, active_cuboid);
                     
-                    Scenery.Move_figure(active_cuboid); 
+                    Scenery.Move_figure(active_cuboid); /* Wykonanie obrotu i wyswietlenie w Gnuplot */
                     Scenery[active_cuboid].Is_it_cub();
                     Scenery[active_cuboid].Write_cub_to_file(adresses_of_files.at(active_cuboid).c_str());
                     Link.Rysuj();
                 break;
 
                 case 'p': /* Opcja translacji o wektor */
-                    std::cout << "Wprowadz wspolrzedne wektora translacji w postaci liczb x i y > ";
+                    std::cout << "Wprowadz wspolrzedne wektora translacji w postaci trzech liczb 'x y z' ";
                     std::cin >> T_vector;
 
                     Scenery.update_vector(T_vector,active_cuboid);

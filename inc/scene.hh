@@ -23,30 +23,35 @@
 /*!
   \brief Klasa modelujaca w programie pojecie Sceny.   
 
-  Utworzona klasa zawiera:
-    - Publiczny destrukor czyszczacy pliki tymczasowe, w ktorych zapisywane sa wspolrzedne globalne prostopadloscianow. 
-    - Metode pozwaljaca modyfikowac macierz rotacji wskazanego prostopadloscianu na scenie.
-    - Metode pozwaljaca modyfikowac wektor przesuniecia wskazanego prostopadloscianu na scenie.
-    - Metode pozwalajaca na przemieszanie prostopaloscianu globalnie na scenie.
-    - Przeciazenie operatora indeksujacego, sluzy ono do uzyskiwania wspolrzednych wskazanego prostopadloscianu ze scenie.
-    - Metode pozwalajaca pobrac wartosci macierzy rotacji wskazanego prostopadloscianu ze sceny.
-    - Metode sprawdzajaca ile prostopadloscianow znajduje sie aktualnie na scenie.
-    - Metode pozwalajaca dodac do sceny kolejny prostopadloscian.
+    Klasa posiada:
+        - prywatne pole "set_of_cuboids" bedace wektorem prostopadloscianow, reprezentuje zbior prostopadloscianow znajdujacych sie na scenie.
+        - prywatne pole "set_of_rotation_matrixes" bedace wektorem macierzy3x3, reprezentuje ono zbior macierzy rotacji dla poszczegolnych prostopadloscianow ze sceny.
+        - prywatne pole "set_of_translation_vectors" bedace wektorem wektorow3D, reprezentuje ono zbior wektorow translacji dla poszczegolnych prostopadloscianow ze sceny.
+        - Publiczny destrukor czyszczacy pliki tymczasowe, w ktorych zapisywane sa wspolrzedne globalne prostopadloscianow. 
+
+    Utworzona klasa zawiera publiczne metody pozwalajace:
+        - modyfikowac macierz rotacji wskazanego prostopadloscianu na scenie.
+        - modyfikowac wektor przesuniecia wskazanego prostopadloscianu na scenie.
+        - przemieszanic wskazany prostopaloscian w ukladzie globlanym sceny.
+        - pobrac wartosci macierzy rotacji wskazanego prostopadloscianu ze sceny.
+        - sprawdzenic ile prostopadloscianow znajduje sie aktualnie na scenie.
+        - dodac do sceny kolejny prostopadloscian.
+
+    Zdefiniowane jest takze przeciazenie operatora indeksujacego, sluzy ono do uzyskiwania wspolrzednych wskazanego prostopadloscianu ze sceny.
 */
 
 class Scene{
     private:
-        /*! \brief Pole klasy reprezentujace zbior poszczególnych prostopadloscianow na scenie. */
+        /*! \brief Pole klasy reprezentujace zbior prostopadloscianow na scenie. */
         std::vector <Cuboid> set_of_cuboids;
         
-        /*! \brief Pole klasy reprezentujace zbior macierzy rotacji dla poszczególnych prostopadloscianow na scenie. */
+        /*! \brief Pole klasy reprezentujace zbior macierzy rotacji dla poszczególnych prostopadloscianow ze scenie. */
         std::vector <Matrix3x3> set_of_rotation_matrixes;
 
-        /*! \brief Pole klasy reprezentujace zbior wektorow przesuniecia dla poszczególnych prostopadloscianow na scenie. */
+        /*! \brief Pole klasy reprezentujace zbior wektorow przesuniecia dla poszczególnych prostopadloscianow ze scenie. */
         std::vector <Vector3D> set_of_translation_vectors;
 
     public:
-
         /*! \brief Destruktor klasy Scene. */
         ~Scene();
         

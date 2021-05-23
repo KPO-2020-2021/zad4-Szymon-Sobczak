@@ -100,18 +100,19 @@ Uruchamianie Testów Programu</h1>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Generowanie dokumentacji w Doxygen</h1>
 <ul>
-<li>Aby wygenerować pliki dokumentacji Doxygen, w postaci HTML, należy skorzystać z pliku konfiguracyjnego "Doxyfile.in" znajdującego się w głównym katalogu repozytorum. Aby to zrobić, należy skorzystać z polecenia "doxygen Doxyfile.in" w głównym katalogu repozytorium. Wygenerowane pliki będą znajdowały się w katalogu "./dox". Do wygenerowania dokumentacji można również skorzystać z kreatora doxywizard.</li>
+<li>Aby wygenerować pliki dokumentacji Doxygen, w postaci HTML, należy skorzystać z pliku konfiguracyjnego "Doxyfile.in" znajdującego się w głównym katalogu repozytorum. Aby to zrobić, należy skorzystać z polecenia "doxygen Doxyfile.in" w głównym katalogu repozytorium. Wygenerowane pliki będą znajdowały się w katalogu "./dox". Do wygenerowania dokumentacji można również skorzystać z kreatora doxywizard lub cmake poleceniem "doxygen" w katalogu "./build".</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Wcześniej wygenerowana dokumentacja</h1>
 <ul>
-<li>Repozytorum posiada wcześniej wygenerowane pliki dokumentacji w katalogu "./dox".</li>
+<li>Repozytorum posiada wcześniej wygenerowane najaktualniejsze pliki dokumentacji w katalogu "./dox". Aby uruchomić stronę główną dokumetnacji należy uruchomić plik "./dox/html/index.html"</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Informacje dodatkowe</h1>
 <ul>
 <li>Możliwe jest dodawanie wielu prostopadłościanów do sceny. Istnieje możliwość przemieszczania każdego z nich oddzielnie po stworzeniu nowych prostopadłościanów na scenie, by to zrobić należy zmienić aktywny prostopadłościan opcją "a".</li>
 <li>Wizualizowane prostopadłościany w Gnuplot są pełnymi prostopadłościanami - ze wszystkimi ścianami.</li>
+<li>Test modyfikacji, wyświetlenie macierzy4x4 - macierzy połączonego obrotu i translacji, przeprowadzone w ramach autotestu. (PLIK. test_matrix4x4.cpp).</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md5"></a>
 Building</h1>
@@ -151,13 +152,13 @@ Building</h1>
 <div class="line">)</div>
 </div><!-- fragment --></li>
 </ul>
-<p>The <code><a class="el" href="main_8cpp.html" title="Plik zawierajacy glowna funkcje programu.">main.cpp</a></code> in the folder <code>tests</code> is needed. Only there we define <code>#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN</code>.</p>
+<p>The <code><a class="el" href="main_8cpp.html" title="Plik zawierajacy &quot;main&quot; programu.">main.cpp</a></code> in the folder <code>tests</code> is needed. Only there we define <code>#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN</code>.</p>
 <p>The main loop of the program is in the <code>app</code> folder. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdoc">Glowna funkcja programu.</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00028">main.cpp:28</a></div></div>
-<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdoc">Szablon klasy modelujacej w programie pojecie wektora.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8hh_source.html#l00022">vector.hh:22</a></div></div>
+<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdoc">Szablon klasy modelujacej w programie pojecie wektora.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8hh_source.html#l00029">vector.hh:29</a></div></div>
 <div class="ttc" id="aclass_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">Szablon klasy modelujacej w programie pojecie macierzy.</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hh_source.html#l00028">matrix.hh:28</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

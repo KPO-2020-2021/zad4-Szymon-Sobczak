@@ -4,7 +4,7 @@
 
 /*!
     \file  
-        \brief Plik zawierajacy definicje konkretyzacji szablonu klasy Matrix do instancji Matrix2x2 - macierzy kwadratowej o wielkosci 2. Oraz trzy prototypy funkcji wypelniajace Matrix3x3 wartosciaciami macierzy obrotu w 3D w osi OX,OY i OZ dla zadanego kata.
+        \brief Plik zawierajacy definicje konkretyzacji szablonu klasy Matrix do instancji Matrix3x3 - macierzy kwadratowej o wielkosci 3. Oraz trzy prototypy funkcji wypelniajace Matrix3x3 wartosciaciami macierzy obrotu w 3D w osi OX,OY i OZ dla zadanego kata.
 */
 
 /*! \brief Konkretyzacja szablonu klasy Matrix do instancji  Matrix3x3 - macierzy kwadratowej o wielkosci 3. */

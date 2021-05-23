@@ -5,7 +5,8 @@
     \date 24.05.2021
     \version 1.0
 
-    Aplikacja realizuje rotację prostopadłościanu wokół osi. 
+    Aplikacja realizuje rotację prostopadłościanu wokół osi w ukladzie lokalnym oraz translacje o wektor.
+    Wyniki przeksztalcen prezentowane sa w 3D w programie Gnuplot. 
     
     \section etykieta-cel-cw Cel ćwiczenia
     Wykształcenie umiejętnosci modelowania kluczowych dla danego problemu pojęć.\n

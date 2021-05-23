@@ -6,7 +6,7 @@
 */
 
 /*! 
-    Funkcja wypelnia macierz o wielkosci 4 wartosciaciami pozwalajacymi obrot wielu osiach i translacje o wektor w 3D, dla zadanch katow i wektora przesuniecia. 
+    Funkcja wypelnia macierz o wielkosci 4 wartosciaciami pozwalajacymi na obrot wielu osiach i translacje o wektor w 3D, dla zadanch katow i wektora przesuniecia. 
     
     \param[in] alpha - Kat obrotu wokol osi OX - roll.
     \param[in] beta - Kat obrotu wokol osi OY - pitch.

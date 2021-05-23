@@ -7,10 +7,10 @@
  * Testy jednostkowe programu uruchamiają się po wpisaniu do terminala "./unit_tests" po poprawnej kompilacji z użyciem pliku Makefile.
 
 ## Generowanie dokumentacji w Doxygen
- * Aby wygenerować pliki dokumentacji Doxygen, w postaci HTML, należy skorzystać z pliku konfiguracyjnego "Doxyfile.in" znajdującego się w głównym katalogu repozytorum. Aby to zrobić, należy skorzystać z polecenia "doxygen Doxyfile.in" w głównym katalogu repozytorium. Wygenerowane pliki będą znajdowały się w katalogu "./dox". Do wygenerowania dokumentacji można również skorzystać z kreatora doxywizard.
+ * Aby wygenerować pliki dokumentacji Doxygen, w postaci HTML, należy skorzystać z pliku konfiguracyjnego "Doxyfile.in" znajdującego się w głównym katalogu repozytorum. Aby to zrobić, należy skorzystać z polecenia "doxygen Doxyfile.in" w głównym katalogu repozytorium. Wygenerowane pliki będą znajdowały się w katalogu "./dox". Do wygenerowania dokumentacji można również skorzystać z kreatora doxywizard lub cmake poleceniem "doxygen" w katalogu "./build". 
 
 ## Wcześniej wygenerowana dokumentacja
- * Repozytorum posiada wcześniej wygenerowane najaktualniejsze pliki dokumentacji w katalogu "./dox".
+ * Repozytorum posiada wcześniej wygenerowane najaktualniejsze pliki dokumentacji w katalogu "./dox". Aby uruchomić stronę główną dokumetnacji należy uruchomić plik "./dox/html/index.html"
 
 ## Informacje dodatkowe
  * Możliwe jest dodawanie wielu prostopadłościanów do sceny. Istnieje możliwość przemieszczania każdego z nich oddzielnie po stworzeniu nowych prostopadłościanów na scenie, by to zrobić należy zmienić aktywny prostopadłościan opcją "a". 

@@ -7,7 +7,6 @@
     Plik zawiera definicje metod klasy Scene.
 */
 
-
 /*!
     Publiczny destrukor czyszczacy pliki tymczasowe, w ktorych zapisywane sa wspolrzedne globalne prostopadloscianow. 
 */
@@ -19,7 +18,7 @@ Scene::~Scene(){
 }
 
 /*!
-    Przeciazenie operatora indeksujacego, sluzy ono do uzyskiwania wspolrzednych wskazanego prostopadloscianu ze scenie.
+    Przeciazenie operatora indeksujacego, sluzy ono do uzyskiwania wspolrzednych wskazanego prostopadloscianu ze sceny.
 
     \param [in] index - Indeks wskazanego prostopadloscianu.
 
@@ -54,8 +53,7 @@ Matrix3x3 Scene::get_matrix(unsigned int index){
 
 Vector3D Scene::get_vector(unsigned int index){
     return set_of_translation_vectors.at(index);
-}
-
+} 
 
 /*!
     Metoda pozwaljaca modyfikowac macierz rotacji wskazanego prostopadloscianu na scenie.
@@ -96,7 +94,7 @@ void Scene::Move_figure(unsigned int index){
 /*!
     Metoda sprawdzajaca ile prostopadloscianow znajduje sie aktualnie na scenie.
 
-    \return aktualna liczba prostopadloscianow na scenie.
+    \return aktualna liczba prostopadloscianow na scenie - unsigned int.
 */
 
 unsigned int Scene::how_many_cuboids(){
@@ -110,7 +108,6 @@ unsigned int Scene::how_many_cuboids(){
     \param [in] tra_OX - Dlugosc boku prostopadloscianu w osi OX. 
     \param [in] tra_OY - Dlugosc boku prostopadloscianu w osi OY. 
     \param [in] tra_OZ - Dlugosc boku prostopadloscianu w osi OZ. 
-
 */
 
 void Scene::Add_cuboid(Vector3D const & center, double const & tra_OX, double const & tra_OY, double const & tra_OZ){
@@ -130,7 +127,6 @@ void Scene::Add_cuboid(Vector3D const & center, double const & tra_OX, double co
     cub_apx[7] = cub_apx[7] + VecOX - VecOY + VecOZ;
 
     Cuboid cuboid_dummy(cub_apx[0], cub_apx[1], cub_apx[2], cub_apx[3], cub_apx[4], cub_apx[5], cub_apx[6], cub_apx[7], center);
-
 
     set_of_cuboids.push_back(cuboid_dummy); 
     set_of_rotation_matrixes.push_back(Matrix3x3());
