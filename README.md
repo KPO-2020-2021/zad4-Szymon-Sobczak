@@ -1,3 +1,6 @@
+## Ważna uwaga
+ * Aby program na pewno działał poprawnie, w katalogu głównym `musi` znajowac sie katalog `datasets`. Git pomija ten ważny katalog, gdy jest on pusty.
+
 ## Uruchamianie Programu
  * Aby móc poprawnie skompilować program należy najpierw stworzyć katalog build, o ile go nie ma, a następnie użyć programu cmake poleceniem `cmake ..` do stworzenia pliku makefile w katalogu `build/`.
  * Następnie należy użyć Makefile poleceniem `make`, aby skompilować program po wcześniejszym poprawnym stworzeniu pliku `Makefile` z pomocą cmake w katalogu `build/`. 
