@@ -88,24 +88,24 @@ $(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><ul>
-<li>Aby móc poprawnie skompilować program należy najpierw stworzyć katalog build, o ile go nie ma, a następnie użyć programu cmake do stworzenia pliku makefile w katalogu build.</li>
-<li>Następnie należy użyć Makefile poleceniem "make", aby skompilować program po wcześniejszym poprawnym stworzeniu pliku Makefile z pomocą&#160;cmake.</li>
-<li>Po poprawnym skompilowaniu, aby uruchomić program, należy użyć polecenia "./main" w katalogu build.</li>
+<li>Aby móc poprawnie skompilować program należy najpierw stworzyć katalog build, o ile go nie ma, a następnie użyć programu cmake poleceniem <code>cmake ..</code> do stworzenia pliku makefile w katalogu <code>build/</code>.</li>
+<li>Następnie należy użyć Makefile poleceniem <code>make</code>, aby skompilować program po wcześniejszym poprawnym stworzeniu pliku <code>Makefile</code> z pomocą&#160;cmake w katalogu <code>build/</code>.</li>
+<li>Po poprawnym skompilowaniu, aby uruchomić program, należy użyć polecenia <code>./main</code> w katalogu <code>build/</code>.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Uruchamianie Testów Programu</h1>
 <ul>
-<li>Testy jednostkowe programu uruchamiają się po wpisaniu do terminala "./unit_tests" po poprawnej kompilacji z użyciem pliku Makefile.</li>
+<li>Testy jednostkowe programu uruchamiają się po wpisaniu do terminala <code>./unit_tests</code> po poprawnej kompilacji z użyciem pliku Makefile w katalogu <code>build/</code>.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Generowanie dokumentacji w Doxygen</h1>
 <ul>
-<li>Aby wygenerować pliki dokumentacji Doxygen, w postaci HTML, należy skorzystać z pliku konfiguracyjnego "Doxyfile.in" znajdującego się w głównym katalogu repozytorum. Aby to zrobić, należy skorzystać z polecenia "doxygen Doxyfile.in" w głównym katalogu repozytorium. Wygenerowane pliki będą znajdowały się w katalogu "./dox". Do wygenerowania dokumentacji można również skorzystać z kreatora doxywizard lub cmake poleceniem "doxygen" w katalogu "./build".</li>
+<li>Aby wygenerować pliki dokumentacji Doxygen, w postaci HTML, należy skorzystać z pliku konfiguracyjnego <code>Doxyfile.in</code> znajdującego się w głównym katalogu repozytorum. Aby to zrobić, należy skorzystać z polecenia <code>doxygen Doxyfile.in</code> w głównym katalogu repozytorium. Wygenerowane pliki będą znajdowały się w katalogu <code>dox/</code>. Do wygenerowania dokumentacji można również skorzystać z kreatora doxywizard lub cmake poleceniem <code>doxygen</code> w katalogu <code>build/</code>.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Wcześniej wygenerowana dokumentacja</h1>
 <ul>
-<li>Repozytorum posiada wcześniej wygenerowane najaktualniejsze pliki dokumentacji w katalogu "./dox". Aby uruchomić stronę główną dokumetnacji należy uruchomić plik "./dox/html/index.html"</li>
+<li>Repozytorum posiada wcześniej wygenerowane najaktualniejsze pliki dokumentacji w katalogu <code>dox/</code>. Aby uruchomić stronę główną dokumetnacji należy uruchomić plik <code>./dox/html/index.html</code></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Informacje dodatkowe</h1>
